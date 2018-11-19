@@ -1,6 +1,4 @@
 class Reponse < ApplicationRecord
   belongs_to :user
-  belongs_to :event
-  belongs_to :favour
-  belongs_to :information
+  belongs_to :postable, polymorphic: true
 end
