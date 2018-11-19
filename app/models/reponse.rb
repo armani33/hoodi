@@ -1,4 +1,4 @@
 class Reponse < ApplicationRecord
   belongs_to :user
-  belongs_to :post
+  belongs_to :postable, polymorphic: true
 end
