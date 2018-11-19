@@ -10,26 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_205158) do
+ActiveRecord::Schema.define(version: 2018_11_19_233131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.string "title"
-    t.string "area"
+    t.string "perimeter"
     t.text "content"
     t.string "picture"
     t.date "date"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_type"
+    t.integer "start_age"
+    t.integer "end_age"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "favours", force: :cascade do |t|
     t.string "title"
-    t.string "area"
+    t.string "perimeter"
     t.text "content"
     t.string "picture"
     t.boolean "helped"
@@ -37,14 +40,14 @@ ActiveRecord::Schema.define(version: 2018_11_19_205158) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "favour_type"
     t.index ["user_id"], name: "index_favours_on_user_id"
   end
 
   create_table "information", force: :cascade do |t|
     t.string "title"
-    t.text "areacontent"
+    t.text "content"
     t.string "picture"
-    t.boolean "saved"
     t.boolean "solved"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -52,20 +55,16 @@ ActiveRecord::Schema.define(version: 2018_11_19_205158) do
     t.index ["user_id"], name: "index_information_on_user_id"
   end
 
-  create_table "reponses", force: :cascade do |t|
+  create_table "responses", force: :cascade do |t|
     t.text "content"
     t.string "distance"
     t.bigint "user_id"
-    t.bigint "favour_id"
-    t.bigint "event_id"
-    t.bigint "information_id"
-    t.string "post_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_reponses_on_event_id"
-    t.index ["favour_id"], name: "index_reponses_on_favour_id"
-    t.index ["information_id"], name: "index_reponses_on_information_id"
-    t.index ["user_id"], name: "index_reponses_on_user_id"
+    t.string "post_type"
+    t.bigint "post_id"
+    t.index ["post_type", "post_id"], name: "index_responses_on_post_type_and_post_id"
+    t.index ["user_id"], name: "index_responses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,8 +81,5 @@ ActiveRecord::Schema.define(version: 2018_11_19_205158) do
   add_foreign_key "events", "users"
   add_foreign_key "favours", "users"
   add_foreign_key "information", "users"
-  add_foreign_key "reponses", "events"
-  add_foreign_key "reponses", "favours"
-  add_foreign_key "reponses", "information"
-  add_foreign_key "reponses", "users"
+  add_foreign_key "responses", "users"
 end
