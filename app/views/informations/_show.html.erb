@@ -9,7 +9,7 @@
     </div>
     <div class="user-name"><%= information.user.first_name %>
     </div>
-    <div class="card-time"> <%= Time.now.utc.hour - Information.first.created_at.hour%>hrs - <%= image_tag("image_after_hour_card", alt: "logo", class: "logo") %>
+    <div class="card-time"> <%= Time.now.utc.hour - information.created_at.hour%>hrs - <%= image_tag("image_after_hour_card", alt: "logo", class: "logo") %>
     </div>
   </div><!-- end card-info-top -->
   <div class="card-info-content">
