@@ -3,7 +3,8 @@
   <div class="tab" id="favour-tab" onclick="unhideForm('favour-form')">Favour</div>
   <div class="tab" id="event-tab" onclick="unhideForm('event-form')">Event</div>
 
-  <div class="form" id="information-form" hidden>
+
+  <div class="form" id="information-form">
     <p>Ask a question or broadcast information</p>
     <%= render 'shared/form', post: @information %>
   </div>
