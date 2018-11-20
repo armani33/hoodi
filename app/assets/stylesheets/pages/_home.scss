@@ -1,1 +1,16 @@
-// Specific CSS for your home-page
+.container-page{
+  background-color: $background-gray;
+}
+.flex-layout{
+  display: flex;
+  height: 100vh;
+  margin: 0 135px;
+}
+.posts-layout{
+  width: 600px;
+  background-color: darkgrey;
+}
+.map-layout{
+  width: 330px;
+  background-color: lightblue;
+}

@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
   def home
+    
+    new_information
+    new_favour
+    new_event
     # TODO build @posts array
     # @posts = []
     find_informations
@@ -8,7 +12,19 @@ class PagesController < ApplicationController
     merge = @informations + @events + @favours
     @posts = merge.sort! { |x, y| y.created_at <=> x.created_at }
   end
+  
+  def new_information
+    @information = Information.new
+  end
+  
+  def new_favour
+    @favour = Favour.new
+  end
 
+  def new_event
+    @event = Event.new
+  end
+  
   def find_informations
     @informations = Information.all
   end
