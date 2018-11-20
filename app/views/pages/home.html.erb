@@ -5,6 +5,7 @@
     </div>
     <div class="posts-layout">
       <h1>Wall</h1>
+      <%= render 'shared/create_post' %>
       <!-- @posts is passed by the controller -->
       <% @posts.each do |post| %>
         <% if post.class == Information %>
