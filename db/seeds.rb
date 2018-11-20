@@ -8,10 +8,10 @@
 puts 'Cleaning database...'
 
 # Response.destroy_all
-# Event.destroy_all
-# Favour.destroy_all
-# Information.destroy_all
-# User.destroy_all
+Event.destroy_all
+Favour.destroy_all
+Information.destroy_all
+User.destroy_all
 
 # Information cards creation
 user = User.new(
@@ -32,19 +32,19 @@ information = Information.new(
 information.user = user
 information.save!
 
-# event = Event.new(
-#   title: "test event stor",
-#   content: "want to organise a game"
-#   )
-# event.user = user
-# event.save!
+event = Event.new(
+  title: "test event stor",
+  content: "want to organise a game"
+  )
+event.user = user
+event.save!
 
-# favour = Favour.new(
-#   title: "test favor stor",
-#   content: "I want to share a ride to the city center"
-#   )
-# favour.user = user
-# favour.save!
+favour = Favour.new(
+  title: "test favor stor",
+  content: "I want to share a ride to the city center"
+  )
+favour.user = user
+favour.save!
 
 # information = Information.new(
 #   title: "Italian restaurant",

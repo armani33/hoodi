@@ -1,1 +1,15 @@
-<p><strong><%= information.title%><%= information.created_at %></strong></p>
+<!-- display information just created -->
+
+<div class="card-info">
+  <div class="card-info-top">
+    <%= current_user %>
+    <span class="badge badge-warning">Information</span>
+  </div><!-- end card-info-top -->
+  <div class="card-info-content">
+    <h1><%=information.title %></h1>
+    <p><%=information.content%></p>
+  </div><!-- end card-info-content -->
+  <div class="card-info-footer">
+
+  </div><!-- end card-info-footer -->
+</div><!-- end card-info -->
