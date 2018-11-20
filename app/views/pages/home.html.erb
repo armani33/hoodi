@@ -1,0 +1,14 @@
+<h1>Wall</h1>
+
+<!-- @posts is passed by the controller -->
+
+<% @posts.each do |post| %>
+  <% if post.class == Information %>
+    <%= render 'informations/show', information: post %>
+  <% elsif post.class == Event %>
+    <%= render 'events/show', event: post %>
+  <% elsif post.class == Favour %>
+    <%= render 'favours/show', favour: post %>
+  <% end %>
+<% end %>
+
