@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_information');
+  newInformationForm.innerHTML = innerHTML;
+}
+
+function addInformation(informationHTML) {
+  const reviews = document.getElementById('information');
+  reviews.insertAdjacentHTML('beforeend', informationHTML);
+}
+
+<% if @information.errors.any? %>
+  refreshForm('<%= j render "shared/form", information: @information %>');
+<% else %>
+  addReview('<%= j render "root_path", information: @information %>');
+  refreshForm('<%= j render "shared/form", information: Information.new %>');
+<% end %>

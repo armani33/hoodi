@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_233131) do
+ActiveRecord::Schema.define(version: 2018_11_20_173037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_233131) do
     t.string "user_type"
     t.integer "start_age"
     t.integer "end_age"
+    t.string "photo"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_233131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "favour_type"
+    t.string "photo"
     t.index ["user_id"], name: "index_favours_on_user_id"
   end
 
@@ -52,6 +54,8 @@ ActiveRecord::Schema.define(version: 2018_11_19_233131) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
+    t.string "perimeter"
     t.index ["user_id"], name: "index_information_on_user_id"
   end
 

@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+.container {
+  display: flex;
+  justify-content: center;
+
+  .new-post-window {
+    .tab {
+    display: inline-block;
+    }
+  }
+}

@@ -1,2 +1,32 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <div class="new-post-window">
+    <div class="tab" id="info-tab" onclick="unhideForm('information-form')">Info</div>
+    <div class="tab" id="favour-tab" onclick="unhideForm('favour-form')">Favour</div>
+    <div class="tab" id="event-tab" onclick="unhideForm('event-form')">Event</div>
+
+    <div id="information-form" hidden>
+      <p>Ask a question or broadcast information</p>
+      <%= render 'shared/form', post: @information %>
+    </div>
+
+    <div id="favour-form" hidden>
+      <p>Ask for a favour</p>
+      <%= render 'shared/form', post: @favour %>
+    </div>
+
+    <div id="event-form" hidden>
+      <p>Create a new event</p>
+      <%= render 'shared/form', post: @event %>
+    </div>
+  </div>
+
+  <div class="information-card">
+    <% @informations.each do |info| %>
+
+      <%= info.user.first_name %>
+      <h4><%= info.title %></h4>
+      <%= cl_image_tag(info.photo, width: 400, height: 300, crop: :fill) %>
+      <p><%= info.content %></p>
+    <% end %>
+  </div>
+</div>
