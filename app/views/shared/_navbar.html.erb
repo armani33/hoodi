@@ -1,0 +1,66 @@
+<div class="navbar-hoodi">
+  <!-- Logo -->
+  <div class="brand">
+    <%= link_to root_path, { :class=>"brand-link" } do %>
+      <ul class="brand-list">
+        <li><%= image_tag('hoodi_white', class: "navbar-hoodi-brand", alt: 'logo') %></li>
+        <li id="hoodi-nav">Hoodi</li>
+      </ul>
+  <% end %>
+  </div>
+
+  <!-- Right Navigation -->
+  <div class="navbar-hoodi-right hidden-xs ">
+    <!-- profil link -->
+    <div class="profil-link">
+      <%= link_to root_path do %>
+        <ul class="profile-nav">
+          <li><%= image_tag('http://i.pravatar.cc/300', class: "avatar_navbar") %></li>
+          <li>Armand</li>
+        </ul>
+      <% end %>
+    </div>
+    <!-- home link: refresh neighbor wall-->
+    <div class="home-link">
+        <%= link_to('Home', root_path ) %>
+    </div>
+    <!-- icones message and notification link -->
+    <ul class="images-link">
+        <!-- message picture link -->
+      <li>
+        <%= link_to root_path do %>
+            <%= image_tag('message-white-navbar.png', class: 'message-button-navbar') %>
+        <% end %>
+      </li>
+      <!-- notification picture link -->
+      <li id="notification">
+        <%= link_to root_path do %>
+          <%= image_tag('notifhome-navbar.png', class: 'notif-button-navbar') %>
+        <% end %>
+      </li>
+      <!-- triangle picture with dropdown list -->
+      <li id="triangle-dropdown">
+        <div class="dropdown">
+          <%= image_tag('triangle.png', class: 'triangle-nav dropdown-toggle', id:'navbar-wagon-menu', data: {toggle:'dropdown'}) %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- Dropdown appearing on mobile only -->
+  <div class="navbar-hoodi-item hidden-sm hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Profil</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">notification</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+

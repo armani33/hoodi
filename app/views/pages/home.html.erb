@@ -1,1 +1,22 @@
-<%= render 'shared/create_post' %>
+<div class="container-page">
+  <div class="flex-layout">
+    <div class="access-layout">
+    </div>
+    <div class="posts-layout">
+      <h1>Wall</h1>
+      <%= render 'shared/create_post' %>
+      <!-- @posts is passed by the controller -->
+      <% @posts.each do |post| %>
+        <% if post.class == Information %>
+          <%= render 'informations/show', information: post %>
+        <% elsif post.class == Event %>
+          <%= render 'events/show', event: post %>
+        <% elsif post.class == Favour %>
+          <%= render 'favours/show', favour: post %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="map-layout">
+    </div>
+  </div>
+</div>

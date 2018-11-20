@@ -1,4 +1,8 @@
 class InformationsController < ApplicationController
+  def index
+    @informations = Information.all
+  end
+  
   def new
     @information = Information.new
   end
