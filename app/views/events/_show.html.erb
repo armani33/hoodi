@@ -1,1 +1,16 @@
-<p><i><%= event.title%><%=event.created_at %></i></p>
+<!-- display event just created -->
+
+<div class="card-event">
+  <div class="ribbon-event ribbon color-info">
+    <span>Event</span>
+  </div>
+  <div class="card-event-top">
+    <%= event.user.first_name %>
+  </div><!-- end card-event-top -->
+  <div class="card-event-content">
+    <h1><%=event.title %></h1>
+    <p><%=event.content%></p>
+  </div><!-- end card-event-content -->
+  <div class="card-event-footer">
+  </div><!-- end card-event-footer -->
+</div><!-- end card-event -->

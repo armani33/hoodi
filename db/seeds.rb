@@ -8,10 +8,10 @@
 puts 'Cleaning database...'
 
 # Response.destroy_all
-# Event.destroy_all
-# Favour.destroy_all
-# Information.destroy_all
-# User.destroy_all
+Event.destroy_all
+Favour.destroy_all
+Information.destroy_all
+User.destroy_all
 
 # Information cards creation
 user = User.new(

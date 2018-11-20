@@ -1,1 +1,17 @@
-<p><%= favour.title%><%= favour.created_at %></p>
+<!-- display favour just created -->
+
+
+<div class="card-favour">
+  <div class="ribbon-favour ribbon color-info">
+    <span>Favour</span>
+  </div>
+  <div class="card-favour-top">
+    <%= favour.user.first_name %>
+  </div><!-- end card-inffavour-top -->
+  <div class="card-favour-content">
+    <h1><%=favour.title %></h1>
+    <p><%=favour.content%></p>
+  </div><!-- end card-favour-content -->
+  <div class="card-favour-footer">
+  </div><!-- end card-favour-footer -->
+</div><!-- end card-favour -->
