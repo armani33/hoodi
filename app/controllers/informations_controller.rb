@@ -1,5 +1,5 @@
 class InformationsController < ApplicationController
   def index
-    @information = Information.all
+    @informations = Information.all
   end
 end
