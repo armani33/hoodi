@@ -1,9 +1,11 @@
 <!-- display event just created -->
 
 <div class="card-event">
+  <div class="ribbon-event ribbon color-info">
+    <span>Event</span>
+  </div>
   <div class="card-event-top">
-    <%= current_user %>
-    <span class="badge badge-danger">Event</span>
+    <%= event.user.first_name %>
   </div><!-- end card-event-top -->
   <div class="card-event-content">
     <h1><%=event.title %></h1>

@@ -7,8 +7,6 @@ class PagesController < ApplicationController
     find_favours
     merge = @informations + @events + @favours
     @posts = merge.sort! { |x, y| y.created_at <=> x.created_at }
-    #@posts << @events
-    # @posts << @favours
   end
 
   def find_informations

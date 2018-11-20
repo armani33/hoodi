@@ -2,9 +2,11 @@
 
 
 <div class="card-favour">
+  <div class="ribbon-favour ribbon color-info">
+    <span>Favour</span>
+  </div>
   <div class="card-favour-top">
-    <%= current_user %>
-    <span class="badge badge-primary">Favour</span>
+    <%= favour.user.first_name %>
   </div><!-- end card-inffavour-top -->
   <div class="card-favour-content">
     <h1><%=favour.title %></h1>
