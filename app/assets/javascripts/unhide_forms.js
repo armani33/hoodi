@@ -1,8 +1,9 @@
 function unhideForm(formType) {
-    const form_div = document.getElementById(formType);
-    if (form_div.style.display === "none") {
-        form_div.style.display = "block";
-    } else {
-        form_div.style.display = "none";
-    }
+    const allForms = document.querySelectorAll('.form');
+    allForms.forEach((form) => {
+    form.style.display = "none";
+  });
+
+    const selectedForm = document.getElementById(formType);
+    selectedForm.style.display = "block";
 }
