@@ -77,10 +77,10 @@
 }
 
 /* *** Profile link *** */
-.profil-link {
+.profil-nav-link {
   margin-right: 25px;
 }
-.profil-link .profile-nav{
+.profil-nav-link .profile-nav{
   display: flex;
   align-items: center;
 }
@@ -91,13 +91,6 @@
 }
 .profile-nav img {
   margin-right: 10px;
-}
-/* User Avatar */
-.avatar_navbar{
- height: 30px;
- width: 30px;
- border-radius: 50%;
- border: 1px solid #352B36;
 }
 
 /* *** Home link *** */

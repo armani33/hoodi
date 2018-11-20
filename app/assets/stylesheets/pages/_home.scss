@@ -1,12 +1,10 @@
+.container-page{
+  background-color: $background-gray;
+}
 .flex-layout{
   display: flex;
   height: 100vh;
-  background-color: red;
   margin: 0 135px;
-}
-.access-layout{
-  width: 145px;
-  background-color: grey;
 }
 .posts-layout{
   width: 600px;
