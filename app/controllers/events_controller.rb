@@ -18,6 +18,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :content, :perimeter, :photo, :date)
+    params.require(:event).permit(:title, :content, :perimeter, :photo, :date, :location, :start_age, :end_age)
   end
 end
