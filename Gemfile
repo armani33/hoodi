@@ -7,6 +7,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -16,9 +17,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
-gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+# gem 'algoliasearch-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

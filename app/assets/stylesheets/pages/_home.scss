@@ -1,16 +1,26 @@
 .container-page{
   background-color: $background-gray;
+
 }
 .flex-layout{
   display: flex;
-  height: 100vh;
+  // flex-direction: column;
+  position: sticky !important;
+  height: 300vh;
   margin: 0 135px;
+  position: relative;
+}
+.access-layout{
+  width: 145px;
+  position: fixed;
 }
 .posts-layout{
   width: 600px;
-  background-color: darkgrey;
+  background-color: $background-gray;
+  margin-left: 145px;
 }
 .map-layout{
   width: 330px;
-  background-color: lightblue;
+  position:fixed;
+  right: 135px;
 }
