@@ -11,19 +11,26 @@
   border: 3px solid $middle-grey;
 }
 .card-top{
-font-family: $body-font;
-display: flex;
-align-items: center;
-justify-content: flex-start;
-height: 50px;
-margin: 0px 20px;
-
-h2{
-  font-size: 20px;
-}
-p{
- font-size: 10px;
-}
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 50px;
+  margin: 0px 20px;
+  h2{
+    font-family: $headers-font;
+    font-size: 15px;
+    font-weight: bold;
+    color: $black;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-align: center;
+    padding: 0px 20px;
+  }
+  p{
+    font-family: $body-font;
+    font-size: 10px;
+    text-align: center;
+    padding: 0px 30px;
+  }
 }
 .card-content{
   height: 200px;
