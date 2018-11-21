@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newFavourForm = document.getElementById('favour-form');
+  newFavourForm.innerHTML = innerHTML;
+}
+
+function addFavour(favourHTML) {
+  const post_window = document.getElementById('new-post-window');
+  post_window.insertAdjacentHTML('afterend', favourHTML);
+}
+
+<% if @favour.errors.any? %>
+  refreshForm('<%= j render "shared/form", favour: @favour %>');
+<% else %>
+  addFavour('<%= j render "root_path", favour: @favour %>');
+  refreshForm('<%= j render "shared/form", favour: Favour.new %>');
+<% end %>
