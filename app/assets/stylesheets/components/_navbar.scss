@@ -5,10 +5,13 @@
   background: $black;
   transition: all 0.3s ease;
   padding: 0px 30px;
+  position: sticky !important;
+  top: 0 !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
+  z-index: 1;
 }
 /* ----Left section---- */
 .brand{
