@@ -1,17 +1,32 @@
+<!--  -->
 <!-- display favour just created -->
 
-
-<div class="card-favour">
-  <div class="ribbon-favour ribbon color-info">
+<div class="card">
+  <div class="ribbon-favour ribbon color-favour">
     <span>Favour</span>
   </div>
-  <div class="card-favour-top">
-    <%= favour.user.first_name %>
-  </div><!-- end card-inffavour-top -->
-  <div class="card-favour-content">
+  <div class="card-top">
+    <div class="card-avatar">
+    </div>
+    <div class="user-name"><%= favour.user.first_name %>
+    </div>
+    <div class="card-time"> <%= Time.now.utc.hour - favour.created_at.hour%>hrs - <%= image_tag("image_after_hour_card", alt: "logo", class: "logo") %>
+    </div>
+  </div><!-- end card-top -->
+  <div class="card-content">
     <h1><%=favour.title %></h1>
     <p><%=favour.content%></p>
-  </div><!-- end card-favour-content -->
-  <div class="card-favour-footer">
-  </div><!-- end card-favour-footer -->
-</div><!-- end card-favour -->
+  </div><!-- end card-content -->
+  <div class="card-footer">
+    <div class="img-footer">
+      <%= image_tag("images.handlove", alt: "logo", class: "logo-footer")%> Saved post
+    </div>
+    <div class="img-footer">
+      <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment
+    </div>
+    <div class="img-footer">
+      <%= image_tag("map-pin", alt: "logo", class: "logo-footer")%> Location
+    </div>
+  </div><!-- end card-footer -->
+</div><!-- end card -->
+

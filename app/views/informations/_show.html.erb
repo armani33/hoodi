@@ -1,22 +1,22 @@
 <!-- display information just created -->
 
-<div class="card-info">
+<div class="card">
   <div class="ribbon-info ribbon color-info">
     <span>Information</span>
   </div>
-  <div class="card-info-top">
+  <div class="card-top">
     <div class="card-avatar">
     </div>
     <div class="user-name"><%= information.user.first_name %>
     </div>
     <div class="card-time"> <%= Time.now.utc.hour - information.created_at.hour%>hrs - <%= image_tag("image_after_hour_card", alt: "logo", class: "logo") %>
     </div>
-  </div><!-- end card-info-top -->
-  <div class="card-info-content">
+  </div><!-- end card-top -->
+  <div class="card-content">
     <h1><%=information.title %></h1>
     <p><%=information.content%></p>
-  </div><!-- end card-info-content -->
-  <div class="card-info-footer">
+  </div><!-- end card-content -->
+  <div class="card-footer">
     <div class="img-footer">
       <%= image_tag("saved", alt: "logo", class: "logo-footer")%> Saved post
     </div>
@@ -26,6 +26,6 @@
     <div class="img-footer">
       <%= image_tag("map-pin", alt: "logo", class: "logo-footer")%> Location
     </div>
-  </div><!-- end card-info-footer -->
-</div><!-- end card-info -->
+  </div><!-- end card-footer -->
+</div><!-- end card -->
 
