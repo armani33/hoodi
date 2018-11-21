@@ -1,5 +1,32 @@
 .new-post-window {
-    .tab {
+  display: flex;
+  justify-content: center;
+
+  .tabs {
+    text-align: center;
+  }
+
+  .tab {
     display: inline-block;
-    }
+  }
+  .form {
+    border: 3px;
+    background-color: $light-grey;
+  }
+
+  #info-tab {
+    background-color: $yellow;
+  }
+
+  #information-form {
+    border-color: $yellow;
+  }
+
+  #favour-tab {
+    background-color: $blue;
+  }
+
+  #event-tab {
+    background-color: $pink;
+  }
 }
