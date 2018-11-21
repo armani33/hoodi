@@ -1,13 +1,20 @@
 <%= simple_form_for post, url: url, method: :post, remote: true do |f| %>
   <!-- [...] -->
-  <%= f.input :title %>
+  <%= f.input :title, label: false, placeholder: "Title" %>
   <% if post.is_a? Event %>
-    <%= f.input :date %>
+    <%= f.input :content, label: false, placeholder: "Personal message" %>
+    <%= f.input :date, as: :string, placeholder: "yyyy-mm-dd"%>
     <%= f.input :location %>
+    <a href="#" class="btn-medium" id="age-btn" >Age</a>
+    <%= f.input :start_age, input_html: { class: 'hidden-age invisible' }, label: false, placeholder: "Start age" %>
+    <%= f.input :end_age, input_html: { class: 'hidden-age invisible' }, label: false, placeholder: "End age" %>
+  <% elsif post.is_a? Information %>
+    <%= f.input :content, label: false, placeholder: "Ask a question or share info!" %>
+  <% else %>
+    <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!" %>
   <% end %>
-  <%= f.input :content %>
-  <%= f.input :perimeter %>
-  <%= f.input :photo %>
+  <%= f.select :perimeter, ["100m", "200m", "300m", "400m", "500m", "600m", "700m", "800m", "900m", "1km", "1.5km", "2km"] %>
+  <%= f.input :photo, label: false %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit %>
 <% end %>

@@ -1,3 +1,44 @@
-.simple_form {
-  width: 40%;
+.form {
+  position: relative;
+  width: 580px;
+  height: 385px;
+  border-style: solid !important;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-group {
+    margin: 0;
+    border-color: red;
+}
+
+#information-form {
+  border-color: $yellow;
+  background-color: $light-yellow;
+}
+
+#favour-form {
+  border-color: $blue;
+  background-color: $light-blue;
+}
+
+#event-form {
+  border-color: $pink;
+  background-color: $light-pink;
+}
+
+.invisible {
+  display: none;
+}
+
+#age-btn {
+  position: absolute;
+  bottom: 70px;
+  left: 15px;
+}
+
+#perimeter-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
 }

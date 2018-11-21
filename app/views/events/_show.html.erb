@@ -10,6 +10,7 @@
   <div class="card-event-content">
     <h1><%=event.title %></h1>
     <p><%=event.content%></p>
+    <%= cl_image_tag(event.photo) %>
   </div><!-- end card-event-content -->
   <div class="card-event-footer">
   </div><!-- end card-event-footer -->
