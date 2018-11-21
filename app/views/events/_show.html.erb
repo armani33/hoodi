@@ -1,16 +1,33 @@
+<!--  -->
 <!-- display event just created -->
 
-<div class="card-event">
-  <div class="ribbon-event ribbon color-info">
+<div class="card">
+  <div class="ribbon-event ribbon color-event">
     <span>Event</span>
   </div>
-  <div class="card-event-top">
-    <%= event.user.first_name %>
-  </div><!-- end card-event-top -->
-  <div class="card-event-content">
+  <div class="card-top">
+  <div class="avatar-medium">
+      <%= image_tag("default_avatar_hoodi", alt: "logo", class: "avatar-medium") %>
+    </div>
+    <div class="user-name">
+      <h2><%= event.user.first_name %></h2>
+      <p><%= Time.now.utc.hour - event.created_at.hour%>hrs - <%= image_tag("image_after_hour_card", alt: "logo", class: "logo") %></p>
+    </div>
+  </div><!-- end card-top -->
+  <div class="card-content">
     <h1><%=event.title %></h1>
     <p><%=event.content%></p>
-  </div><!-- end card-event-content -->
-  <div class="card-event-footer">
-  </div><!-- end card-event-footer -->
-</div><!-- end card-event -->
+  </div><!-- end card-content -->
+  <div class="card-footer">
+    <div class="img-footer">
+      <%= image_tag("invited", alt: "logo", class: "logo-footer")%> Respond
+    </div>
+    <div class="img-footer">
+      <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment
+    </div>
+    <div class="img-footer">
+      <%= image_tag("mapzer", alt: "logo", class: "logo-footer-mapzer")%> Location
+    </div>
+  </div><!-- end card-footer -->
+</div><!-- end card -->
+
