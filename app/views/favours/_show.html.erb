@@ -6,11 +6,12 @@
     <span>Favour</span>
   </div>
   <div class="card-top">
-    <div class="card-avatar">
+    <div class="avatar-medium">
+      <%= image_tag("default_avatar_hoodi", alt: "logo", class: "avatar-medium") %>
     </div>
-    <div class="user-name"><%= favour.user.first_name %>
-    </div>
-    <div class="card-time"> <%= Time.now.utc.hour - favour.created_at.hour%>hrs - <%= image_tag("image_after_hour_card", alt: "logo", class: "logo") %>
+    <div class="user-name">
+      <h2><%= favour.user.first_name %></h2>
+      <p><%= Time.now.utc.hour - favour.created_at.hour%>hrs - <%= image_tag("image_after_hour_card", alt: "logo", class: "logo") %></p>
     </div>
   </div><!-- end card-top -->
   <div class="card-content">

@@ -12,6 +12,18 @@
 }
 .card-top{
 font-family: $body-font;
+display: flex;
+align-items: center;
+justify-content: flex-start;
+height: 50px;
+margin: 0px 20px;
+
+h2{
+  font-size: 20px;
+}
+p{
+ font-size: 10px;
+}
 }
 .card-content{
   height: 200px;
