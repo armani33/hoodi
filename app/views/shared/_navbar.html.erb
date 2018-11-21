@@ -44,7 +44,7 @@
           <%= image_tag('triangle.png', class: 'triangle-nav dropdown-toggle', id:'navbar-wagon-menu', data: {toggle:'dropdown'}) %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><a href="#">Profile</a></li>
-            <li><a href="#">Log Out</a></li>
+            <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
           </ul>
         </div>
       </li>
