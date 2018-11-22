@@ -10,57 +10,63 @@
   </div>
 
   <!-- Right Navigation -->
-  <div class="navbar-hoodi-right hidden-xs ">
-    <!-- profil link -->
-    <div class="profil-nav-link">
-      <%= link_to root_path do %>
-        <ul class="profile-nav">
-          <li><%= image_tag('http://i.pravatar.cc/300', class: "avatar-navbar") %></li>
-          <li><%= User.first.first_name %></li>
-        </ul>
-      <% end %>
-    </div>
-    <!-- home link: refresh neighbor wall-->
-    <div class="home-link">
-        <%= link_to('Home', root_path ) %>
-    </div>
-    <!-- icones message and notification link -->
-    <ul class="images-link">
-        <!-- message picture link -->
-      <li>
+  <% if user_signed_in? %>
+    <div class="navbar-hoodi-right hidden-xs ">
+      <!-- profil link -->
+      <div class="profil-nav-link">
         <%= link_to root_path do %>
-            <%= image_tag('message-white-navbar.png', class: 'message-button-navbar') %>
-        <% end %>
-      </li>
-      <!-- notification picture link -->
-      <li id="notification">
-        <%= link_to root_path do %>
-          <%= image_tag('notifhome-navbar.png', class: 'notif-button-navbar') %>
-        <% end %>
-      </li>
-      <!-- triangle picture with dropdown list -->
-      <li id="triangle-dropdown">
-        <div class="dropdown">
-          <%= image_tag('triangle.png', class: 'triangle-nav dropdown-toggle', id:'navbar-wagon-menu', data: {toggle:'dropdown'}) %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
+          <ul class="profile-nav">
+            <li><%= image_tag('http://i.pravatar.cc/300', class: "avatar-navbar") %></li>
+            <li><%= User.first.first_name %></li>
           </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <!-- Dropdown appearing on mobile only -->
-  <div class="navbar-hoodi-item hidden-sm hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Profil</a></li>
-        <li><a href="#">Messages</a></li>
-        <li><a href="#">notification</a></li>
+        <% end %>
+      </div>
+      <!-- home link: refresh neighbor wall-->
+      <div class="home-link">
+          <%= link_to('Home', root_path ) %>
+      </div>
+      <!-- icones message and notification link -->
+      <ul class="images-link">
+          <!-- message picture link -->
+        <li>
+          <%= link_to root_path do %>
+              <%= image_tag('message-white-navbar.png', class: 'message-button-navbar') %>
+          <% end %>
+        </li>
+        <!-- notification picture link -->
+        <li id="notification">
+          <%= link_to root_path do %>
+            <%= image_tag('notifhome-navbar.png', class: 'notif-button-navbar') %>
+          <% end %>
+        </li>
+        <!-- triangle picture with dropdown list -->
+        <li id="triangle-dropdown">
+          <div class="dropdown">
+            <%= image_tag('triangle.png', class: 'triangle-nav dropdown-toggle', id:'navbar-wagon-menu', data: {toggle:'dropdown'}) %>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
-  </div>
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-hoodi-item hidden-sm hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Profil</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">notification</a></li>
+        </ul>
+      </div>
+    </div>
+  <% else %>
+    <div class="navbar-sign-in">
+        <p>work on that</p>
+    </div>
+  <% end %>
 </div>
 
 
