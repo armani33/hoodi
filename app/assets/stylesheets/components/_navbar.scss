@@ -76,12 +76,12 @@
 }
 .navbar-hoodi-right a{
   text-decoration: none;
-  color: white;
 }
 
 /* *** Profile link *** */
 .profil-nav-link {
   margin-right: 25px;
+  color: white;
 }
 .profil-nav-link .profile-nav{
   display: flex;
@@ -91,6 +91,7 @@
   margin: 0;
   padding: 3px;
   list-style: none;
+  color: white;
 }
 .profile-nav img {
   margin-right: 10px;

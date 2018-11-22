@@ -8,7 +8,8 @@
     <%= f.input :last_name %>
 
     <%= f.input :address,
-                required: true %>
+                required: true,
+                placeholder: "What's your address?"%>
 
     <%= f.input :age %>
     <%= f.input :email,
@@ -31,11 +32,4 @@
 
 <%= render "devise/shared/links" %>
 
-<script src="https://cdn.jsdelivr.net/npm/places.js@1.13.0"></script>
-<script>
-  var placesAutocomplete = places({
-    appId: '<%= ENV['YOUR_PLACES_APP_ID'] %>',
-    apiKey: '<%= ENV['YOUR_PLACES_API_KEY'] %>',
-    container: document.querySelector('#user_address')
-  });
-</script>
+
