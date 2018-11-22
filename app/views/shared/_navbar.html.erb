@@ -17,7 +17,7 @@
         <%= link_to root_path do %>
           <ul class="profile-nav">
             <li><%= image_tag('http://i.pravatar.cc/300', class: "avatar-navbar") %></li>
-            <li><%= User.first.first_name %></li>
+            <li><%= current_user.first_name.capitalize%></li>
           </ul>
         <% end %>
       </div>

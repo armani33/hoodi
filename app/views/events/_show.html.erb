@@ -34,12 +34,15 @@
         <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment
       <% end %>
     </div>
-    <div class="footer-link">
-      <%= link_to root_path do %>
+    <div class="footer-link footer-link-localisation">
+      <a href="/" lat="<%= event.user.latitude %>" lng="<%= event.user.longitude %>">
         <%= image_tag("map_icon", alt: "logo", class: "logo-footer-mapzer")%> Location
-      <% end %>
+      </a>
     </div>
   </div>
   <!-- end card-footer -->
 </div>
 <!-- end card -->
+
+<script>
+</script>
