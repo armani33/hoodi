@@ -1,34 +1,41 @@
 <!-- display information just created -->
 
-<div class="card">
-  <div class="ribbon-info ribbon color-info">
-    <span>Information</span>
-  </div>
+<div class="card yellow-card">
   <div class="card-top">
     <div class="avatar-medium">
       <%= image_tag("default_avatar_hoodi", alt: "logo", class: "avatar-medium") %>
     </div>
     <div class="user-name">
       <h2><%= information.user.first_name %></h2>
-      <div class="time">
+      <div class="time time-information">
         <p><%= Time.now.utc.hour - information.created_at.hour %> hrs - </p>
-        <%= image_tag("image_after_hour_card", alt: "logo", class: "logo") %>
+        <%= image_tag("image_after_hour_card", alt: "time", class: "logo") %>
       </div>
     </div>
-  </div><!-- end card-top -->
+  </div>
+  <div class="option-menu">
+    <%= image_tag("dropdown_menu_card", class: "dropdown-card") %>
+  </div>
+  <!-- end card-top -->
+  <h1 class="title yellow-title">needs your neighbor knowledge</h1>
   <div class="card-content">
-    <h1><%=information.title %></h1>
     <p><%=information.content%></p>
   </div><!-- end card-content -->
   <div class="card-footer">
-    <div class="img-footer">
-      <%= image_tag("saved", alt: "logo", class: "logo-footer")%> Saved post
+    <div class="footer-link">
+      <%= link_to root_path do %>
+        <%= image_tag("love_neighbour", alt: "logo", class: "logo-footer")%> Saved post
+      <% end %>
     </div>
-    <div class="img-footer">
-      <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment
+    <div class="footer-link">
+      <%= link_to root_path do %>
+        <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment
+      <% end %>
     </div>
-    <div class="img-footer">
-      <%= image_tag("mapzer", alt: "logo", class: "logo-footer-mapzer")%> Location
+    <div class="footer-link">
+      <%= link_to root_path do %>
+        <%= image_tag("map_icon", alt: "logo", class: "logo-footer-mapzer")%> Location
+      <% end %>
     </div>
   </div><!-- end card-footer -->
 </div><!-- end card -->
