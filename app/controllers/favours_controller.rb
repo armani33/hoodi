@@ -15,9 +15,9 @@ class FavoursController < ApplicationController
     end
   end
 
-    def show
+  def show
     @favour = Favour.find(params[:id])
-    @response = Response.new  # <-- You need this now.
+    @response = Response.new # <-- You need this now.
   end
 
   private

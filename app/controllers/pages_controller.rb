@@ -1,5 +1,3 @@
-require 'response'
-
 class PagesController < ApplicationController
   def home
     new_information
