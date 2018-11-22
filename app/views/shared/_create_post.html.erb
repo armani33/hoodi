@@ -4,17 +4,14 @@
     <div class="tab" id="favour-tab" onclick="unhideForm('favour-form')">Favour</div>
     <div class="tab" id="event-tab" onclick="unhideForm('event-form')">Event</div>
     <div class="form" id="information-form">
-      <p>Ask a question or broadcast information</p>
       <%= render 'shared/form', post: @information, url: informations_path(@information) %>
     </div>
 
     <div class="form" id="favour-form" hidden>
-      <p>Ask your neighbours for a favour</p>
       <%= render 'shared/form', post: @favour, url: favours_path(@favour) %>
     </div>
 
     <div class="form" id="event-form" hidden>
-      <p>Create a new event</p>
       <%= render 'shared/form', post: @event, url: events_path(@event) %>
     </div>
   </div>
