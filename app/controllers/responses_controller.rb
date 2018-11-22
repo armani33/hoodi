@@ -1,16 +1,16 @@
 class ResponsesController < ApplicationController
   def create
-    @post = Post.find(params[:post_id])
+    @favour = Favour.find(params[:favour_id])
     @response = response.new(response_params)
-    @response.post = @post
+    @response.favour = @favour
     if @response.save
       respond_to do |format|
-        format.html { redirect_to #home ?? }
+        # format.html { redirect_to root_path }
         format.js
       end
     else
       respond_to do |format|
-        format.html { render #home ?? }
+        # format.html { render root_path }
         format.js
       end
     end
@@ -19,6 +19,6 @@ class ResponsesController < ApplicationController
   private
 
   def response_params
-    params.require(:response).permit(:content)
+    params.require(:response).permit(:content, :favour_id)
   end
 end

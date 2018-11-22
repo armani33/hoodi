@@ -1,8 +1,9 @@
 class InformationsController < ApplicationController
   def index
+    # To use for the menu on the left
     @informations = Information.all
   end
-  
+
   def new
     @information = Information.new
   end

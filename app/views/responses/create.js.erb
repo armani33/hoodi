@@ -1,16 +1,16 @@
-// function refreshForm(innerHTML) {
-//   const newResponseForm = document.getElementById('new_response');
-//   newResponseForm.innerHTML = innerHTML;
-// }
+function refreshForm(innerHTML) {
+  const newResponseForm = document.getElementById('new_response');
+  newResponseForm.innerHTML = innerHTML;
+}
 
-// function addResponse(responseHTML) {
-//   const responses = document.getElementById('responses');
-//   responses.insertAdjacentHTML('beforeend', responseHTML);
-// }
+function addResponse(responseHTML) {
+  const responses = document.getElementById('responses');
+  responses.insertAdjacentHTML('beforeend', responseHTML);
+}
 
-// <% if @response.errors.any? %>
-//   refreshForm('<%= j render "responses/form", post: @post, response: @response %>');
-// <% else %>
-//   addResponse('<%= j render "responses/show", response: @response %>');
-//   refreshForm('<%= j render "responses/form", post: @post, response: Response.new %>');
-// <% end %>
+<% if @response.errors.any? %>
+  refreshForm('<%= j render "responses/form", post: @post, response: @response %>');
+<% else %>
+  addResponse('<%= j render "responses/show", response: @response %>');
+  refreshForm('<%= j render "responses/form", post: @post, response: Response.new %>');
+<% end %>

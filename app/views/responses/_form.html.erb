@@ -1,1 +1,4 @@
-_form.html.erb
+<%= simple_form_for [ @favour] do |form| %>
+  <%= form.input :content, as: :text %>
+  <%= form.button :submit %>
+<% end %>
