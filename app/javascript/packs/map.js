@@ -19,6 +19,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 
   var userMarkerElement = document.createElement('div');
   userMarkerElement.className = 'user-marker';
+  userMarkerElement.style = `background-image: url(${mapElement.getAttribute('data-userimage')})`;
   //Add user marker
   new mapboxgl.Marker(userMarkerElement)
     .setLngLat([userMarker.lng, userMarker.lat])
