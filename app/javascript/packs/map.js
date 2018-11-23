@@ -53,19 +53,19 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 
 
 
-  var directions = new MapboxDirections({
-    accessToken: mapboxgl.accessToken,
-    unit: 'metric',
-    profile: 'mapbox/cycling',
-    controls: {inputs: false}
-  });
+//   var directions = new MapboxDirections({
+//     accessToken: mapboxgl.accessToken,
+//     unit: 'metric',
+//     profile: 'mapbox/cycling',
+//     controls: {inputs: false}
+//   });
 
-  var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9'
-  });
+//   var map = new mapboxgl.Map({
+//     container: 'map',
+//     style: 'mapbox://styles/mapbox/streets-v9'
+//   });
 
-  map.addControl(directions, 'top-left');
+//   map.addControl(directions, 'top-left');
 }
 
 
