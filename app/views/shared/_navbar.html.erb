@@ -16,7 +16,7 @@
       <div class="profil-nav-link">
         <%= link_to root_path do %>
           <ul class="profile-nav">
-            <li><%= image_tag(current_user.photo, class: "avatar-navbar") %></li>
+            <li><%= cl_image_tag(current_user.photo, class: "avatar-navbar") %></li>
             <li><%= current_user.first_name.capitalize%></li>
           </ul>
         <% end %>

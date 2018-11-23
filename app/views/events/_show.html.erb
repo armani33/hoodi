@@ -10,12 +10,12 @@
       <h2><%= event.user.first_name %></h2>
       <div class="time time-event">
         <p><%= Time.now.utc.hour - event.created_at.hour %> hrs - </p>
-        <%= image_tag("image_after_hour_card", alt: "time", class: "logo") %>
+        <%= image_tag("image_after_hour_card.png", alt: "time", class: "logo") %>
       </div>
     </div>
   </div>
   <div class="option-menu">
-      <%= image_tag("dropdown_menu_card", class: "dropdown-card") %>
+      <%= image_tag("dropdown_menu_card.png", class: "dropdown-card") %>
   </div>
   <!-- end card-top -->
   <h1 class="title pink-title">invites you to his neighbor's event</h1>
@@ -26,17 +26,17 @@
   <div class="card-footer">
     <div class="footer-link">
       <%= link_to root_path do %>
-        <%= image_tag("invited", alt: "logo", class: "logo-footer")%> Respond
+        <%= image_tag("invited.png", alt: "logo", class: "logo-footer")%> Respond
       <% end %>
     </div>
     <div class="footer-link">
       <%= link_to root_path do %>
-        <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment
+        <%= image_tag("comment.png", alt: "logo", class: "logo-footer")%> Comment
       <% end %>
     </div>
     <div class="footer-link footer-link-localisation">
       <a href="/" lat="<%= event.user.latitude %>" lng="<%= event.user.longitude %>" data-userimage="<%= event.user.avatar %>">
-        <%= image_tag("map_icon", alt: "logo", class: "logo-footer-mapzer")%> Location
+        <%= image_tag("map_icon.png", alt: "logo", class: "logo-footer-mapzer")%> Location
       </a>
     </div>
   </div>
