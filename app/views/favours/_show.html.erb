@@ -40,13 +40,18 @@
       <% end %>
     </div>
   </div><!-- end card-footer -->
-  <div id="responses-content">
-
-    <%= render 'responses/form', favour: favour, response: @response %>
-
-      <%= render 'responses/show', response: response %>
-    </div>
+  <div id="response">
+    <% if favour.responses.blank? %>
+      Leave a response
+    <% else %>
+      <%favour.responses.each do |response_object|%>
+        <%= render('responses/show', { response: response_object }) %>
+      <% end %>
+    <% end %>
+  </div>
 </div><!-- end card -->
+<!-- <div class="new-response"> -->
 
+<%= render('responses/form', { favour: favour, response: @response }) %>
 
-
+<!-- </div> -->
