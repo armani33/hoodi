@@ -6,6 +6,7 @@
   position: relative;
   height: 420px;
   width: 580px;
+  padding: 200px;
 }
 
 .form-group {
@@ -18,20 +19,9 @@
   left: 25px;
 }
 
-select {
-  position: absolute;
-  bottom: 25px;
-  left: 25px;
-}
-
-#photo-upload {
-  position: absolute;
-  right: 10px;
-  bottom: 25px;
-}
-
 .tabs {
   position: absolute;
+  top: 0px;
   display: flex;
   justify-content: space-around;
 }
