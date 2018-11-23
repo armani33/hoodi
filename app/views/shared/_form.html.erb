@@ -14,20 +14,20 @@
       <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!" %>
 
     <% end %>
-  <a href="#" class="btn-medium" id="perimeter-btn">Perimeter</a>
+  <!-- <a href="#" class="btn-medium" id="perimeter-btn">Perimeter</a>
   <div class="invisible" id="perimeter-div">
-    <button type="button" class="close" aria-label="Close" id="perimeter-close">
+    <button type="button" class="close" aria-label="Close" id="perimeter-close"> -->
     <%= f.select :perimeter, ["100m", "200m", "300m", "400m", "500m", "600m", "700m", "800m", "900m", "1km", "1.5km", "2km"] %>
-  </div>
-
+<!--   </div>
+ -->
 <% if post.is_a? Event %>
-   <div id="age-field">
+  <!--  <div id="age-field">
       <button type="button" class="close" aria-label="Close" id="age-close">
       <span aria-hidden="true">&times;</span>
-      </button>
+      </button> -->
       <%= f.input :start_age, label: false, placeholder: "Start age" %>
       <%= f.input :end_age, label: false, placeholder: "End age" %>
-    </div>
+ <!--    </div> -->
 <% end %>
 
   <%= f.input :photo, label: false, input_html: { id: "photo-upload"} %>
