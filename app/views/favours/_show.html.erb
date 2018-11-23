@@ -49,9 +49,10 @@
       <% end %>
     <% end %>
   </div>
+
+  <div id="new-response">
+    <%= render('responses/form', { favour: favour, response: @response }) %>
+  </div>
 </div><!-- end card -->
 <!-- <div class="new-response"> -->
-
-<%= render('responses/form', { favour: favour, response: @response }) %>
-
 <!-- </div> -->
