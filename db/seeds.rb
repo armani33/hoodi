@@ -8,42 +8,58 @@
 puts 'Cleaning database...'
 
 # Response.destroy_all
-Event.destroy_all
-Favour.destroy_all
-Information.destroy_all
 User.destroy_all
 
+
 # Information cards creation
-user = User.new(
+tom = User.new(
   first_name: "Tom",
   last_name: "George",
   email: "Tom@hoodi",
-  password: "000000"
+  password: "azazaz",
+  address: "5258 Rue Saint-André, Montreal, Québec, Canada",
+  avatar: "http://blg.com/en/Our-People/PublishingImages/w/Wray-George.jpg"
   )
-user.save!
+tom.save!
+vic = User.new(
+  first_name: "vic",
+  last_name: "clinck",
+  email: "vic@hoodi",
+  password: "azazaz",
+  address: "5007 Avenue Christophe-Colomb, Montreal, Québec, Canada",
+  avatar: "https://www.unbc.ca/sites/default/files/styles/people_profile/public/people/8195/winwood-dr.paul/winwood-paul.jpg?itok=6KgQoXcT"
+  )
+vic.save!
+olga = User.new(
+  first_name: "olga",
+  last_name: "kepasi",
+  email: "olga@hoodi",
+  password: "azazaz",
+  address: "5141 Rue Garnier, Montreal, Québec, Canada",
+  avatar: "https://images.pexels.com/photos/638700/pexels-photo-638700.jpeg?auto=compress&cs=tinysrgb&h=350"
+  )
+olga.save!
 
 information = Information.new(
   title: "Test stor info",
-  content: "work in the area",
-  picture: "./asset/images/info_test.png",
-  solved: false,
+  content: "work in the area"
 
   )
-information.user = user
+information.user = tom
 information.save!
 
 event = Event.new(
   title: "test event stor",
   content: "want to organise a game"
   )
-event.user = user
+event.user = vic
 event.save!
 
 favour = Favour.new(
   title: "test favor stor",
   content: "I want to share a ride to the city center"
   )
-favour.user = user
+favour.user = olga
 favour.save!
 
 # information = Information.new(
