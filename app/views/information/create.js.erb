@@ -1,5 +1,5 @@
 function refreshForm(innerHTML) {
-  const newInformationForm = document.getElementById('information-form');
+  const newInformationForm = document.getElementById('new_information');
   newInformationForm.innerHTML = innerHTML;
 }
 
@@ -8,9 +8,6 @@ function addInformation(informationHTML) {
   post_window.insertAdjacentHTML('afterend', informationHTML);
 }
 
-<% if @information.errors.any? %>
-  refreshForm('<%= j render "shared/form", information: @information %>');
-<% else %>
-  addInformation('<%= j render "root_path", information: @information %>');
-  refreshForm('<%= j render "shared/form", information: Information.new %>');
-<% end %>
+addInformation('<%= j render "root_path", information: @information %>');
+refreshForm('<%= j render "shared/form", information: Information.new %>');
+

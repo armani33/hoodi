@@ -4,7 +4,7 @@
 <div class="card blue-card">
   <div class="card-top">
     <div class="avatar-medium">
-      <%= image_tag("default_avatar_hoodi", alt: "logo", class: "avatar-medium") %>
+      <%= cl_image_tag(favour.user.photo, {class: "avatar-medium"}) %>
     </div>
     <div class="user-name">
       <h2><%= favour.user.first_name %></h2>
