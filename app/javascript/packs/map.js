@@ -14,42 +14,68 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     style: 'mapbox://styles/mapbox/streets-v10'
   });
 
-  const markers = JSON.parse(mapElement.dataset.markers);
 
-  markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([marker.lng, marker.lat])
-      // console.log(map);
-      .addTo(map);
-  })
+  const userMarker = JSON.parse(mapElement.dataset.usermarker);
+
+  var userMarkerElement = document.createElement('div');
+  userMarkerElement.className = 'user-marker';
+  //Add user marker
+  new mapboxgl.Marker(userMarkerElement)
+    .setLngLat([userMarker.lng, userMarker.lat])
+    // console.log(map);
+    .addTo(map);
 
 
-  if (markers.length === 0) {
-    map.setZoom(1);
-  } else if (markers.length === 1) {
-    map.setZoom(12.5);
-    map.setCenter([markers[0].lng, markers[0].lat]);
-  } else {
-    const bounds = new mapboxgl.LngLatBounds();
-    markers.forEach((marker) => {
-      bounds.extend([marker.lng, marker.lat]);
-    });
-    map.fitBounds(bounds, { duration: 0, padding: 75 })
-  }
+  map.setZoom(12.5);
+  map.setCenter([userMarker.lng, userMarker.lat]);
 
 
   document.querySelectorAll('.footer-link-localisation a').forEach( (element) => {
     element.addEventListener('click', (event) => {
       event.preventDefault();
-      console.log('ENV[MAPBOX_API_KEY]')
+      // remove past post marker
+      const existingPostMarker = document.querySelector('div.user-post-marker')
+      if (existingPostMarker){
+        existingPostMarker.remove();
+      };
+
       const lat = event.target.getAttribute('lat');
       const lng = event.target.getAttribute('lng');
+      const avatarUrl = event.target.getAttribute('data-userimage');
 
-      new mapboxgl.Marker()
+      const userPostMarker = {lat: lat, lng: lng};
+
+      var userPostMarkerElement = document.createElement('div');
+      userPostMarkerElement.className = 'user-post-marker';
+      userPostMarkerElement.style = `background-image: url(${avatarUrl})`;
+
+      new mapboxgl.Marker(userPostMarkerElement)
         .setLngLat([lng, lat])
         .addTo(map);
+
+      const markers = [userMarker, userPostMarker]
+        const bounds = new mapboxgl.LngLatBounds();
+        markers.forEach((marker) => {
+          bounds.extend([marker.lng, marker.lat]);
+        });
+        map.fitBounds(bounds, { duration: 0, padding: 75 })
+
     });
   });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -66,20 +92,5 @@ if (mapElement) { // only build a map if there's a div#map to inject into
 //   });
 
 //   map.addControl(directions, 'top-left');
-}
 
 
-
-
-//Localisation.addEventListener("click", function(e){
-   // event.preventDefault();
-
-    //markerCardOwner = {lat: <%= event.user.latitude %>, lng: <%= event.user.longitude %>};
-
-    //console.log(markerCardOwner);
-    //new mapboxgl.Marker()
-     // .setLngLat([markerCardOwner.lng, markerCardOwner.lat])
-      // console.log(map);
-     // .addTo(map);
-
-//});

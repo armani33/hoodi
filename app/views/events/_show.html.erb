@@ -35,7 +35,7 @@
       <% end %>
     </div>
     <div class="footer-link footer-link-localisation">
-      <a href="/" lat="<%= event.user.latitude %>" lng="<%= event.user.longitude %>">
+      <a href="/" lat="<%= event.user.latitude %>" lng="<%= event.user.longitude %>" data-userimage="<%= event.user.avatar %>">
         <%= image_tag("map_icon", alt: "logo", class: "logo-footer-mapzer")%> Location
       </a>
     </div>

@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
 
     # @users = User.where.not(latitude: nil, longitude: nil)
-    @marker = [{lat: current_user.latitude, lng: current_user.longitude}]
+    @user_marker = {lat: current_user.latitude, lng: current_user.longitude}
 
   end
 
