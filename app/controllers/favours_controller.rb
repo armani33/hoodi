@@ -15,8 +15,12 @@ class FavoursController < ApplicationController
     end
   end
 
-  private
+  def show
+    @favour = Favour.find(params[:id])
+    @response = Response.new # <-- You need this now.
+  end
 
+  private
   def favour_params
     params.require(:favour).permit(:title, :content, :perimeter, :photo)
   end

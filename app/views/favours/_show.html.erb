@@ -29,9 +29,9 @@
         <%= image_tag("images.handlove", alt: "logo", class: "logo-footer")%> Help post
       <% end %>
     </div>
-    <div class="footer-link">
+    <div class="footer-link" id="comment">
       <%= link_to root_path do %>
-        <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment
+        <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment,
       <% end %>
     </div>
     <div class="footer-link">
@@ -40,4 +40,24 @@
       <% end %>
     </div>
   </div><!-- end card-footer -->
+
 </div><!-- end card -->
+<!-- <div class="new-response"> -->
+<!-- </div> -->
+<div id="comment">
+
+  <div id="response">
+    <% if favour.responses.blank? %>
+      Leave a response
+    <% else %>
+      <%favour.responses.each do |response_object|%>
+        <%= render('responses/show', { response: response_object }) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="new-response">
+    <%= render('responses/form', { favour: favour, response: @response }) %>
+  </div>
+
+</div>

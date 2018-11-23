@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def home
-
     new_information
     new_favour
     new_event
@@ -10,6 +9,8 @@ class PagesController < ApplicationController
     find_informations
     find_events
     find_favours
+    @response = Response.new
+
     merge = @informations + @events + @favours
     @posts = merge.sort! { |x, y| y.created_at <=> x.created_at }
 
