@@ -1,5 +1,5 @@
 function refreshForm(innerHTML) {
-  const newEventForm = document.getElementById('event-form');
+  const newEventForm = document.getElementById('new_event');
   newEventForm.innerHTML = innerHTML;
 }
 
@@ -8,9 +8,8 @@ function addEvent(eventHTML) {
   post_window.insertAdjacentHTML('afterend', eventHTML);
 }
 
-<% if @event.errors.any? %>
-  refreshForm('<%= j render "shared/form", event: @event %>');
-<% else %>
+// <% if @event.errors.any? %>
+//   refreshForm('<%= j render "shared/form", event: @event %>');
+// <% else %>
   addEvent('<%= j render "root_path", event: @event %>');
   refreshForm('<%= j render "shared/form", event: Event.new %>');
-<% end %>

@@ -3,7 +3,7 @@
   <div class="brand">
     <%= link_to root_path, { :class=>"brand-link" } do %>
       <ul class="brand-list">
-        <li><%= image_tag('hoodi_white', class: "navbar-hoodi-brand", alt: 'logo') %></li>
+        <li><%= image_tag('hoodi_white.png', class: "navbar-hoodi-brand", alt: 'logo') %></li>
         <li id="hoodi-nav">Hoodi</li>
       </ul>
   <% end %>
@@ -16,7 +16,7 @@
       <div class="profil-nav-link">
         <%= link_to root_path do %>
           <ul class="profile-nav">
-            <li><%= image_tag('http://i.pravatar.cc/300', class: "avatar-navbar") %></li>
+            <li><%= cl_image_tag(current_user.photo, class: "avatar-navbar") %></li>
             <li><%= current_user.first_name.capitalize%></li>
           </ul>
         <% end %>
