@@ -40,6 +40,12 @@
       <% end %>
     </div>
   </div><!-- end card-footer -->
+
+</div><!-- end card -->
+<!-- <div class="new-response"> -->
+<!-- </div> -->
+<div id="comment">
+
   <div id="response">
     <% if favour.responses.blank? %>
       Leave a response
@@ -53,6 +59,5 @@
   <div id="new-response">
     <%= render('responses/form', { favour: favour, response: @response }) %>
   </div>
-</div><!-- end card -->
-<!-- <div class="new-response"> -->
-<!-- </div> -->
+
+</div>

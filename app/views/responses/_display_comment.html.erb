@@ -1,0 +1,15 @@
+<%= #render('responses/display_comment', { favour: favour, response: @response }) %>
+
+<div id="response">
+    <% if favour.responses.blank? %>
+      Leave a response
+    <% else %>
+      <%favour.responses.each do |response_object|%>
+        <%= render('responses/show', { response: response_object }) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="new-response">
+    <%= render('responses/form', { favour: favour, response: @response }) %>
+  </div>
