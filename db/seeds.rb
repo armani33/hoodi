@@ -8,6 +8,7 @@
 puts 'Cleaning database...'
 
 # Response.destroy_all
+Response.destroy_all
 User.destroy_all
 
 
