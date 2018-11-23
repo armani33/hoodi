@@ -30,8 +30,8 @@
       <% end %>
     </div>
     <div class="footer-link" id="comment">
-      <%= link_to root_path do %>
-        <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment,
+      <%= link_to root_path, class: "comment-button" do %>
+        <%= image_tag("comment", alt: "logo", class: "logo-footer ")%> Comment,
       <% end %>
     </div>
     <div class="footer-link footer-link-localisation">
@@ -44,9 +44,9 @@
 </div><!-- end card -->
 <!-- <div class="new-response"> -->
 <!-- </div> -->
-<div id="comment">
+<div class="response hidden">
 
-  <div id="response">
+  <div id="response-display">
     <% if favour.responses.blank? %>
       Leave a response
     <% else %>
