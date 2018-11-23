@@ -1,17 +1,25 @@
-<div class="new-post-window" id="new-post-window">
+<div class="new-post-window">
   <div class="tabs">
-    <div class="tab" id="info-tab" onclick="unhideForm('information-form')">Info</div>
-    <div class="tab" id="favour-tab" onclick="unhideForm('favour-form')">Favour</div>
-    <div class="tab" id="event-tab" onclick="unhideForm('event-form')">Event</div>
-    <div class="form" id="information-form">
+    <ul class="nav nav-tabs" id="postTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Info</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="favour-tab" data-toggle="tab" href="#favour" role="tab" aria-controls="favour" aria-selected="false">Favour</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="false">Event</a>
+      </li>
+    </ul>
+  </div>
+  <div class="tab-content" id="postTabContent">
+    <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
       <%= render 'shared/form', post: @information, url: informations_path(@information) %>
     </div>
-
-    <div class="form" id="favour-form" hidden>
+    <div class="tab-pane fade" id="favour" role="tabpanel" aria-labelledby="favour-tab">
       <%= render 'shared/form', post: @favour, url: favours_path(@favour) %>
     </div>
-
-    <div class="form" id="event-form" hidden>
+    <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
       <%= render 'shared/form', post: @event, url: events_path(@event) %>
     </div>
   </div>
