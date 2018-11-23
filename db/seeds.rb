@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 
-# Response.destroy_all
 Response.destroy_all
 User.destroy_all
 
@@ -63,6 +62,13 @@ favour = Favour.new(
 favour.user = olga
 favour.save!
 
+response = Response.new(
+  content: "test",
+  user: olga,
+  postable: favour
+  )
+
+response.save!
 # information = Information.new(
 #   title: "Italian restaurant",
 #   content: "New italian restaurant opened",
