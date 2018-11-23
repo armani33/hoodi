@@ -40,10 +40,13 @@
       <% end %>
     </div>
   </div><!-- end card-footer -->
-
-  <%= render 'responses/form', favour: favour, response: @response %>
-  <div>
-    <%= raise %>
-  <p><%= @response.content %></p>
-</div>
+  <div id="responses-content">
+    <p><% Response.all.each do |response| %></p>
+      <%= response.content %>
+    <% end %>
+    <%= render 'responses/form', favour: favour, response: @response %>
+    </div>
 </div><!-- end card -->
+
+
+
