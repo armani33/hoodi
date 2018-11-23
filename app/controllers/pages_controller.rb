@@ -14,14 +14,11 @@ class PagesController < ApplicationController
     merge = @informations + @events + @favours
     @posts = merge.sort! { |x, y| y.created_at <=> x.created_at }
 
-    @users = User.where.not(latitude: nil, longitude: nil)
 
-    @markers = @users.map do |user|
-      {
-        lng: user.longitude,
-        lat: user.latitude
-      }
-    end
+
+    # @users = User.where.not(latitude: nil, longitude: nil)
+    @user_marker = {lat: current_user.latitude, lng: current_user.longitude}
+
   end
 
   def new_information

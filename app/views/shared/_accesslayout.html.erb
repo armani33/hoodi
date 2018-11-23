@@ -5,7 +5,7 @@
         <%= image_tag('http://i.pravatar.cc/300', class: "avatar-small") %>
       </li>
       <li>
-        Armand Chariot
+        <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
       </li>
     </ul>
   <% end %>
