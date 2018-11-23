@@ -1,44 +1,31 @@
-.form {
-  position: relative;
-  width: 580px;
-  height: 385px;
-  border-style: solid !important;
-  border-radius: 5px;
-  padding: 10px;
+.tab-content {
+  width: 90%;
 }
 
-.form-group {
-    margin: 0;
-    border-color: red;
+.btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
 }
-
-#information-form {
-  border-color: $yellow;
-  background-color: $light-yellow;
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
 }
-
-#favour-form {
-  border-color: $blue;
-  background-color: $light-blue;
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
 }
-
-#event-form {
-  border-color: $pink;
-  background-color: $light-pink;
-}
-
-.invisible {
-  display: none;
-}
-
-#age-btn {
-  position: absolute;
-  bottom: 70px;
-  left: 15px;
-}
-
-#perimeter-btn {
-  position: absolute;
-  bottom: 20px;
-  left: 15px;
+.btn-treehouse:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
 }

@@ -1,0 +1,19 @@
+function refreshForm(innerHTML) {
+  const newResponseForm = document.getElementById('new-response');
+  newResponseForm.innerHTML = "";
+  newResponseForm.innerHTML = innerHTML;
+  console.log(newResponseForm)
+}
+
+function addResponse(responseHTML) {
+  const responses = document.getElementById('response');
+  responses.insertAdjacentHTML('afterend', responseHTML);
+  console.log(responses)
+}
+
+<% if @response.errors.any? %>
+  refreshForm('<%= j render "favours/show", favour: favour, response: @response %>');
+<% else %>
+  addResponse('<%= j render "responses/show", response: @response %>');
+  refreshForm('<%= j render "responses/form", favour: @favour, response: Response.new%>');
+<% end %>

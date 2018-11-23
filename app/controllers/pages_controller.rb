@@ -1,14 +1,16 @@
 class PagesController < ApplicationController
   def home
-
     new_information
     new_favour
     new_event
     # TODO build @posts array
     # @posts = []
+    nearby_users
     find_informations
     find_events
     find_favours
+    @response = Response.new
+
     merge = @informations + @events + @favours
     @posts = merge.sort! { |x, y| y.created_at <=> x.created_at }
 
@@ -29,6 +31,16 @@ class PagesController < ApplicationController
 
   def new_event
     @event = Event.new
+  end
+
+  def nearby_users
+    @nearby_users = User.near([current_user.longitude, current_user.latitude], 2)
+
+    # this is how we will localize content
+    # iterate over nearby users and for each user call
+    # user.informations, user.favours, user.events
+    # we then iterate over each post array
+    #injecting their post items into the html
   end
 
   def find_informations

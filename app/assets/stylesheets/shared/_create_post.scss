@@ -1,62 +1,60 @@
-.new-post-window {
+.new-post-window{
+  border: 3px solid;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
-
-  .tabs {
-    text-align: center;
-    padding: 5px;
-  }
-
-  .tab {
-    display: inline-block;
-  }
-  .form {
-    border: 3px;
-    background-color: $light-grey;
-  }
-
-  #info-tab {
-    background-color: $yellow;
-  }
-
-  #information-form {
-    border-color: $yellow;
-  }
-
-  #favour-tab {
-    background-color: $blue;
-  }
-
-  #event-tab {
-    background-color: $pink;
-  }
+  position: relative;
+  height: 420px;
+  width: 580px;
+  padding: 200px;
 }
 
-.btn-medium {
-  color: #999999;
-  border: 1px solid #999999;
-  padding: 10px 15px;
-  border-radius: 50px;
-  font-weight: lighter;
-  opacity: 0.6;
-}
-.btn-medium:hover {
-  opacity: 1;
-  text-decoration: none;
-  color: #999999;
-}
-.btn-treehouse {
-  color: white;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #6AD58B;
-  transition: background 0.3s ease;
-}
-.btn-treehouse:hover {
-  opacity: 1;
-  background: #3ac162;
-  text-decoration: none;
-  color: white;
+.form-group {
+  margin: 0;
 }
 
+#perimeter-btn {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+.tabs {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-content {
+  position: absolute;
+  top: 50px;
+}
+
+.nav-link {
+  color: $grey;
+}
+
+#info-tab {
+  background-color: $yellow;
+}
+
+#favour-tab {
+  background-color: $blue;
+}
+
+#event-tab {
+  background-color: $pink;
+}
+
+#info {
+  background-color: $light-yellow;
+}
+
+#favour {
+  background-color: $light-blue;
+}
+
+#event {
+  background-color: $light-pink;
+}

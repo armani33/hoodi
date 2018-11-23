@@ -1,20 +1,36 @@
 <%= simple_form_for post, url: url, method: :post, remote: true do |f| %>
-  <!-- [...] -->
-  <%= f.input :title, label: false, placeholder: "Title" %>
-  <% if post.is_a? Event %>
-    <%= f.input :content, label: false, placeholder: "Personal message" %>
-    <%= f.input :date, as: :string, placeholder: "yyyy-mm-dd"%>
-    <%= f.input :location %>
-    <a href="#" class="btn-medium" id="age-btn" >Age</a>
-    <%= f.input :start_age, input_html: { class: 'hidden-age invisible' }, label: false, placeholder: "Start age" %>
-    <%= f.input :end_age, input_html: { class: 'hidden-age invisible' }, label: false, placeholder: "End age" %>
-  <% elsif post.is_a? Information %>
-    <%= f.input :content, label: false, placeholder: "Ask a question or share info!" %>
-  <% else %>
-    <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!" %>
-  <% end %>
-  <%= f.select :perimeter, ["100m", "200m", "300m", "400m", "500m", "600m", "700m", "800m", "900m", "1km", "1.5km", "2km"] %>
-  <%= f.input :photo, label: false %>
+    <%= f.input :title, label: false, placeholder: "Title" %>
+
+    <% if post.is_a? Event %>
+      <%= f.input :content, label: false, placeholder: "Personal message" %>
+      <%= f.input :date, as: :string, placeholder: "yyyy-mm-dd", label: false %>
+
+    <% elsif post.is_a? Information %>
+
+      <%= f.input :content, label: false, placeholder: "Ask a question or share info!" %>
+
+    <% else %>
+
+      <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!" %>
+
+    <% end %>
+  <!-- <a href="#" class="btn-medium" id="perimeter-btn">Perimeter</a>
+  <div class="invisible" id="perimeter-div">
+    <button type="button" class="close" aria-label="Close" id="perimeter-close"> -->
+    <%= f.select :perimeter, ["100m", "200m", "300m", "400m", "500m", "600m", "700m", "800m", "900m", "1km", "1.5km", "2km"] %>
+<!--   </div>
+ -->
+<% if post.is_a? Event %>
+  <!--  <div id="age-field">
+      <button type="button" class="close" aria-label="Close" id="age-close">
+      <span aria-hidden="true">&times;</span>
+      </button> -->
+      <%= f.input :start_age, label: false, placeholder: "Start age" %>
+      <%= f.input :end_age, label: false, placeholder: "End age" %>
+ <!--    </div> -->
+<% end %>
+
+  <%= f.input :photo, label: false, input_html: { id: "photo-upload"} %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit %>
 <% end %>
