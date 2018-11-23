@@ -1,16 +1,16 @@
 function refreshForm(innerHTML) {
-  const newResponseForm = document.getElementById('new_response');
+  const newResponseForm = document.getElementById('responses/form');
   newResponseForm.innerHTML = innerHTML;
 }
 
 function addResponse(responseHTML) {
   const responses = document.getElementById('responses');
-  responses.insertAdjacentHTML('beforeend', responseHTML);
+  responses.insertAdjacentHTML('afterend', responseHTML);
 }
 
 <% if @response.errors.any? %>
-  refreshForm('<%= j render "responses/form", post: @post, response: @response %>');
+  refreshForm('<%= j render "root_path", post: @post, response: @response %>');
 <% else %>
   addResponse('<%= j render "responses/show", response: @response %>');
-  refreshForm('<%= j render "responses/form", post: @post, response: Response.new %>');
+  refreshForm('<%= j render "root_path", post: @post, response: Response.new %>');
 <% end %>

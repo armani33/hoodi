@@ -31,7 +31,7 @@
     </div>
     <div class="footer-link">
       <%= link_to root_path do %>
-        <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment23,
+        <%= image_tag("comment", alt: "logo", class: "logo-footer")%> Comment,
       <% end %>
     </div>
     <div class="footer-link">
@@ -41,10 +41,10 @@
     </div>
   </div><!-- end card-footer -->
   <div id="responses-content">
-    <p><% Response.all.each do |response| %></p>
-      <%= response.content %>
-    <% end %>
+
     <%= render 'responses/form', favour: favour, response: @response %>
+
+      <%= render 'responses/show', response: response %>
     </div>
 </div><!-- end card -->
 

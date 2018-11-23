@@ -5,8 +5,6 @@ class ResponsesController < ApplicationController
     @response = Response.new(response_params)
     @response.postable = @favour
     @response.user = current_user
-    # @response.postable_id = @favour.id
-    # @response.postable_type = "Favour"
     if @response.save!
       respond_to do |format|
         format.html { redirect_to root_path }

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
     resources :favours, only: [:index, :create] do
-      resources :responses, only: [:create]
+      resources :responses, only: [:show, :create]
     end
     resources :informations, only: [:index, :create]
     resources :events, only: [:index, :create]
