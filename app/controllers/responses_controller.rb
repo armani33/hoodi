@@ -2,6 +2,7 @@ class ResponsesController < ApplicationController
   def create
 
     @favour = Favour.find(params[:favour_id])
+
     @response = Response.new(response_params)
     @response.postable = @favour
     @response.user = current_user
@@ -20,7 +21,11 @@ class ResponsesController < ApplicationController
 
   private
 
+  def find_postable
+
+  end
+
   def response_params
-    params.require(:response).permit(:content, :favour_id)
+    params.require(:response).permit(:content, :favour_id, :information_id)
   end
 end

@@ -57,7 +57,8 @@
   </div>
 
   <div id="new-response">
-    <%= render('responses/form', { favour: favour, response: @response }) %>
+    <% postable = favour %>
+    <%= render('responses/form', { postable: postable, response: @response }) %>
   </div>
 
 </div>
