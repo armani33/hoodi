@@ -151,3 +151,9 @@
 .hidden-content{
   color: red;
 }
+
+.active{
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: $grey;
+}

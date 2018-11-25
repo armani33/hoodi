@@ -21,9 +21,6 @@ class ResponsesController < ApplicationController
 
   private
 
-  def find_postable
-
-  end
 
   def response_params
     params.require(:response).permit(:content, :favour_id, :information_id)

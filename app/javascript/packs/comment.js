@@ -13,9 +13,11 @@
 //
 const response = document.querySelector(".response");
 const buttonComment = document.querySelector(".comment-button")
+const commentContent = document.querySelector("#comment")
 // console.log(buttonComment);
 buttonComment.addEventListener("click", (event) => {
     event.preventDefault();
 response.classList.toggle("hidden");
+commentContent.classList.toggle("active")
   });
 
