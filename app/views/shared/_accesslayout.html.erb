@@ -2,7 +2,7 @@
   <%= link_to root_path do %>
     <ul class="profile-link">
       <li>
-        <%= image_tag('http://i.pravatar.cc/300', class: "avatar-small") %>
+        <%= cl_image_tag(current_user.photo, class: "avatar-small") %>
       </li>
       <li>
         <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
