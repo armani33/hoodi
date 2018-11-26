@@ -3,9 +3,10 @@
 @import url("https://fonts.googleapis.com/css?family=Sniglet");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300");
-
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
 // Define fonts for body and headers
+$post-font: 'Lato', sans-serif;
 $logo-font: 'Sniglet', cursive;
 $access-link-title: 'Roboto', sans-serif;
 $card-title: 'Montserrat', sans-serif;

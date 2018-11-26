@@ -1,60 +1,48 @@
 .new-post-window{
-  border: 3px solid;
-  border-radius: 5px;
+  height: 140px;
+  border: 1px solid $light-grey;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
-  position: relative;
-  height: 420px;
-  width: 580px;
-  padding: 200px;
+  background-color: grey;
+  margin: 10px 0;
+  width: 100%;
 }
-
+.nav{
+  display: flex;
+  justify-content: space-between;
+  width: 590px;
+}
 .form-group {
   margin: 0;
 }
-
 #perimeter-btn {
   position: absolute;
   bottom: 25px;
   left: 25px;
 }
-
-.tabs {
-  position: absolute;
-  top: 0px;
-  display: flex;
-  justify-content: space-around;
-}
-
 .tab-content {
   position: absolute;
   top: 50px;
 }
-
 .nav-link {
   color: $grey;
 }
-
 #info-tab {
   background-color: $yellow;
 }
-
 #favour-tab {
   background-color: $blue;
 }
-
 #event-tab {
   background-color: $pink;
 }
-
 #info {
   background-color: $light-yellow;
 }
-
 #favour {
   background-color: $light-blue;
 }
-
 #event {
   background-color: $light-pink;
 }

@@ -5,28 +5,33 @@
   background: $black;
   transition: all 0.3s ease;
   padding: 0px 30px;
-  position: sticky !important;
-  top: 0 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  z-index: 1;
+}
+
+.navbar-content{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 /* ----Left section---- */
 .brand{
   height: 46px;
-  margin-left: 65px;
 }
 .brand-link:hover{
   text-decoration: none;
 }
 .brand-list{
   display: flex;
-  list-style: none;
   text-decoration: none;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 /* Logo */
 .navbar-hoodi-brand{
@@ -37,7 +42,7 @@
   font-family: $logo-font;
   font-size: 20px;
   color: white;
-  margin-left: 50px;
+  margin: 0;
 }
 @media (max-width: 600px) {
   .navbar-hoodi {
@@ -68,11 +73,10 @@
   display: flex;
   align-items: center;
   height: 45px;
-  width: 350px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  margin-right: 100px;
+  margin: 0;
 }
 .navbar-hoodi-right a{
   text-decoration: none;
@@ -98,11 +102,13 @@
   margin-right: 10px;
 }
 
+.profile-nav p {
+  margin: 0;
+}
+
 /* *** Home link *** */
 .home-link{
-  display: flex;
-  justify-content: center;
-  padding: 0 25px;
+  padding: 0 50px;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
 }
@@ -110,9 +116,14 @@
 .images-link{
   display: flex;
   list-style: none;
-  padding-left: 13px;
   margin-bottom: 2px;
 }
+
+.images-link li {
+  margin-left: 15px;
+}
+
+
 /* Message image*/
 .message-button-navbar{
   height: 25px;
@@ -166,4 +177,9 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-hoodi-placeholder{
+  height: 45px;
+  width: 100%;
 }

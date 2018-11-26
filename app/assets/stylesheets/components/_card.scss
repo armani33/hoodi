@@ -1,21 +1,38 @@
 .card{
   position: relative;
   background-color: white;
-  max-width: 600px;
-  width: 590px;
-  height: 200px;
+  width: 100%;
+  // height: 200px;
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 20px $box-shadow;
   border: 1px solid $middle-grey;
 }
-.yellow-card{
-  border: 1px solid $yellow;
+.body-card{
+  padding: 20px 30px;
+
 }
-.blue-card{
-  border: 1px solid $blue;
+.post-badge{
+  padding: 3px 6px;
+  border-radius: 3px;
+  color:white;
+  font-size: 8px;
+  font-weight:bold;
+  background-color: $blue;
 }
-.pink-card{
-  border: 1px solid $pink;
+.card-content{
+  // height: 60px;
+  // padding-top: 20px ;
+  padding-bottom: 20px;
+}
+.yellow-card .post-badge{
+  background-color: $yellow;
+}
+.blue-card .post-badge{
+  background-color: $blue;
+}
+.pink-card .post-badge{
+  background-color: $pink;
 }
 .card-top{
   display: flex;
@@ -23,15 +40,17 @@
   justify-content: flex-start;
   // position: absolute;
   // top: 0;
-  height: 50px;
-  margin-left: 7px;
+  // height: 50px;
+}
+.card-content p{
+    font-size: 25px;
+    padding: 5px 0;
+    font-family: $post-font;
+    color: $black;
+    text-align: justify;
 }
 .user-name{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 .user-name h2{
   font-family: $headers-font;
@@ -45,25 +64,30 @@
   font-size: 10px;
   padding: 0;
   margin: 0;
-  margin-top: 3px;
+}
+.user-name i{
+  font-size: 4px;
+  padding: 0;
+  margin: 0 5px;
+}
+.avatar-post{
+  width: 50px;
 }
 .time{
   display: flex;
+  align-items: center;
 }
-.time-event{
-  color: $pink;
+.distance{
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+  color: $grey;
 }
-.time-favour{
-  color: $blue;
-}
-.time-information{
-  color: $yellow;
-}
-.logo{
+.distance img{
+  margin-right: 10px;
+  margin-top: 0;
   width: 8px;
   height: 12px;
-  margin-top: 4px;
-  margin-left: 5px;
 }
 .dropdown-card{
   position: absolute;
@@ -71,24 +95,17 @@
   right: 10px;
   width: 15px;
 }
-.card-content{
-  height: 60px;
-  padding-top: 20px ;
-  padding-bottom: 80px;
-  border-bottom: 1px solid $middle-grey;
-  margin: 0 15px;
-}
-.title{
-    font-family: $card-title;
-    font-size: 12px;
-    font-family: $headers-font;
-    color: $black;
-    position: absolute;
-    left: 120px;
-    margin: 0;
-    top: 10.5px;
-    color: black;
-}
+// .title{
+//     font-family: $card-title;
+//     font-size: 12px;
+//     font-family: $headers-font;
+//     color: $black;
+//     position: absolute;
+//     left: 120px;
+//     margin: 0;
+//     top: 10.5px;
+//     color: black;
+// }
 // .pink-title{
 //   border-bottom: 5px solid $pink;
 // }
@@ -100,23 +117,17 @@
 //   box-sizing: border-box;
 //   border-bottom: 5px solid $yellow;
 // }
-.card-content p{
-    font-size: 15px;
-    padding: 0;
-    font-family: $body-font;
-    color: $black;
-    text-align: justify;
-}
-
 .card-footer{
   height: 47.5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 15px;
+  margin: 0 10px;
+  padding: 10px;
   font-size: 15px;
   font-family: $body-font;
   // justify-content: space-between;
   padding: 0;
+  border-top: 1px solid $middle-grey;
 }
 .footer-link{
   display: flex;
@@ -137,12 +148,10 @@
   background-color:$light-grey;
 }
 .logo-footer{
-  width: 30px;
-  height: 30px
+  width: 20px;
 }
 .logo-footer-mapzer{
-  width: 35px;
-  height: 35px
+  width: 25px;
 }
 
 .response{

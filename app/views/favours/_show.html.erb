@@ -2,27 +2,32 @@
 <!-- display favour just created -->
 
 <div class="card blue-card">
-  <div class="card-top">
-    <div class="avatar-medium">
-      <%= cl_image_tag(postable.user.photo, {class: "avatar-medium"}) %>
-    </div>
-    <div class="user-name">
-      <h2><%= postable.user.first_name %></h2>
-      <div class="time time-postable">
-        <p><%= Time.now.utc.hour - postable.created_at.hour %> hrs - </p>
-        <%= image_tag("image_after_hour_card.png", alt: "time", class: "logo") %>
+
+  <div class="body-card">
+    <div class="card-content">
+      <span class="post-badge">FAVOUR</span>
+      <p><%=postable.content%></p>
+    </div><!-- end card-content -->
+    <div class="card-top">
+      <div class="avatar-medium">
+        <%= cl_image_tag(postable.user.photo, {class: "avatar-medium"}) %>
+      </div>
+      <div class="user-name">
+          <div class="time time-favour">
+            <h2><%= postable.user.first_name%></h2>
+            <i class="fas fa-circle"></i>
+            <p><%= Time.now.utc.hour - postable.created_at.hour %> hrs ago </p>
+          </div>
+          <div class="distance">
+            <%= image_tag("image_after_hour_card.png", alt: "time") %>
+            <p>400m away</p>
+          </div>
+      </div>
+      <div class="option-menu">
+        <%= image_tag("dropdown_menu_card.png", class: "dropdown-card") %>
       </div>
     </div>
   </div>
-  <div class="option-menu">
-    <%= image_tag("dropdown_menu_card.png", class: "dropdown-card") %>
-  </div>
-  <!-- end card-top -->
-  <h1 class="title blue-title">is asking for some help</h1>
-  <div class="card-content">
-    <!-- <p><%=postable.title %></p> -->
-    <p><%=postable.content%></p>
-  </div><!-- end card-content -->
   <div class="card-footer">
     <div class="footer-link">
       <%= link_to root_path do %>
