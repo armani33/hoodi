@@ -51,7 +51,18 @@
       Leave a response
     <% else %>
       <%favour.responses.each do |response_object|%>
+      <div class="response-content">
+          <div class="avatar-medium">
+      <%= cl_image_tag(User.find(response_object.user_id).photo, {class: "avatar-medium"}) %>
+    </div>
+        <div class="text-comment">
+          <strong><%= User.find(response_object.user_id).first_name.capitalize %>: </strong>
         <%= render('responses/show', { response: response_object }) %>
+        </div>
+        <div class="time-response">
+          <%= Time.now.utc.hour - response_object.created_at.hour %> hrs
+        </div>
+        </div>
       <% end %>
     <% end %>
   </div>

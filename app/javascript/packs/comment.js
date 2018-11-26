@@ -18,6 +18,6 @@ const commentContent = document.querySelector("#comment")
 buttonComment.addEventListener("click", (event) => {
     event.preventDefault();
 response.classList.toggle("hidden");
-commentContent.classList.toggle("active")
+commentContent.classList.toggle("underline")
   });
 
