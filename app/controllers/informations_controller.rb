@@ -9,18 +9,12 @@ class InformationsController < ApplicationController
   end
 
   def create
+    @response = Response.new
     @information = Information.new(information_params)
     @information.user = current_user
-    if @information.save!
-      respond_to do |format|
-        format.html { redirect_to root_path(@information) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { render root_path(@information) }
-        format.js  # <-- idem
-      end
+    @information.save!
+    respond_to do |format|
+      format.js
     end
   end
 
