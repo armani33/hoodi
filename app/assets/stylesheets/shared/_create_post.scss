@@ -18,35 +18,46 @@
 .form-group {
   margin: 0;
 }
-
 #perimeter-btn {
   position: absolute;
   bottom: 25px;
   left: 25px;
 }
-
 .nav-link {
   color: white !important;
-  background: red;
+  background: red !important;
   font-family: $headers-font;
   font-weight: 500;
+  margin: 0 !important;
+  border: none !important;
 }
-
-.nav-link:hover {
+.nav-link:hover,  {
   background: green !important;
   border-color: transparent !important;
+  border: none !important;
 }
-
 .nav-link:focus {
   background: blue !important;
   border-color: transparent !important;
+  border: none !important;
+}
+.nav-link:active {
+  background: blue !important;
+  border-color: transparent !important;
+  border: none !important;
 }
 
 
 .nav-tabs{
   border: none !important;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
+
+.nav:before, .nav:after {
+  content: none !important;
+}
+
 
 // #info-tab {
 //   background-color: $yellow;
