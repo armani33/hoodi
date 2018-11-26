@@ -4,12 +4,12 @@
 <div class="card blue-card">
   <div class="card-top">
     <div class="avatar-medium">
-      <%= cl_image_tag(favour.user.photo, {class: "avatar-medium"}) %>
+      <%= cl_image_tag(postable.user.photo, {class: "avatar-medium"}) %>
     </div>
     <div class="user-name">
-      <h2><%= favour.user.first_name %></h2>
-      <div class="time time-favour">
-        <p><%= Time.now.utc.hour - favour.created_at.hour %> hrs - </p>
+      <h2><%= postable.user.first_name %></h2>
+      <div class="time time-postable">
+        <p><%= Time.now.utc.hour - postable.created_at.hour %> hrs - </p>
         <%= image_tag("image_after_hour_card.png", alt: "time", class: "logo") %>
       </div>
     </div>
@@ -20,8 +20,8 @@
   <!-- end card-top -->
   <h1 class="title blue-title">is asking for some help</h1>
   <div class="card-content">
-    <!-- <p><%=favour.title %></p> -->
-    <p><%=favour.content%></p>
+    <!-- <p><%=postable.title %></p> -->
+    <p><%=postable.content%></p>
   </div><!-- end card-content -->
   <div class="card-footer">
     <div class="footer-link">
@@ -35,7 +35,7 @@
       <% end %>
     </div>
     <div class="footer-link footer-link-localisation">
-      <a href="/" lat="<%= favour.user.latitude %>" lng="<%= favour.user.longitude %>" data-userimage="<%= favour.user.photo %>">
+      <a href="/" lat="<%= postable.user.latitude %>" lng="<%= postable.user.longitude %>" data-userimage="<%= postable.user.photo %>">
         <%= image_tag("map_icon.svg", alt: "logo", class: "logo-footer-mapzer")%> Location
       </a>
     </div>
@@ -47,10 +47,10 @@
 <div class="response hidden">
 
   <div id="response-display">
-    <% if favour.responses.blank? %>
+    <% if postable.responses.blank? %>
       Leave a response
     <% else %>
-      <%favour.responses.each do |response_object|%>
+      <%postable.responses.each do |response_object|%>
       <div class="response-content">
           <div class="avatar-medium">
       <%= cl_image_tag(User.find(response_object.user_id).photo, {class: "avatar-medium"}) %>
@@ -68,7 +68,6 @@
   </div>
 
   <div id="new-response">
-    <% postable = favour %>
     <%= render('responses/form', { postable: postable, response: @response }) %>
   </div>
 

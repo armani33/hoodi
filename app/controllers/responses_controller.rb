@@ -1,10 +1,12 @@
 class ResponsesController < ApplicationController
   def create
 
-    @favour = Favour.find(params[:favour_id])
+    @postable = Favour.find(params[:favour_id]) if params[:favour_id].present?
+    @postable = Event.find(params[:event_id]) if params[:event_id].present?
+    @postable = Information.find(params[:information_id]) if params[:information_id].present?
 
     @response = Response.new(response_params)
-    @response.postable = @favour
+    @response.postable = @postable
     @response.user = current_user
     if @response.save!
       respond_to do |format|
@@ -23,6 +25,6 @@ class ResponsesController < ApplicationController
 
 
   def response_params
-    params.require(:response).permit(:content, :favour_id, :information_id)
+    params.require(:response).permit(:content, :favour_id, :information_id, :event_id)
   end
 end

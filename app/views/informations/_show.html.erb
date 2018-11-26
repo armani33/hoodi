@@ -3,12 +3,12 @@
 <div class="card yellow-card">
   <div class="card-top">
     <div class="avatar-medium">
-      <%= cl_image_tag(information.user.photo, {class: "avatar-medium"}) %>
+      <%= cl_image_tag(postable.user.photo, {class: "avatar-medium"}) %>
     </div>
     <div class="user-name">
-      <h2><%= information.user.first_name %></h2>
+      <h2><%= postable.user.first_name %></h2>
       <div class="time time-information">
-        <p><%= Time.now.utc.hour - information.created_at.hour %> hrs - </p>
+        <p><%= Time.now.utc.hour - postable.created_at.hour %> hrs - </p>
         <%= image_tag("image_after_hour_card.png", alt: "time", class: "logo") %>
       </div>
     </div>

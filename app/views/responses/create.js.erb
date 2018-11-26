@@ -1,8 +1,7 @@
-function refreshForm(innerHTML) {
-  const newResponseForm = document.getElementById('new-response');
-  newResponseForm.innerHTML = "";
-  newResponseForm.innerHTML = innerHTML;
-  console.log(newResponseForm)
+function refreshForm() {
+  const newResponseForm = document.getElementById('response_content');
+  newResponseForm.value= "";
+  console.log(newResponseForm);
 }
 
 function addResponse(responseHTML) {
@@ -11,9 +10,5 @@ function addResponse(responseHTML) {
   console.log(responses)
 }
 
-<% if @response.errors.any? %>
-  refreshForm('<%= j render "favours/show", postable: postable, response: @response %>');
-<% else %>
-  addResponse('<%= j render "responses/show", response: @response %>');
-  refreshForm('<%= render("responses/form", { postable: @favour, response: @response }) %>');
-<% end %>
+addResponse('<%= j render "responses/show", response: @response %>');
+refreshForm();
