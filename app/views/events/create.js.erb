@@ -1,15 +1,11 @@
-function refreshForm(innerHTML) {
-  const newEventForm = document.getElementById('new_event');
-  newEventForm.innerHTML = innerHTML;
-}
+console.log('bitch')
 
-function addEvent(eventHTML) {
-  const post_window = document.getElementById('new-post-window');
-  post_window.insertAdjacentHTML('afterend', eventHTML);
-}
+var newEvent = "<%= j render 'events/show', postable: @event, response: @response%>";
 
-// <% if @event.errors.any? %>
-//   refreshForm('<%= j render "shared/form", event: @event %>');
-// <% else %>
-  addEvent('<%= j render "root_path", event: @event %>');
-  refreshForm('<%= j render "shared/form", event: Event.new %>');
+var newPostWindow = document.querySelector('.new-post-window');
+
+newPostWindow.insertAdjacentHTML('afterend', newEvent);
+
+var eventForm = document.getElementById('new_event');
+
+eventForm.reset();

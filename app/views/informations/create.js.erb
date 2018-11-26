@@ -1,0 +1,10 @@
+console.log('bitch')
+
+var newInformation = "<%= j render 'informations/show', postable: @information, response: @response%>";
+
+var newPostWindow = document.querySelector('.new-post-window');
+
+newPostWindow.insertAdjacentHTML('afterend', newInformation);
+
+var infoForm = document.getElementById('new_information');
+infoForm.reset();

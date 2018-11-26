@@ -1,13 +1,10 @@
-function refreshForm(innerHTML) {
-  const newFavourForm = document.getElementById('new_favour');
-  newFavourForm.innerHTML = innerHTML;
-}
+console.log('bitch')
 
-function addFavour(favourHTML) {
-  const post_window = document.getElementById('new-post-window');
-  post_window.insertAdjacentHTML('afterend', favourHTML);
-}
+var newFavour = "<%= j render 'favours/show', postable: @favour, response: @response%>";
 
+var newPostWindow = document.querySelector('.new-post-window');
 
-addFavour('<%= j render "root_path", favour: @favour %>');
-refreshForm('<%= j render "shared/form", favour: Favour.new %>');
+newPostWindow.insertAdjacentHTML('afterend', newFavour);
+
+var favourForm = document.getElementById('new_favour');
+favourForm.reset();
