@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_161253) do
+ActiveRecord::Schema.define(version: 2018_11_26_225530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,19 @@ ActiveRecord::Schema.define(version: 2018_11_26_161253) do
     t.index ["user_id"], name: "index_information_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "help_content"
+    t.string "phone"
+    t.string "email"
+    t.date "available_time"
+    t.bigint "user_id"
+    t.bigint "favour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favour_id"], name: "index_messages_on_favour_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "responses", force: :cascade do |t|
     t.text "content"
     t.string "distance"
@@ -96,5 +109,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_161253) do
   add_foreign_key "events", "users"
   add_foreign_key "favours", "users"
   add_foreign_key "information", "users"
+  add_foreign_key "messages", "favours"
+  add_foreign_key "messages", "users"
   add_foreign_key "responses", "users"
 end

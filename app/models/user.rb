@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :informations, dependent: :destroy
   has_many :responses, as: :postable, dependent: :destroy
+  has_many :messages, dependent: :destroy
   geocoded_by :address
 
   after_validation :geocode
