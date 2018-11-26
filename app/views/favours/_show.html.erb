@@ -2,27 +2,28 @@
 <!-- display favour just created -->
 
 <div class="card blue-card">
-  <div class="card-top">
-    <div class="avatar-medium">
-      <%= cl_image_tag(favour.user.photo, {class: "avatar-medium"}) %>
-    </div>
-    <div class="user-name">
-      <h2><%= favour.user.first_name %></h2>
-      <div class="time time-favour">
-        <p><%= Time.now.utc.hour - favour.created_at.hour %> hrs - </p>
-        <%= image_tag("image_after_hour_card.png", alt: "time", class: "logo") %>
+  <div class="body-card">
+    <div class="card-content">
+      <!-- <p><%=favour.title %></p> -->
+      <span class="post-badge">FAVOUR</span>
+      <p><%=favour.content%></p>
+    </div><!-- end card-content -->
+    <div class="card-top">
+      <div class="avatar-medium">
+        <%= cl_image_tag(favour.user.photo, {class: "avatar-medium"}) %>
+      </div>
+      <div class="user-name">
+        <h2><%= favour.user.first_name %></h2>
+        <div class="time time-favour">
+          <p><%= Time.now.utc.hour - favour.created_at.hour %> hrs - </p>
+          <%= image_tag("image_after_hour_card.png", alt: "time", class: "logo") %>
+        </div>
+      </div>
+      <div class="option-menu">
+        <%= image_tag("dropdown_menu_card.png", class: "dropdown-card") %>
       </div>
     </div>
   </div>
-  <div class="option-menu">
-    <%= image_tag("dropdown_menu_card.png", class: "dropdown-card") %>
-  </div>
-  <!-- end card-top -->
-  <h1 class="title blue-title">is asking for some help</h1>
-  <div class="card-content">
-    <!-- <p><%=favour.title %></p> -->
-    <p><%=favour.content%></p>
-  </div><!-- end card-content -->
   <div class="card-footer">
     <div class="footer-link">
       <%= link_to root_path do %>

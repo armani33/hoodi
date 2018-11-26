@@ -1,72 +1,75 @@
 <div class="navbar-hoodi">
-  <!-- Logo -->
-  <div class="brand">
-    <%= link_to root_path, { :class=>"brand-link" } do %>
-      <ul class="brand-list">
-        <li><%= image_tag('hoodi_white.png', class: "navbar-hoodi-brand", alt: 'logo') %></li>
-        <li id="hoodi-nav">Hoodi</li>
-      </ul>
-  <% end %>
-  </div>
-
-  <!-- Right Navigation -->
-  <% if user_signed_in? %>
-    <div class="navbar-hoodi-right hidden-xs ">
-      <!-- profil link -->
-      <div class="profil-nav-link">
-        <%= link_to root_path do %>
-          <ul class="profile-nav">
-            <li><%= cl_image_tag(current_user.photo, class: "avatar-navbar") %></li>
-            <li><%= current_user.first_name.capitalize%></li>
-          </ul>
-        <% end %>
+  <div class="container-page">
+    <div class="navbar-content">
+    <!-- Logo -->
+      <div class="brand access-layout">
+        <%= link_to root_path, { :class=>"brand-link" } do %>
+          <div class="brand-list">
+            <%= image_tag('hoodi_white.png', class: "navbar-hoodi-brand", alt: 'logo') %>
+            <h2 id="hoodi-nav">Hoodi</h2>
+          </div>
+      <% end %>
       </div>
-      <!-- home link: refresh neighbor wall-->
-      <div class="home-link">
-          <%= link_to('Home', root_path ) %>
-      </div>
-      <!-- icones message and notification link -->
-      <ul class="images-link">
-          <!-- message picture link -->
-        <li>
-          <%= link_to root_path do %>
-              <%= image_tag('message-white-navbar.png', class: 'message-button-navbar') %>
-          <% end %>
-        </li>
-        <!-- notification picture link -->
-        <li id="notification">
-          <%= link_to root_path do %>
-            <%= image_tag('notifhome-navbar.png', class: 'notif-button-navbar') %>
-          <% end %>
-        </li>
-        <!-- triangle picture with dropdown list -->
-        <li id="triangle-dropdown">
-          <div class="dropdown">
-            <%= image_tag('triangle.png', class: 'triangle-nav dropdown-toggle', id:'navbar-wagon-menu', data: {toggle:'dropdown'}) %>
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li><a href="#">Profile</a></li>
-              <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
+      <!-- Right Navigation -->
+      <% if user_signed_in? %>
+        <div class="navbar-hoodi-right map-layout hidden-xs ">
+          <!-- profil link -->
+            <div class="profil-nav-link">
+              <%= link_to root_path do %>
+                <div class="profile-nav">
+                  <%= cl_image_tag(current_user.photo, class: "avatar-navbar") %>
+                  <p><%= current_user.first_name.capitalize%></p>
+                </div>
+              <% end %>
+            </div>
+            <!-- home link: refresh neighbor wall-->
+            <div class="home-link">
+                <%= link_to('Home', root_path ) %>
+            </div>
+            <!-- icones message and notification link -->
+            <ul class="images-link">
+                <!-- message picture link -->
+              <li>
+                <%= link_to root_path do %>
+                    <%= image_tag('message-white-navbar.png', class: 'message-button-navbar') %>
+                <% end %>
+              </li>
+              <!-- notification picture link -->
+              <li id="notification">
+                <%= link_to root_path do %>
+                  <%= image_tag('notifhome-navbar.png', class: 'notif-button-navbar') %>
+                <% end %>
+              </li>
+              <!-- triangle picture with dropdown list -->
+              <li id="triangle-dropdown">
+                <div class="dropdown">
+                  <%= image_tag('triangle.png', class: 'triangle-nav dropdown-toggle', id:'navbar-wagon-menu', data: {toggle:'dropdown'}) %>
+                  <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                    <li><a href="#">Profile</a></li>
+                    <li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
+                  </ul>
+                </div>
+              </li>
             </ul>
           </div>
-        </li>
-      </ul>
+          <!-- Dropdown appearing on mobile only -->
+          <div class="navbar-hoodi-item hidden-sm hidden-md hidden-lg">
+            <div class="dropdown">
+              <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">notification</a></li>
+              </ul>
+            </div>
+          </div>
+        <% else %>
+          <div class="navbar-sign-in">
+              <p>work on that</p>
+          </div>
+        <% end %>
     </div>
-    <!-- Dropdown appearing on mobile only -->
-    <div class="navbar-hoodi-item hidden-sm hidden-md hidden-lg">
-      <div class="dropdown">
-        <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profil</a></li>
-          <li><a href="#">Messages</a></li>
-          <li><a href="#">notification</a></li>
-        </ul>
-      </div>
-    </div>
-  <% else %>
-    <div class="navbar-sign-in">
-        <p>work on that</p>
-    </div>
-  <% end %>
+  </div>
 </div>
 
-
+<div class="navbar-hoodi-placeholder"></div>

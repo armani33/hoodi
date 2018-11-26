@@ -1,21 +1,38 @@
 .card{
   position: relative;
   background-color: white;
-  max-width: 600px;
-  width: 590px;
-  height: 200px;
+  width: 100%;
+  // height: 200px;
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 0 20px $box-shadow;
   border: 1px solid $middle-grey;
 }
+.body-card{
+  padding: 20px 30px;
+
+}
+.post-badge{
+  padding: 3px 6px;
+  border-radius: 3px;
+  color:white;
+  font-size: 8px;
+  font-weight:bold;
+  background-color: $blue;
+}
+.card-content{
+  // height: 60px;
+  // padding-top: 20px ;
+  padding-bottom: 20px;
+}
 .yellow-card{
-  border: 1px solid $yellow;
+
 }
 .blue-card{
-  border: 1px solid $blue;
+
 }
 .pink-card{
-  border: 1px solid $pink;
+
 }
 .card-top{
   display: flex;
@@ -23,8 +40,14 @@
   justify-content: flex-start;
   // position: absolute;
   // top: 0;
-  height: 50px;
-  margin-left: 7px;
+  // height: 50px;
+}
+.card-content p{
+    font-size: 25px;
+    padding: 5px 0;
+    font-family: $body-font;
+    color: $black;
+    text-align: justify;
 }
 .user-name{
   display: flex;
@@ -71,24 +94,17 @@
   right: 10px;
   width: 15px;
 }
-.card-content{
-  height: 60px;
-  padding-top: 20px ;
-  padding-bottom: 80px;
-  border-bottom: 1px solid $middle-grey;
-  margin: 0 15px;
-}
-.title{
-    font-family: $card-title;
-    font-size: 12px;
-    font-family: $headers-font;
-    color: $black;
-    position: absolute;
-    left: 120px;
-    margin: 0;
-    top: 10.5px;
-    color: black;
-}
+// .title{
+//     font-family: $card-title;
+//     font-size: 12px;
+//     font-family: $headers-font;
+//     color: $black;
+//     position: absolute;
+//     left: 120px;
+//     margin: 0;
+//     top: 10.5px;
+//     color: black;
+// }
 // .pink-title{
 //   border-bottom: 5px solid $pink;
 // }
@@ -100,23 +116,17 @@
 //   box-sizing: border-box;
 //   border-bottom: 5px solid $yellow;
 // }
-.card-content p{
-    font-size: 15px;
-    padding: 0;
-    font-family: $body-font;
-    color: $black;
-    text-align: justify;
-}
-
 .card-footer{
   height: 47.5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 15px;
+  margin: 0 10px;
+  padding: 10px;
   font-size: 15px;
   font-family: $body-font;
   // justify-content: space-between;
   padding: 0;
+  border-top: 1px solid $middle-grey;
 }
 .footer-link{
   display: flex;
@@ -137,12 +147,10 @@
   background-color:$light-grey;
 }
 .logo-footer{
-  width: 30px;
-  height: 30px
+  width: 20px;
 }
 .logo-footer-mapzer{
-  width: 35px;
-  height: 35px
+  width: 25px;
 }
 
 .response{
