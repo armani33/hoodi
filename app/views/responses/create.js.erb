@@ -1,11 +1,19 @@
 // Selector
   // Favour
-const newResponseFormFavour = document.getElementById('response_content');
-const responsesFavour = document.getElementById('response-display');
-  // Information
-const newResponseFormInfo = document.getElementById('response_content');
-const responsesInfo = document.getElementById('response-display-info');
-// Function
+<% if @response.postable_type == "Favour" %>
+  var newResponseFormFavour = document.getElementById('response_content');
+  var selector = "#favours-response-<%= @response.postable_id %> .response-display";
+  var responsesFavour = document.querySelector(selector);
+  addResponse(responsesFavour, '<%= j render "responses/show", response: @response %>');
+  refreshForm(newResponseFormFavour);
+
+<% elsif @response.postable_type == "Information" %>
+  var newResponseFormInformation = document.getElementById('response_content');
+  var selector = "#informations-response-<%= @response.postable_id %> .response-display";
+  var responsesInformation = document.querySelector(selector);
+  addResponse(responsesInformation, '<%= j render "responses/show", response: @response %>');
+  refreshForm(newResponseFormInformation);
+<% end %>
 function refreshForm(newResponseForm) {
   newResponseForm.value= "";
 }
@@ -13,10 +21,23 @@ function addResponse(responses, responseHTML) {
   responses.insertAdjacentHTML('afterend', responseHTML);
 }
 
+
+
+
+
+
+
+
+  // Information
+// var newResponseFormInfo = document.getElementById('response_content');
+// var responsesInfo = document.getElementById('response-display-info');
+// Function
+
 // Processing
   // Favour
-addResponse(responsesFavour, '<%= j render "responses/show", response: @response %>');
-refreshForm(newResponseFormFavour);
+
+// addResponse(responsesInfo, '<%= j render "responses/show", response: @response %>');
+
   //Information
-addResponse(responsesInfo, '<%= j render "responses/show", response: @response %>');
-refreshForm(newResponseFormInfo);
+
+// refreshForm(newResponseFormInfo);

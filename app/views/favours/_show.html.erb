@@ -44,8 +44,8 @@
 </div><!-- end card -->
 <!-- <div class="new-response"> -->
 <!-- comment method -->
-<div class="response hidden">
-  <div id="response-display">
+<div class="response hidden" id="favours-response-<%= postable.id%>">
+  <div class="response-display">
     <% if postable.responses.blank? %>
       Leave a response
     <% else %>

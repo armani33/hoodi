@@ -40,8 +40,8 @@
   </div><!-- end card-footer -->
 </div><!-- end card -->
 <!-- comment method -->
-<div class="response-info hidden">
-  <div id="response-display-information">
+<div class="response-info hidden" id="informations-response-<%= postable.id%>">
+  <div class="response-display">
     <% if postable.responses.blank? %>
       Leave a response
     <% else %>
