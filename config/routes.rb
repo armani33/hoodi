@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     resources :favours, only: [:index, :create] do
       resources :responses, only: [:show, :create]
     end
-    resources :informations, only: [:index, :create]
-    resources :events, only: [:index, :create]
+    resources :informations, only: [:index, :create] do
+      resources :responses, only: [:index, :create]
+    end
+
+    resources :events, only: [:index, :create] do
+      resources :responses, only: [:index, :create]
+    end
 
 end

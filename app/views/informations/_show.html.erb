@@ -19,7 +19,7 @@
   <!-- end card-top -->
   <h1 class="title yellow-title">needs your neighbor knowledge</h1>
   <div class="card-content">
-    <p><%=information.content%></p>
+    <p><%=postable.content%></p>
   </div><!-- end card-content -->
   <div class="card-footer">
     <div class="footer-link">
@@ -27,15 +27,41 @@
         <%= image_tag("love_neighbour.png", alt: "logo", class: "logo-footer")%> Saved post
       <% end %>
     </div>
-    <div class="footer-link">
-      <%= link_to root_path do %>
+    <div class="footer-link" id="comment-info">
+      <%= link_to root_path, class: "comment-button-info" do %>
         <%= image_tag("comment.png", alt: "logo", class: "logo-footer")%> Comment
       <% end %>
     </div>
     <div class="footer-link footer-link-localisation">
-      <a href="/" lat="<%= information.user.latitude %>" lng="<%= information.user.longitude %>" data-userimage="<%= information.user.photo %>">
+      <a href="/" lat="<%= postable.user.latitude %>" lng="<%= postable.user.longitude %>" data-userimage="<%= postable.user.photo %>">
         <%= image_tag("map_icon.svg", alt: "logo", class: "logo-footer-mapzer")%> Location
       </a>
     </div>
   </div><!-- end card-footer -->
 </div><!-- end card -->
+<!-- comment method -->
+<div class="response-info hidden">
+  <div id="response-display-information">
+    <% if postable.responses.blank? %>
+      Leave a response
+    <% else %>
+      <%postable.responses.each do |response_object|%>
+      <div class="response-content">
+          <div class="avatar-medium">
+      <%= cl_image_tag(User.find(response_object.user_id).photo, {class: "avatar-medium"}) %>
+    </div>
+        <div class="text-comment">
+          <strong><%= User.find(response_object.user_id).first_name.capitalize %>: </strong>
+        <%= render('responses/show', { response: response_object }) %>
+        </div>
+        <div class="time-response">
+          <%= Time.now.utc.hour - response_object.created_at.hour %> hrs
+        </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="new-response">
+    <%= render('responses/form', { postable: postable, response: @response }) %>
+  </div>
+</div>

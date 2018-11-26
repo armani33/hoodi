@@ -10,9 +10,9 @@
         <!-- display all the cards -->
         <% @posts.each do |post| %><!-- call all the posts from all types -->
           <% if post.class == Information %><!-- check if card is type info -->
-            <%= render 'informations/show', information: post, response: @response %><!-- refer to show from info -->
+            <%= render 'informations/show', postable: post, response: @response %><!-- refer to show from info -->
           <% elsif post.class == Event %><!-- check if card is type event -->
-            <%= render 'events/show', event: post, response: @response %><!-- refer to show from event -->
+            <%= render 'events/show', postable: post, response: @response %><!-- refer to show from event -->
           <% elsif post.class == Favour %><!-- check if card is type favour -->
             <%= render 'favours/show', postable: post, response: @response %><!-- refer to show from favour -->
           <% end %>

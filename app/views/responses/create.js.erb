@@ -1,14 +1,22 @@
-function refreshForm() {
-  const newResponseForm = document.getElementById('response_content');
+// Selector
+  // Favour
+const newResponseFormFavour = document.getElementById('response_content');
+const responsesFavour = document.getElementById('response-display');
+  // Information
+const newResponseFormInfo = document.getElementById('response_content');
+const responsesInfo = document.getElementById('response-display-info');
+// Function
+function refreshForm(newResponseForm) {
   newResponseForm.value= "";
-  console.log(newResponseForm);
 }
-
-function addResponse(responseHTML) {
-  const responses = document.getElementById('response-display');
+function addResponse(responses, responseHTML) {
   responses.insertAdjacentHTML('afterend', responseHTML);
-  console.log(responses)
 }
 
-addResponse('<%= j render "responses/show", response: @response %>');
-refreshForm();
+// Processing
+  // Favour
+addResponse(responsesFavour, '<%= j render "responses/show", response: @response %>');
+refreshForm(newResponseFormFavour);
+  //Information
+addResponse(responsesInfo, '<%= j render "responses/show", response: @response %>');
+refreshForm(newResponseFormInfo);

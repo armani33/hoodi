@@ -11,13 +11,39 @@
 
 
 //
-const response = document.querySelector(".response");
-const buttonComment = document.querySelector(".comment-button")
-const commentContent = document.querySelector("#comment")
-// console.log(buttonComment);
-buttonComment.addEventListener("click", (event) => {
+// Selection for favour
+const responseFavour = document.querySelector(".response");
+const buttonCommentFavour = document.querySelector(".comment-button");
+const commentContentFavour = document.querySelector("#comment");
+// Selection for Information
+const responseInfo = document.querySelector(".response-info");
+const buttonCommentInfo = document.querySelector(".comment-button-info");
+const commentContentInfo = document.querySelector("#comment-info");
+// Selection for Information
+const responseEvent = document.querySelector(".response-event");
+const buttonCommentEvent = document.querySelector(".comment-button-event")
+const commentContentEvent = document.querySelector("#comment-event")
+
+toggleResponses(buttonCommentFavour, responseFavour, commentContentFavour);
+toggleResponses(buttonCommentInfo, responseInfo, commentContentInfo);
+toggleResponses(buttonCommentEvent, responseEvent, commentContentEvent);
+
+function toggleResponses(button, response, comment) {
+  button.addEventListener("click", (event) => {
     event.preventDefault();
 response.classList.toggle("hidden");
-commentContent.classList.toggle("underline")
+comment.classList.toggle("underline")
   });
+}
 
+
+
+// const responseInfo = document.querySelector(".response-info");
+// const buttonCommentInfo = document.querySelector(".comment-button-info")
+// const commentContentInfo = document.querySelector("#comment-info")
+// console.log(buttonComment);
+// buttonCommentInfo.addEventListener("click", (event) => {
+//     event.preventDefault();
+// responseInfo.classList.toggle("hidden");
+// commentContentInfo.classList.toggle("underline")
+//   });
