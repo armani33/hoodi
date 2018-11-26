@@ -1,48 +1,69 @@
 .new-post-window{
-  height: 140px;
+  // height: 140px;
   border: 1px solid $light-grey;
   border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  background-color: grey;
+  background: white;
   margin: 10px 0;
   width: 100%;
+  box-shadow: 0 0 20px $box-shadow;
+  border: 1px solid $middle-grey;
 }
-.nav{
-  display: flex;
-  justify-content: space-between;
-  width: 590px;
-}
+
+// .nav{
+//   display: flex;
+//   justify-content: space-between;
+//   width: 590px;
+// }
+
 .form-group {
   margin: 0;
 }
+
 #perimeter-btn {
   position: absolute;
   bottom: 25px;
   left: 25px;
 }
-.tab-content {
-  position: absolute;
-  top: 50px;
-}
+
 .nav-link {
-  color: $grey;
+  color: white !important;
+  background: red;
+  font-family: $headers-font;
+  font-weight: 500;
 }
-#info-tab {
-  background-color: $yellow;
+
+.nav-link:hover {
+  background: green !important;
+  border-color: transparent !important;
 }
-#favour-tab {
-  background-color: $blue;
+
+.nav-link:focus {
+  background: blue !important;
+  border-color: transparent !important;
 }
-#event-tab {
-  background-color: $pink;
+
+
+.nav-tabs{
+  border: none !important;
+
 }
-#info {
-  background-color: $light-yellow;
-}
-#favour {
-  background-color: $light-blue;
-}
-#event {
-  background-color: $light-pink;
-}
+
+// #info-tab {
+//   background-color: $yellow;
+// }
+// #favour-tab {
+//   background-color: $blue;
+// }
+// #event-tab {
+//   background-color: $pink;
+// }
+
+// #info {
+//   background-color: $light-yellow;
+// }
+// #favour {
+//   background-color: $light-blue;
+// }
+// #event {
+//   background-color: $light-pink;
+// }

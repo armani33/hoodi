@@ -1,9 +1,11 @@
 /*******Access-Layout*******/
 .access-layout h1{
-  font-family: $access-link-title;
+  font-family: $headers-font;
   font-size: 17px;
+  font-weight: bolder;
   color: $grey;
   margin: 0;
+  padding-bottom: 10px;
 }
 /* -----Profile and message link----- */
 .main-link{
@@ -35,7 +37,8 @@
   border-radius: 3px;
 }
 .profile-link li{
-  font-size: 11px;
+  font-size: 12px;
+  font-family: $body-font;
 }
 /* Message link */
 .message-link{
@@ -53,7 +56,8 @@
   border-radius: 3px;
 }
 .message-link li{
-  font-size: 11px;
+  font-size: 12px;
+  font-family: $body-font;
 }
 .message-link img{
   width: 23px;
@@ -71,12 +75,14 @@
 .shortcuts img{
   margin-right: 5px;
 }
+.shortcuts ul{
+  margin: 0;
+}
 /* Perimeter link */
 .perimeter-link{
   display: flex;
   align-items: center;
   list-style: none;
-  margin-bottom: 20px;
   padding: 5px 17px 5px 2px;
   border: 1px solid transparent;
 }
@@ -87,7 +93,8 @@
   border-radius: 3px;
 }
 .perimeter-link li{
-  font-size: 11px;
+  font-size: 12px;
+  font-family: $body-font;
 }
 .perimeter-link img{
   width: 23px;
@@ -108,7 +115,8 @@
   border-radius: 3px;
 }
 .posts-link li{
-  font-size: 11px;
+  font-size: 12px;
+  font-family: $body-font;
 }
 .posts-link img{
   width: 26px;
@@ -146,7 +154,8 @@
   border-radius: 3px;
 }
 .explore-link li{
-  font-size: 11px;
+  font-size: 12px;
+  font-family: $body-font;
 }
 .explore-link img{
   width: 23px;

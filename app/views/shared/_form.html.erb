@@ -1,5 +1,4 @@
 <%= simple_form_for post, url: url, method: :post, remote: true do |f| %>
-    <%= f.input :title, label: false, placeholder: "Title" %>
 
     <% if post.is_a? Event %>
       <%= f.input :content, label: false, placeholder: "Personal message" %>
