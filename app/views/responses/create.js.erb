@@ -4,21 +4,30 @@
   var newResponseFormFavour = document.getElementById('response_content');
   var selector = "#favours-response-<%= @response.postable_id %> .response-display";
   var responsesFavour = document.querySelector(selector);
-  addResponse(responsesFavour, '<%= j render "responses/show", response: @response %>');
+  var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %><div class="text-comment"> <strong><%= current_user.first_name.capitalize%>: </strong> </div><%= j render "responses/show", response: @response %></div></div></div>'
+  addResponse(responsesFavour, insertHTMLAdd);
   refreshForm(newResponseFormFavour);
+
 <% elsif @response.postable_type == "Information" %>
-  var newResponseFormInformation = document.getElementById('response_content');
+  var newResponseFormInformation = document.getElementById('response-content');
   var selector = "#informations-response-<%= @response.postable_id %> .response-display";
   var responsesInformation = document.querySelector(selector);
-  addResponse(responsesInformation, '<%= j render "responses/show", response: @response %>');
+  var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %><div class="text-comment"> <strong><%= current_user.first_name.capitalize%>: </strong> </div><%= j render "responses/show", response: @response %></div></div></div>'
+  addResponse(responsesInformation, insertHTMLAdd);
   refreshForm(newResponseFormInformation);
+
+
+
+
 <% elsif @response.postable_type == "Event" %>
-  var newResponseFormInformation = document.getElementById('response_content');
+  var newResponseFormInformation = document.getElementById('response-content');
   var selector = "#events-response-<%= @response.postable_id %> .response-display";
   var responsesInformation = document.querySelector(selector);
-  addResponse(responsesInformation, '<%= j render "responses/show", response: @response %>');
+  var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %><div class="text-comment"> <strong><%= current_user.first_name.capitalize%>: </strong> </div><%= j render "responses/show", response: @response %></div></div></div>'
+  addResponse(responsesInformation, insertHTMLAdd);
   refreshForm(newResponseFormInformation);
 <% end %>
+
 function refreshForm(newResponseForm) {
   newResponseForm.value= "";
 }
