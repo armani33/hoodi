@@ -11,7 +11,7 @@
         <!-- display all the cards -->
         <% @posts.each do |post| %><!-- call all the posts from all types -->
           <!-- check if card is type info -->
-          <% if current_user.in?(post.user.nearbys(post.perimeter, units: :km)) %>
+          <% if current_user.in?(post.user.nearbys(post.perimeter, units: :km)) || post.user == current_user %>
             <% if post.class == Information %>
               <%= render 'informations/show', information: post, response: @response %>
               <!-- refer to show from info -->
