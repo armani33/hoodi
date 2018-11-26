@@ -160,3 +160,21 @@
 .hidden-content{
   color: red;
 }
+
+.underline{
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: $border-light-grey;
+}
+.text-comment{
+  display: flex;
+  width: 470px;
+  margin: 0 10px;
+  padding: 0 20px;
+  background-color: $border-light-grey;
+  border-radius: 50px;
+}
+.response-content{
+  display: flex;
+  margin: 10px 5px;
+}

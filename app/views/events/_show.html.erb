@@ -6,17 +6,17 @@
   <div class="body-card">
     <div class="card-content">
       <span class="post-badge">EVENT</span>
-      <p><%= event.content %></p>
+      <p><%= postable.content %></p>
     </div><!-- end card-content -->
     <div class="card-top">
       <div class="avatar-medium">
-        <%= cl_image_tag(event.user.photo, {class: "avatar-medium"}) %>
+        <%= cl_image_tag(postable.user.photo, {class: "avatar-medium"}) %>
       </div>
       <div class="user-name">
           <div class="time time-event">
-            <h2><%= event.user.first_name%></h2>
+            <h2><%= postable.user.first_name%></h2>
             <i class="fas fa-circle"></i>
-            <p><%= Time.now.utc.hour - event.created_at.hour %> hrs ago </p>
+            <p><%= Time.now.utc.hour - postable.created_at.hour %> hrs ago </p>
           </div>
           <div class="distance">
             <%= image_tag("image_after_hour_card.png", alt: "time") %>
@@ -29,7 +29,6 @@
     </div>
   </div>
 
-
   <!-- end card-content -->
   <div class="card-footer">
     <div class="footer-link">
@@ -37,13 +36,13 @@
         <%= image_tag("invited.png", alt: "logo", class: "logo-footer")%> Respond
       <% end %>
     </div>
-    <div class="footer-link">
-      <%= link_to root_path do %>
+    <div class="footer-link" id="comment-event">
+      <%= link_to root_path, class: "comment-button-event" do %>
         <%= image_tag("comment.png", alt: "logo", class: "logo-footer")%> Comment
       <% end %>
     </div>
     <div class="footer-link footer-link-localisation">
-      <a href="/" lat="<%= event.user.latitude %>" lng="<%= event.user.longitude %>" data-userimage="<%= event.user.photo %>">
+      <a href="/" lat="<%= postable.user.latitude %>" lng="<%= postable.user.longitude %>" data-userimage="<%= postable.user.photo %>">
         <%= image_tag("map_icon.svg", alt: "logo", class: "logo-footer-mapzer")%> Location
       </a>
     </div>
@@ -51,6 +50,29 @@
   <!-- end card-footer -->
 </div>
 <!-- end card -->
-
-<script>
-</script>
+<!-- comment method -->
+<div class="response-event hidden" id="events-response-<%=postable.id%>">
+  <div class="response-display">
+    <% if postable.responses.blank? %>
+      Leave a response
+    <% else %>
+      <%postable.responses.each do |response_object|%>
+        <div class="response-content">
+          <div class="avatar-medium">
+            <%= cl_image_tag(User.find(response_object.user_id).photo, {class: "avatar-medium"}) %>
+          </div>
+          <div class="text-comment">
+            <strong><%= User.find(response_object.user_id).first_name.capitalize %>: </strong>
+            <%= render('responses/show', { response: response_object }) %>
+          </div>
+          <div class="time-response">
+            <%= Time.now.utc.hour - response_object.created_at.hour %> hrs
+          </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+    <div id="new-response">
+      <%= render('responses/form', { postable: postable, response: @response }) %>
+    </div>
+</div>
