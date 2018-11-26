@@ -6,10 +6,15 @@
   var responsesFavour = document.querySelector(selector);
   addResponse(responsesFavour, '<%= j render "responses/show", response: @response %>');
   refreshForm(newResponseFormFavour);
-
 <% elsif @response.postable_type == "Information" %>
   var newResponseFormInformation = document.getElementById('response_content');
   var selector = "#informations-response-<%= @response.postable_id %> .response-display";
+  var responsesInformation = document.querySelector(selector);
+  addResponse(responsesInformation, '<%= j render "responses/show", response: @response %>');
+  refreshForm(newResponseFormInformation);
+<% elsif @response.postable_type == "Event" %>
+  var newResponseFormInformation = document.getElementById('response_content');
+  var selector = "#events-response-<%= @response.postable_id %> .response-display";
   var responsesInformation = document.querySelector(selector);
   addResponse(responsesInformation, '<%= j render "responses/show", response: @response %>');
   refreshForm(newResponseFormInformation);
