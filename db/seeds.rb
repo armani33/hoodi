@@ -42,22 +42,24 @@ olga.save!
 
 information = Information.new(
   title: "Test stor info",
-  content: "work in the area"
-
+  content: "work in the area",
+  perimeter: 2.0
   )
 information.user = tom
 information.save!
 
 event = Event.new(
   title: "test event stor",
-  content: "want to organise a game"
+  content: "want to organise a game",
+  perimeter: 0.7
   )
 event.user = vic
 event.save!
 
 favour = Favour.new(
   title: "test favor stor",
-  content: "I want to share a ride to the city center"
+  content: "I want to share a ride to the city center",
+  perimeter: 0.1
   )
 favour.user = olga
 favour.save!

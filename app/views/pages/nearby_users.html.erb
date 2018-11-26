@@ -1,0 +1,23 @@
+<% @informations.each do |information| %>
+  <% if current_user.in?(information.user.nearbys(information.perimeter)) %>
+    <h4><%= information.title %></h4>
+    <p><%= information.content %></p>
+    <p><%= information.perimeter %></p>
+  <% end %>
+<% end %>
+
+<% @favours.each do |favour| %>
+  <% if current_user.in?(favour.user.nearbys(favour.perimeter)) %>
+    <h4><%= favour.title %></h4>
+    <p><%= favour.content %></p>
+    <p><%= favour.perimeter %></p>
+  <% end %>
+<% end %>
+
+<% @events.each do |event| %>
+  <% if current_user.in?(event.user.nearbys(event.perimeter)) %>
+    <h4><%= event.title %></h4>
+    <p><%= event.content %></p>
+    <p><%= event.perimeter %></p>
+  <% end %>
+<% end %>

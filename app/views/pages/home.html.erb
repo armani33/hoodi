@@ -9,12 +9,16 @@
         <!-- @posts is passed by the controller -->
         <!-- display all the cards -->
         <% @posts.each do |post| %><!-- call all the posts from all types -->
-          <% if post.class == Information %><!-- check if card is type info -->
-            <%= render 'informations/show', information: post, response: @response %><!-- refer to show from info -->
-          <% elsif post.class == Event %><!-- check if card is type event -->
-            <%= render 'events/show', event: post, response: @response %><!-- refer to show from event -->
-          <% elsif post.class == Favour %><!-- check if card is type favour -->
+          <!-- check if card is type info -->
+          <% if current_user.in?(post.user.nearbys(post.perimeter, units: :km)) %>
+            <% if post.class == Information %>
+              <%= render 'informations/show', information: post, response: @response %>
+              <!-- refer to show from info -->
+            <% elsif post.class == Event %><!-- check if card is type event -->
+              <%= render 'events/show', event: post, response: @response %><!-- refer to show from event -->
+            <% else post.class == Favour %><!-- check if card is type favour -->
             <%= render 'favours/show', favour: post, response: @response %><!-- refer to show from favour -->
+            <% end %>
           <% end %>
         <% end %>
       </div>
