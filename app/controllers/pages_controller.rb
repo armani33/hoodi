@@ -5,7 +5,6 @@ class PagesController < ApplicationController
     new_event
     # TODO build @posts array
     # @posts = []
-    nearby_users
     find_informations
     find_events
     find_favours
@@ -34,7 +33,10 @@ class PagesController < ApplicationController
   end
 
   def nearby_users
-    @nearby_users = User.near([current_user.longitude, current_user.latitude], 2)
+    # @nearby_users = User.near([current_user.longitude, current_user.latitude], 2)
+    @informations = find_informations
+    @events = find_events
+    @favours = find_favours
 
     # this is how we will localize content
     # iterate over nearby users and for each user call

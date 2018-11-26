@@ -17,7 +17,7 @@
   <!-- <a href="#" class="btn-medium" id="perimeter-btn">Perimeter</a>
   <div class="invisible" id="perimeter-div">
     <button type="button" class="close" aria-label="Close" id="perimeter-close"> -->
-    <%= f.select :perimeter, ["100m", "200m", "300m", "400m", "500m", "600m", "700m", "800m", "900m", "1km", "1.5km", "2km"] %>
+    <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse %>
 <!--   </div>
  -->
 <% if post.is_a? Event %>
