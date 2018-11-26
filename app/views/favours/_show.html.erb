@@ -4,7 +4,6 @@
 <div class="card blue-card">
   <div class="body-card">
     <div class="card-content">
-      <!-- <p><%=favour.title %></p> -->
       <span class="post-badge">FAVOUR</span>
       <p><%=favour.content%></p>
     </div><!-- end card-content -->
@@ -13,11 +12,15 @@
         <%= cl_image_tag(favour.user.photo, {class: "avatar-medium"}) %>
       </div>
       <div class="user-name">
-        <h2><%= favour.user.first_name %></h2>
-        <div class="time time-favour">
-          <p><%= Time.now.utc.hour - favour.created_at.hour %> hrs - </p>
-          <%= image_tag("image_after_hour_card.png", alt: "time", class: "logo") %>
-        </div>
+          <div class="time time-favour">
+            <h2><%= favour.user.first_name%></h2>
+            <i class="fas fa-circle"></i>
+            <p><%= Time.now.utc.hour - favour.created_at.hour %> hrs ago </p>
+          </div>
+          <div class="distance">
+            <%= image_tag("image_after_hour_card.png", alt: "time") %>
+            <p>400m away</p>
+          </div>
       </div>
       <div class="option-menu">
         <%= image_tag("dropdown_menu_card.png", class: "dropdown-card") %>
@@ -32,7 +35,7 @@
     </div>
     <div class="footer-link" id="comment">
       <%= link_to root_path, class: "comment-button" do %>
-        <%= image_tag("comment.png", alt: "logo", class: "logo-footer")%> Comment,
+        <%= image_tag("comment.png", alt: "logo", class: "logo-footer")%> Comment
       <% end %>
     </div>
     <div class="footer-link footer-link-localisation">
