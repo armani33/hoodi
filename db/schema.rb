@@ -108,6 +108,4 @@ ActiveRecord::Schema.define(version: 2018_11_27_183733) do
   add_foreign_key "favours", "users"
   add_foreign_key "information", "users"
   add_foreign_key "responses", "users"
-  add_foreign_key "saved_informations", "information"
-  add_foreign_key "saved_informations", "users"
 end
