@@ -1,16 +1,18 @@
 <%= simple_form_for post, url: url, method: :post, remote: true do |f| %>
 
     <% if post.is_a? Event %>
-      <%= f.input :content, label: false, placeholder: "Personal message" %>
+      <%= f.input :content, label: false, placeholder: "Personal message", class: "text-control" %>
       <%= f.input :date, as: :string, placeholder: "yyyy-mm-dd", label: false %>
 
     <% elsif post.is_a? Information %>
 
-      <%= f.input :content, label: false, placeholder: "Ask a question or share info!" %>
+      <%= f.input :content, label: false, placeholder: "Ask a question or share info!", class: "text-control" %>
 
     <% else %>
 
-      <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!" %>
+      <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!", class: "text-control" %>
+      <%= f.input :photo, label: false, input_html: { id: "photo-upload"} %>
+      <%= f.input :photo_cache, as: :hidden %>
 
     <% end %>
   <!-- <a href="#" class="btn-medium" id="perimeter-btn">Perimeter</a>
@@ -29,7 +31,5 @@
  <!--    </div> -->
 <% end %>
 
-  <%= f.input :photo, label: false, input_html: { id: "photo-upload"} %>
-  <%= f.input :photo_cache, as: :hidden %>
   <%= f.button :submit %>
 <% end %>
