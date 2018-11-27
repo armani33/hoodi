@@ -1,6 +1,5 @@
 <!--  -->
 <!-- display favour just created -->
-
 <div class="card blue-card">
 
   <div class="body-card">
@@ -74,5 +73,9 @@
   <div id="new-response">
     <%= render('responses/form', { postable: postable, response: @response }) %>
   </div>
-
 </div>
+<!-- end comment method -->
+<!-- Help message method -->
+<div id="new-message">
+    <%= render('messages/form', { postable: postable, message: @message }) %>
+  </div>

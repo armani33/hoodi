@@ -1,0 +1,6 @@
+<%= simple_form_for([postable, message]) do |form| %>
+  <%= form.input :help_content, as: :text%>
+  <%= form.input :phone %>
+  <%= form.input :email %>
+  <%= form.button :submit %>
+<% end %>
