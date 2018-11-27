@@ -30,7 +30,7 @@
 
   <div class="card-footer">
     <div class="footer-link">
-      <%= link_to root_path do %>
+      <%= link_to information_favourites_path(postable), method: :post do %>
         <%= image_tag("love_neighbour.png", alt: "logo", class: "logo-footer")%> Saved post
       <% end %>
     </div>
