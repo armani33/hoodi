@@ -29,7 +29,7 @@
   </div>
   <div class="card-footer">
     <div class="footer-link">
-      <%= link_to root_path do %>
+      <%= link_to root_path, class: "message-button" do %>
         <%= image_tag("handlove.png", alt: "logo", class: "logo-footer")%> Help post
       <% end %>
     </div>
@@ -69,13 +69,12 @@
       <% end %>
     <% end %>
   </div>
-
   <div id="new-response">
     <%= render('responses/form', { postable: postable, response: @response }) %>
   </div>
 </div>
 <!-- end comment method -->
 <!-- Help message method -->
-<div id="new-message">
+<div id="new-message" class="hidden">
     <%= render('messages/form', { postable: postable, message: @message }) %>
   </div>
