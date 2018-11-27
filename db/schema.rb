@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_161253) do
+ActiveRecord::Schema.define(version: 2018_11_27_183733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2018_11_26_161253) do
     t.string "location"
     t.float "perimeter"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "information_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["information_id"], name: "index_favourites_on_information_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
   create_table "favours", force: :cascade do |t|
@@ -94,6 +103,8 @@ ActiveRecord::Schema.define(version: 2018_11_26_161253) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "favourites", "information"
+  add_foreign_key "favourites", "users"
   add_foreign_key "favours", "users"
   add_foreign_key "information", "users"
   add_foreign_key "responses", "users"
