@@ -25,7 +25,6 @@
 }
 .nav-link {
   color: white !important;
-  background: red !important;
   font-family: $headers-font;
   font-weight: 500;
   margin: 0 !important;
@@ -46,8 +45,42 @@
   border-color: transparent !important;
   border: none !important;
 }
-
-
+.nav-yellow{
+  background-color: $lightyellow !important;
+}
+.nav-yellow:hover{
+  background-color: $yellow !important;
+}
+.nav-yellow:focus{
+  background-color: $yellow !important;
+}
+.nav-yellow:active{
+  background-color: $yellow !important;
+}
+.nav-blue{
+  background-color: $lightblue !important;
+}
+.nav-blue:hover{
+  background-color: $blue !important;
+}
+.nav-blue:focus{
+  background-color: $blue !important;
+}
+.nav-blue:active{
+  background-color: $blue !important;
+}
+.nav-pink{
+  background-color: $lightpink !important;
+}
+.nav-pink:hover{
+  background-color: $pink !important;
+}
+.nav-pink:focus{
+  background-color: $pink !important;
+}
+.nav-pink:active{
+  background-color: $pink !important;
+}
 .nav-tabs{
   border: none !important;
   display: grid;
@@ -57,7 +90,23 @@
 .nav:before, .nav:after {
   content: none !important;
 }
-
+.writing-post{
+  width: 100%;
+  background-color: $middle-grey;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+.writing-post p{
+  margin: 0;
+  padding: 0;
+}
+.writing-image{
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
 
 // #info-tab {
 //   background-color: $yellow;

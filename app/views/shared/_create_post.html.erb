@@ -2,25 +2,37 @@
   <div class="tabs">
     <ul class="nav nav-tabs" id="postTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Info</a>
+        <a class="nav-link nav-yellow" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Info</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="favour-tab" data-toggle="tab" href="#favour" role="tab" aria-controls="favour" aria-selected="false">Favour</a>
+        <a class="nav-link nav-blue" id="favour-tab" data-toggle="tab" href="#favour" role="tab" aria-controls="favour" aria-selected="false">Favour</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="false">Event</a>
+        <a class="nav-link nav-pink" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="false">Event</a>
       </li>
     </ul>
   </div>
 
   <div class="tab-content" id="postTabContent">
     <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+      <div class="writing-post">
+        <%= image_tag("writing.png", class: "writing-image") %>
+        <p>Compose Post</p>
+      </div>
       <%= render 'shared/form', post: @information, url: informations_path(@information) %>
     </div>
     <div class="tab-pane fade" id="favour" role="tabpanel" aria-labelledby="favour-tab">
+      <div class="writing-post">
+        <%= image_tag("writing.png", class: "writing-image") %>
+        <p>Compose Post</p>
+      </div>
       <%= render 'shared/form', post: @favour, url: favours_path(@favour) %>
     </div>
     <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
+      <div class="writing-post">
+        <%= image_tag("writing.png", class: "writing-image") %>
+        <p>Compose Post</p>
+      </div>
       <%= render 'shared/form', post: @event, url: events_path(@event) %>
     </div>
   </div>
