@@ -27,21 +27,23 @@
   color: white !important;
   font-family: $headers-font;
   font-weight: 500;
+  width: 200px !important;
   margin: 0 !important;
   border: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .nav-link:hover,  {
-  background: green !important;
   border-color: transparent !important;
   border: none !important;
 }
 .nav-link:focus {
-  background: blue !important;
   border-color: transparent !important;
   border: none !important;
 }
 .nav-link:active {
-  background: blue !important;
   border-color: transparent !important;
   border: none !important;
 }
@@ -97,6 +99,7 @@
   display: flex;
   align-items: center;
   padding: 5px 10px;
+  position: relative;
 }
 .writing-post p{
   margin: 0;
@@ -107,7 +110,13 @@
   height: 25px;
   margin-right: 10px;
 }
+.cross-image{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 10px;
 
+}
 // #info-tab {
 //   background-color: $yellow;
 // }

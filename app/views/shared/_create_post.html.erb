@@ -2,7 +2,7 @@
   <div class="tabs">
     <ul class="nav nav-tabs" id="postTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link nav-yellow" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Info</a>
+        <a class="nav-link nav-yellow" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="true">Information</a>
       </li>
       <li class="nav-item">
         <a class="nav-link nav-blue" id="favour-tab" data-toggle="tab" href="#favour" role="tab" aria-controls="favour" aria-selected="false">Favour</a>
@@ -18,22 +18,26 @@
       <div class="writing-post">
         <%= image_tag("writing.png", class: "writing-image") %>
         <p>Compose Post</p>
+        <%= image_tag("cross.png", class: "cross-image") %>
       </div>
-      <%= render 'shared/form', post: @information, url: informations_path(@information) %>
+      <%= render 'shared/form', post: @information, url: informations_path(@information), class_name: 'yellow-post-color' %>
     </div>
     <div class="tab-pane fade" id="favour" role="tabpanel" aria-labelledby="favour-tab">
       <div class="writing-post">
         <%= image_tag("writing.png", class: "writing-image") %>
         <p>Compose Post</p>
+        <%= image_tag("cross.png", class: "cross-image") %>
       </div>
-      <%= render 'shared/form', post: @favour, url: favours_path(@favour) %>
+      <%= render 'shared/form', post: @favour, url: favours_path(@favour), class_name: 'blue-post-color',
+      postion_photo_button: 'postion-photo-button'%>
     </div>
     <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
       <div class="writing-post">
         <%= image_tag("writing.png", class: "writing-image") %>
         <p>Compose Post</p>
+        <%= image_tag("cross.png", class: "cross-image") %>
       </div>
-      <%= render 'shared/form', post: @event, url: events_path(@event) %>
+      <%= render 'shared/form', post: @event, url: events_path(@event), class_name: 'pink-post-color' %>
     </div>
   </div>
 </div>

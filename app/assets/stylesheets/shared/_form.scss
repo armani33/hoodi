@@ -1,8 +1,6 @@
-.tab-content {
-  // height: 500px;
-  // padding: 15px;
+.simple_form{
+  position: relative;
 }
-
 .btn-medium {
   color: #999999;
   border: 1px solid #999999;
@@ -30,22 +28,118 @@
   text-decoration: none;
   color: white;
 }
-#information-content{
-  outline:none;
-}
-input textarea{
-  border-radius: 3px;
-  border: none;
-  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
-     -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
-          box-sizing: border-box;
+.postion-photo-button{
+  position: absolute;
+  right: 20px;
 }
 .form-control{
-  background-color: $light-grey;
-  border: none;
+  background-color: white;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid $light-grey !important;
+}
+textarea{
+  -webkit-appearance: none !important;
+  outline: none !important;
+  resize: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  height: 110px !important;
+}
+.perimeter-button{
+  outline: none !important;
+  border-radius: 0 !important;
+  width: 250px !important;
+  margin: 20px 15px 20px 30px  !important;
+  border-radius: 2px !important;
+  text-indent: 40px !important;
+  font-family: $post-font;
+  font-size: 15px;
+  background-image: url("perimeter.png") !important;
+  background-size: 25px !important;
+  background-repeat: no-repeat !important;
+  background-position: 3px 3px !important;
+}
+select{
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none !important;
+  padding: 5px !important;
+  border: none !important;
+}
+select[include_blank]{
+  text-align:center;
+}
+.post-button{
+  background-color: $black;
+  color: white;
+  font-family: $post-font;
+  font-size: 15px;
+  padding: 4px 20px !important;
+  margin: 20px 20px 21px 15px !important;
+  width: 250px ;
+}
+.yellow-post-color{
+  background-color: $yellow !important;
+  color: $black;
+}
+.blue-post-color{
+  background-color: $blue !important;
+  color: white;
+}
+.pink-post-color{
+  background-color: $pink !important;
+  color: white;
+}
+.age-and-date{
+  display: flex;
+  justify-content: space-around;
+}
+.date{
+  display: flex;
+  flex-direction: column;
+}
+.date a{
+  text-decoration: none;
+  color: $black;
+}
+.date-button{
+  text-align: center;
+  text-decoration: none;
+}
+.date-button p{
+  background-color: white;
+  padding: 4px 20px;
+  border: 2px solid $pink;
+  border-radius: 3px;
+  width: 250px;
+}
+.choose-date{
+  display: flex;
+  flex-direction: column;
+}
+.age{
+  display: flex;
+  flex-direction: column;
+}
+.age a{
+  text-decoration: none;
+  color: $black;
+}
+.age-button{
+  text-align: center;
+}
+.age-button p{
+  background-color: white;
+  padding: 4px 20px;
+  border: 2px solid $pink;
+  border-radius: 3px;
+  width: 250px;
+}
 
-}
-.textarea{
-  outline: none;
-}
+
+
+
+
+
+
+
