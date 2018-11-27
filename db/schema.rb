@@ -81,13 +81,6 @@ ActiveRecord::Schema.define(version: 2018_11_27_183733) do
     t.index ["user_id"], name: "index_responses_on_user_id"
   end
 
-  create_table "saved_informations", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "information_id"
-    t.index ["information_id"], name: "index_saved_informations_on_information_id"
-    t.index ["user_id"], name: "index_saved_informations_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
