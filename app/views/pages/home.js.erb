@@ -1,0 +1,4 @@
+var allPosts = document.getElementById('all_posts');
+
+allPosts.innerHTML = "<%= j render 'shared/full_wall', posts: @posts, response: @response %>";
+
