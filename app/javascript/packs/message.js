@@ -1,3 +1,8 @@
-// When click on "help" button: window message js generated
-const messageFavour = document.querySelector("#new-message")
-const buttonMessageFavour = document.querySelector(".message-button")
+document.querySelector(".message-button").addEventListener("click", (event) => {
+  event.preventDefault();
+
+const messageFavour = document.querySelector(".new-message");
+messageFavour.classList.toggle("hidden");
+});
+
+
