@@ -15,29 +15,41 @@
 
   <div class="tab-content" id="postTabContent">
     <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
-      <div class="writing-post">
-        <%= image_tag("writing.png", class: "writing-image") %>
-        <p>Compose Post</p>
-        <%= image_tag("cross.png", class: "cross-image") %>
+      <div class="create-post-window">
+        <div class="writing-post">
+          <%= image_tag("writing.png", class: "writing-image") %>
+          <p>Compose Post</p>
+          <%= link_to root_path, class: 'cross-button' do %>
+            <%= image_tag("cross.png", class: "cross-image") %>
+          <% end %>
+        </div>
+        <%= render 'shared/form', post: @information, url: informations_path(@information), class_name: 'yellow-post-color' %>
       </div>
-      <%= render 'shared/form', post: @information, url: informations_path(@information), class_name: 'yellow-post-color' %>
     </div>
     <div class="tab-pane fade" id="favour" role="tabpanel" aria-labelledby="favour-tab">
-      <div class="writing-post">
-        <%= image_tag("writing.png", class: "writing-image") %>
-        <p>Compose Post</p>
-        <%= image_tag("cross.png", class: "cross-image") %>
+      <div class="create-post-window">
+        <div class="writing-post">
+          <%= image_tag("writing.png", class: "writing-image") %>
+          <p>Compose Post</p>
+          <%= link_to root_path, class: 'cross-button' do %>
+            <%= image_tag("cross.png", class: "cross-image") %>
+          <% end %>
+        </div>
+        <%= render 'shared/form', post: @favour, url: favours_path(@favour), class_name: 'blue-post-color',
+        postion_photo_button: 'postion-photo-button'%>$
       </div>
-      <%= render 'shared/form', post: @favour, url: favours_path(@favour), class_name: 'blue-post-color',
-      postion_photo_button: 'postion-photo-button'%>
     </div>
     <div class="tab-pane fade" id="event" role="tabpanel" aria-labelledby="event-tab">
-      <div class="writing-post">
-        <%= image_tag("writing.png", class: "writing-image") %>
-        <p>Compose Post</p>
-        <%= image_tag("cross.png", class: "cross-image") %>
+      <div class="create-post-window">
+        <div class="writing-post">
+          <%= image_tag("writing.png", class: "writing-image") %>
+          <p>Compose Post</p>
+          <%= link_to root_path, class: 'cross-button' do %>
+            <%= image_tag("cross.png", class: "cross-image") %>
+          <% end %>
+        </div>
+        <%= render 'shared/form', post: @event, url: events_path(@event), class_name: 'pink-post-color' %>
       </div>
-      <%= render 'shared/form', post: @event, url: events_path(@event), class_name: 'pink-post-color' %>
     </div>
   </div>
 </div>
