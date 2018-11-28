@@ -1,7 +1,7 @@
 <!--  -->
 <!-- display event just created -->
 
-<div class="card pink-card">
+<div class="card pink-card" id="event-<%= postable.id %>">
 
   <div class="body-card">
     <div class="card-content">
@@ -32,8 +32,8 @@
   <!-- end card-content -->
   <div class="card-footer">
     <div class="footer-link">
-      <%= link_to root_path do %>
-        <%= image_tag("invited.png", alt: "logo", class: "logo-footer")%> Respond
+      <%= link_to event_reservations_path(postable), method: :post, remote: true do %>
+        <%= image_tag("invited.png", alt: "logo", class: "logo-footer")%> RSVP
       <% end %>
     </div>
     <div class="footer-link" id="comment-event">

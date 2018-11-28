@@ -1,0 +1,3 @@
+<% @favourites.each do |fave| %>
+  <%= render 'informations/show', postable: fave.information, response: @response %>
+<% end %>

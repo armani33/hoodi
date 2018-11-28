@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_225530) do
+ActiveRecord::Schema.define(version: 2018_11_27_221808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 2018_11_26_225530) do
     t.string "location"
     t.float "perimeter"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "information_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["information_id"], name: "index_favourites_on_information_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
   create_table "favours", force: :cascade do |t|
@@ -71,6 +80,15 @@ ActiveRecord::Schema.define(version: 2018_11_26_225530) do
     t.datetime "updated_at", null: false
     t.index ["favour_id"], name: "index_messages_on_favour_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_reservations_on_event_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+
   end
 
   create_table "responses", force: :cascade do |t|
@@ -83,6 +101,13 @@ ActiveRecord::Schema.define(version: 2018_11_26_225530) do
     t.bigint "postable_id"
     t.index ["postable_type", "postable_id"], name: "index_responses_on_postable_type_and_postable_id"
     t.index ["user_id"], name: "index_responses_on_user_id"
+  end
+
+  create_table "saved_informations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "information_id"
+    t.index ["information_id"], name: "index_saved_informations_on_information_id"
+    t.index ["user_id"], name: "index_saved_informations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -107,9 +132,18 @@ ActiveRecord::Schema.define(version: 2018_11_26_225530) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "favourites", "information"
+  add_foreign_key "favourites", "users"
   add_foreign_key "favours", "users"
   add_foreign_key "information", "users"
+
   add_foreign_key "messages", "favours"
   add_foreign_key "messages", "users"
+
+  add_foreign_key "reservations", "events"
+  add_foreign_key "reservations", "users"
+
   add_foreign_key "responses", "users"
+  add_foreign_key "saved_informations", "information"
+  add_foreign_key "saved_informations", "users"
 end

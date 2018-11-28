@@ -17,6 +17,10 @@ class PagesController < ApplicationController
 
     # @users = User.where.not(latitude: nil, longitude: nil)
     @user_marker = {lat: current_user.latitude, lng: current_user.longitude}
+    respond_to do |format|
+      format.html
+      format.js  # <-- will render `app/views/pages/home.js.erb`
+    end
 
   end
 
@@ -46,14 +50,26 @@ class PagesController < ApplicationController
   end
 
   def find_informations
-    @informations = Information.all
+    if (params[:only_events].present? || params[:only_favours].present?)
+      @informations = []
+    else
+      @informations = Information.all
+    end
   end
 
   def find_events
-    @events = Event.all
+    if (params[:only_informations].present? || params[:only_favours].present?)
+      @events = []
+    else
+      @events = Event.all
+    end
   end
 
   def find_favours
-    @favours = Favour.all
+    if (params[:only_informations].present? || params[:only_events].present?)
+      @favours = []
+    else
+      @favours = Favour.all
+    end
   end
 end

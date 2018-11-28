@@ -1,35 +1,55 @@
 <%= simple_form_for post, url: url, method: :post, remote: true do |f| %>
 
     <% if post.is_a? Event %>
-      <%= f.input :content, label: false, placeholder: "Personal message" %>
-      <%= f.input :date, as: :string, placeholder: "yyyy-mm-dd", label: false %>
+
+
+      <%= f.input :content, label: false, placeholder: "Personal message", class: "text-control" %>
+
+      <div class="age-and-date">
+        <div class="date">
+          <%= link_to root_path, class: 'date-button' do %>
+            <p>Date</p>
+          <% end %>
+          <div class="choose-date hidden">
+            <%= f.date_field :date, as: :string, label: false %>
+            <%= f.time_field :date, as: :string, label: false %>
+          </div>
+        </div>
+        <div class="age">
+          <%= link_to root_path, class: 'age-button' do %>
+            <p>Age</p>
+          <% end %>
+          <div class="choose-age hidden">
+            <%= f.input :start_age, label: false, placeholder: "Start age" %>
+            <%= f.input :end_age, label: false, placeholder: "End age" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="perimeter-and-post">
+        <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Select Perimeter (Km)"}, class: "perimeter-button #{class_name} " %>
+        <%= f.button :submit, value: "Post", class: "post-button" %>
+      </div>
+
+
 
     <% elsif post.is_a? Information %>
 
-      <%= f.input :content, label: false, placeholder: "Ask a question or share info!" %>
+
+      <%= f.input :content, label: false, placeholder: "Ask a question or share info!", class: "text-control" %>
+      <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Select Perimeter (Km)"}, class: "perimeter-button #{class_name} " %>
+      <%= f.button :submit, value: "Post", class: "post-button" %>
+
 
     <% else %>
 
-      <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!" %>
+      <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!", class: "text-control" %>
+      <%= f.input :photo, label: false, input_html: { id: "photo-upload"} %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Select Perimeter (Km)"}, class: "perimeter-button #{class_name} " %>
+      <%= f.button :submit, value: "Post", class: "post-button" %>
+
 
     <% end %>
-  <!-- <a href="#" class="btn-medium" id="perimeter-btn">Perimeter</a>
-  <div class="invisible" id="perimeter-div">
-    <button type="button" class="close" aria-label="Close" id="perimeter-close"> -->
-    <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse %>
-<!--   </div>
- -->
-<% if post.is_a? Event %>
-  <!--  <div id="age-field">
-      <button type="button" class="close" aria-label="Close" id="age-close">
-      <span aria-hidden="true">&times;</span>
-      </button> -->
-      <%= f.input :start_age, label: false, placeholder: "Start age" %>
-      <%= f.input :end_age, label: false, placeholder: "End age" %>
- <!--    </div> -->
 <% end %>
 
-  <%= f.input :photo, label: false, input_html: { id: "photo-upload"} %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.button :submit %>
-<% end %>

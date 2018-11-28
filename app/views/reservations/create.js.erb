@@ -1,0 +1,11 @@
+var eventDate = `${'<%= @event.date %>'}`;
+
+var eventCard = document.getElementById(`event-${'<%= @event.id %>'}`);
+
+var cardFooter = eventCard.querySelector('.card-footer');
+
+var eventHost = eventCard.getElementsByTagName('h2')[0].innerHTML;
+
+var reservationMade = `<p>You are going to ${eventHost}'s event on ${eventDate}!</p>`;
+
+cardFooter.insertAdjacentHTML("beforebegin", reservationMade);

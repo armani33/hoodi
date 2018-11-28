@@ -32,8 +32,8 @@
       </li>
     </ul>
   <% end %>
-  <%= link_to root_path do %>
-    <ul class="posts-link">
+  <%= link_to root_path(only_events: true), remote: true do %>
+    <ul class="posts-link" id="events_shortcut">
       <li>
         <%= image_tag('card_hoodi_pink.png') %>
       </li>
@@ -42,8 +42,8 @@
       </li>
     </ul>
   <% end %>
-  <%= link_to root_path do %>
-    <ul class="posts-link">
+  <%= link_to root_path(only_favours: true), remote: true do %>
+    <ul class="posts-link" id="favours_shortcut">
       <li>
         <%= image_tag('card_hoodi_blue.png') %>
       </li>
@@ -52,8 +52,8 @@
       </li>
     </ul>
   <% end %>
-  <%= link_to root_path do %>
-    <ul class="posts-link">
+  <%= link_to root_path(only_informations: true), remote: true  do %>
+    <ul class="posts-link" id="informations_shortcut">
       <li>
         <%= image_tag('card_hoodi_yellow.png') %>
       </li>
@@ -85,7 +85,7 @@
       </li>
     </ul>
   <% end %>
-  <%= link_to root_path do %>
+  <%= link_to favourites_path do %>
     <ul class="explore-link">
       <li>
         <%= image_tag('saved.png') %>

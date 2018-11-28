@@ -18,36 +18,105 @@
 .form-group {
   margin: 0;
 }
-
 #perimeter-btn {
   position: absolute;
   bottom: 25px;
   left: 25px;
 }
-
 .nav-link {
   color: white !important;
-  background: red;
   font-family: $headers-font;
   font-weight: 500;
+  width: 200px !important;
+  margin: 0 !important;
+  border: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.nav-link:hover {
-  background: green !important;
+.nav-link:hover,  {
   border-color: transparent !important;
+  border: none !important;
 }
-
 .nav-link:focus {
-  background: blue !important;
   border-color: transparent !important;
+  border: none !important;
 }
-
-
+.nav-link:active {
+  border-color: transparent !important;
+  border: none !important;
+}
+.nav-yellow{
+  background-color: $lightyellow !important;
+}
+.nav-yellow:hover{
+  background-color: $yellow !important;
+}
+.nav-yellow:focus{
+  background-color: $yellow !important;
+}
+.nav-yellow:active{
+  background-color: $yellow !important;
+}
+.nav-blue{
+  background-color: $lightblue !important;
+}
+.nav-blue:hover{
+  background-color: $blue !important;
+}
+.nav-blue:focus{
+  background-color: $blue !important;
+}
+.nav-blue:active{
+  background-color: $blue !important;
+}
+.nav-pink{
+  background-color: $lightpink !important;
+}
+.nav-pink:hover{
+  background-color: $pink !important;
+}
+.nav-pink:focus{
+  background-color: $pink !important;
+}
+.nav-pink:active{
+  background-color: $pink !important;
+}
 .nav-tabs{
   border: none !important;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
+.nav:before, .nav:after {
+  content: none !important;
+}
+.writing-post{
+  width: 100%;
+  background-color: $middle-grey;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  position: relative;
+}
+.writing-post p{
+  margin: 0;
+  padding: 0;
+}
+.writing-image{
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.cross-image{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 10px;
+
+}
 // #info-tab {
 //   background-color: $yellow;
 // }
