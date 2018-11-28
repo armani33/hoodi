@@ -5,51 +5,63 @@
 
       <%= f.input :content, label: false, placeholder: "Personal message", class: "text-control" %>
 
-      <div class="age-and-date">
-        <div class="date">
-          <%= link_to root_path, class: 'date-button' do %>
-            <p>Date</p>
-          <% end %>
-          <div class="choose-date hidden">
-            <%= f.text_field :date, as: :string, label: false, id: "datepicker" %>
-            <%#f.date_field :date, as: :string, label: false %>
-            <%#f.time_field :date, as: :string, label: false %>
+      <div class="form-container">
+        <div class="button-container">
+          <div class="button button-pink-transparent">
+            <%= link_to root_path, class: 'date-button' do %>
+              <p>Date</p>
+            <% end %>
+            <div class="choose-date hidden">
+              <%= f.text_field :date, as: :string, label: false, id: "datepicker" %>
+              <%#f.date_field :date, as: :string, label: false %>
+              <%#f.time_field :date, as: :string, label: false %>
+            </div>
+          </div>
+
+
+          <div class="button button-pink-transparent">
+            <%= link_to root_path, class: 'age-button' do %>
+              <p>Age</p>
+            <% end %>
+            <div class="choose-age hidden">
+              <div class="pmd-range-slider pmd-range-tooltip" id="age-range"></div>
+              <%# f.input :start_age, label: false, placeholder: "Start age" %>
+              <%# f.input :end_age, label: false, placeholder: "End age" %>
+            </div>
           </div>
         </div>
-        <div class="age">
-          <%= link_to root_path, class: 'age-button' do %>
-            <p>Age</p>
-          <% end %>
-          <div class="choose-age hidden">
-            <div class="pmd-range-slider pmd-range-tooltip" id="age-range"></div>
-            <%# f.input :start_age, label: false, placeholder: "Start age" %>
-            <%# f.input :end_age, label: false, placeholder: "End age" %>
-          </div>
+
+        <div class="button-container">
+          <%= f.select :perimeter, [0.100 , 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Perimeter (Km)"}, class: "perimeter-button #{class_name}" %>
+          <%= f.button :submit, value: "Post", class: "button button-pink" %>
         </div>
-      </div>
 
-      <div class="perimeter-and-post">
-        <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Select Perimeter (Km)"}, class: "perimeter-button #{class_name} " %>
-        <%= f.button :submit, value: "Post", class: "post-button" %>
       </div>
-
 
 
     <% elsif post.is_a? Information %>
 
 
       <%= f.input :content, label: false, placeholder: "Ask a question or share info!", class: "text-control" %>
-      <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Select Perimeter (Km)"}, class: "perimeter-button #{class_name} " %>
-      <%= f.button :submit, value: "Post", class: "post-button" %>
+      <div class="form-container">
+        <div class="button-container">
+          <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Perimeter (Km)"}, class: "perimeter-button #{class_name} " %>
+          <%= f.button :submit, value: "Post", class: "button button-yellow" %>
+        </div>
+      </div>
 
 
     <% else %>
 
       <%= f.input :content, label: false, placeholder: "Ask your neighbours for a favour!", class: "text-control" %>
-      <%= f.input :photo, label: false, input_html: { id: "photo-upload"} %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Select Perimeter (Km)"}, class: "perimeter-button #{class_name} " %>
-      <%= f.button :submit, value: "Post", class: "post-button" %>
+      <div class="form-container">
+        <div class="button-container">
+          <%= f.select :perimeter, [0.100, 0.200, 0.300, 0.400, 0.500, 0.600, 0.700, 0.800, 0.900, 1, 1.5, 2].reverse, {include_blank: "Perimeter (Km)"}, class: "perimeter-button #{class_name} " %>
+          <%= f.label :photo, 'Picture', class: "button button-blue-transparent picture-button" %>
+          <%= f.file_field :photo, input_html: { id: "photo-upload"} %>
+        </div>
+        <%= f.button :submit, value: "Post", class: "button button-long button-blue" %>
+      </div>
 
 
     <% end %>
