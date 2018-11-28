@@ -11,8 +11,9 @@
             <p>Date</p>
           <% end %>
           <div class="choose-date hidden">
-            <%= f.date_field :date, as: :string, label: false %>
-            <%= f.time_field :date, as: :string, label: false %>
+            <%= f.text_field :date, as: :string, label: false, id: "datepicker" %>
+            <%#f.date_field :date, as: :string, label: false %>
+            <%#f.time_field :date, as: :string, label: false %>
           </div>
         </div>
         <div class="age">
@@ -20,8 +21,9 @@
             <p>Age</p>
           <% end %>
           <div class="choose-age hidden">
-            <%= f.input :start_age, label: false, placeholder: "Start age" %>
-            <%= f.input :end_age, label: false, placeholder: "End age" %>
+            <div class="pmd-range-slider pmd-range-tooltip" id="age-range"></div>
+            <%# f.input :start_age, label: false, placeholder: "Start age" %>
+            <%# f.input :end_age, label: false, placeholder: "End age" %>
           </div>
         </div>
       </div>
