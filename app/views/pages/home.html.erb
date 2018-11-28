@@ -13,7 +13,8 @@
           <%= render 'shared/full_wall' %>
         </div>
       </div>
-    <div class="map-layout">
+      <!-- hidden class toggle for mail box display -->
+    <div class="map-layout hidden">
       <div class="sticky-container">
         <div
           id="map"
@@ -23,5 +24,10 @@
         ></div>
       </div>
     </div>
+    <div id="mail-box">
+      <%= render 'shared/mail_box' %>
+    </div>
+
+
   </div>
 </div>
