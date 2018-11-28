@@ -1,3 +1,4 @@
+<div class="message-container">
 <%= render 'messages/index' %>
 <div class="message-nav-bar">
   <p>Mail Box : <%= current_user.first_name %></p>
@@ -7,8 +8,6 @@
 <h3>No messages</h3>
 <% else %>
 <% @messages.each do |message| %>
-<div class="message-container">
-
   <div class="message-sender">
     <%= cl_image_tag(message.user.photo, {class: "avatar-medium"}) %>
     <%= message.user.first_name %> <%= message.user.last_name %>:
@@ -19,6 +18,6 @@
   <div class="favour-content">
     <%= message.help_content %>
   </div>
+<% end %>
+<% end %>
 </div>
-<% end %>
-<% end %>
