@@ -1,6 +1,11 @@
 <%= simple_form_for([postable, message]) do |form| %>
-  <%= form.input :help_content, as: :text%>
-  <%= form.input :phone %>
-  <%= form.input :email %>
-  <%= form.button :submit %>
+  <%= form.input :help_content, as: :text, input_html: { class: "message-input", id: "help-content" }, label: false, placeholder: "How can you help?"%>
+<div class="coordonate">
+  <%= form.input :phone, input_html: { class: "message-input", id: "phone" }, label: false, placeholder: "Phone number" %>
+
+  <%= form.input :email, input_html: { class: "message-input", id: "email" }, label: false, placeholder: "Email adress" %>
+  </div>
+  <%= form.date_field :available_time, class: "message-input", label: false, placeholder: "Availability" %>
+
+  <%= form.button :submit, class: "submit_button" %>
 <% end %>

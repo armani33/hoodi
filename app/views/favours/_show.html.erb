@@ -45,7 +45,7 @@
     </div>
   </div><!-- end card-footer -->
 
-</div><!-- end card -->
+<!-- end card -->
 <!-- <div class="new-response"> -->
 <!-- comment method -->
 <div class="response hidden" id="favours-response-<%= postable.id%>">
@@ -76,5 +76,9 @@
 <!-- end comment method -->
 <!-- Help message method -->
 <div class="new-message hidden" >
+<div>
+  <h2>Send your message</h2>
     <%= render('messages/form', { postable: postable, message: @message }) %>
   </div>
+  </div>
+</div>

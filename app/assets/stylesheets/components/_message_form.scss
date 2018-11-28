@@ -1,1 +1,47 @@
-_message_form.scss
+#message_help_content {
+}
+.new-message h2 {
+  font-size: 25px;
+  padding: 5px 0;
+  font-family: "Lato", sans-serif;
+  color: #172118;
+  text-align: justify;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.new-message{
+  // width: 100%;
+  // background-color: white;
+  border-top: 1px solid $middle-grey;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  // border-radius: 3px;
+  // margin-top: 0px;
+  // box-shadow: 0 0 20px $box-shadow;
+  // border: 1px solid $middle-grey;
+}
+.message-input{
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  background: $middle-grey;
+  border-radius: 3px;
+  margin: 10px;
+}
+#help-content {
+  width: 100%;
+}
+#phone {
+  width: 150px;
+}
+#email {
+ width: 150px;
+}
+#message_available_time {
+  width: 100px;
+}
+.coordonate {
+  display: flex;
+}
