@@ -69,6 +69,18 @@ ActiveRecord::Schema.define(version: 2018_11_27_221808) do
     t.index ["user_id"], name: "index_information_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.text "help_content"
+    t.string "phone"
+    t.string "email"
+    t.date "available_time"
+    t.bigint "user_id"
+    t.bigint "favour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["favour_id"], name: "index_messages_on_favour_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+
   create_table "reservations", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "event_id"
@@ -76,6 +88,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_221808) do
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_reservations_on_event_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+
   end
 
   create_table "responses", force: :cascade do |t|
@@ -123,8 +136,13 @@ ActiveRecord::Schema.define(version: 2018_11_27_221808) do
   add_foreign_key "favourites", "users"
   add_foreign_key "favours", "users"
   add_foreign_key "information", "users"
+
+  add_foreign_key "messages", "favours"
+  add_foreign_key "messages", "users"
+
   add_foreign_key "reservations", "events"
   add_foreign_key "reservations", "users"
+
   add_foreign_key "responses", "users"
   add_foreign_key "saved_informations", "information"
   add_foreign_key "saved_informations", "users"

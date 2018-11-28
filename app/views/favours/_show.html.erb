@@ -1,6 +1,5 @@
 <!--  -->
 <!-- display favour just created -->
-
 <div class="card blue-card">
 
   <div class="body-card">
@@ -30,7 +29,7 @@
   </div>
   <div class="card-footer">
     <div class="footer-link">
-      <%= link_to root_path do %>
+      <%= link_to root_path, class: "message-button" do %>
         <%= image_tag("handlove.png", alt: "logo", class: "logo-footer")%> Help post
       <% end %>
     </div>
@@ -46,7 +45,7 @@
     </div>
   </div><!-- end card-footer -->
 
-</div><!-- end card -->
+<!-- end card -->
 <!-- <div class="new-response"> -->
 <!-- comment method -->
 <div class="response hidden" id="favours-response-<%= postable.id%>">
@@ -70,9 +69,24 @@
       <% end %>
     <% end %>
   </div>
-
   <div id="new-response">
     <%= render('responses/form', { postable: postable, response: @response }) %>
   </div>
+</div>
+<!-- end comment method -->
+<!-- Help message method -->
+  <div class="new-message hidden" >
 
+    <div id="top-message">
+        <div>
+        <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %>
+        </div>
+        <div>
+        <h2>Send your message</h2>
+        </div>
+    </div>
+    <div>
+      <%= render('messages/form', { postable: postable, message: @message }) %>
+    </div>
+  </div>
 </div>

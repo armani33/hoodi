@@ -1,0 +1,64 @@
+#message_help_content {
+}
+.new-message h2 {
+  font-size: 25px;
+  padding: 5px 0;
+  font-family: "Lato", sans-serif;
+  color: #172118;
+  text-align: justify;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.new-message{
+  // width: 100%;
+  // background-color: white;
+  border-top: 1px solid $middle-grey;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  // border-radius: 3px;
+  // margin-top: 0px;
+  // box-shadow: 0 0 20px $box-shadow;
+  // border: 1px solid $middle-grey;
+}
+
+#top-message {
+  display: flex;
+  justify-content: center;
+}
+
+.message-input{
+  display: flex;
+  justify-content: space-between;
+  // width: 500px;
+  background: $middle-grey;
+  border-radius: 3px;
+  margin: 10px;
+}
+#help-content {
+  width: 500px;
+  height: 100px;
+  background: white;
+  border: none !important;
+}
+#phone {
+  width: 200px;
+}
+#email {
+ width: 200px;
+}
+#message_available_time {
+  width: 100px;
+}
+.coordonate {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+.footer-message {
+ display: flex;
+ justify-content: space-evenly;
+ margin-bottom: 20px;
+}
