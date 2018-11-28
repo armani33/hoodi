@@ -8,7 +8,14 @@
   border-bottom: 1px solid $light-grey !important;
   padding: 20px 25px !important;
 }
-
+input[type='file']{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
 textarea{
   -webkit-appearance: none !important;
   outline: none !important;
@@ -35,6 +42,7 @@ select{
   appearance: none !important;
   padding: 5px !important;
   border: none !important;
+  background-color: white !important;
 }
 select[include_blank]{
   text-align:center;
@@ -69,9 +77,8 @@ select[include_blank]{
   justify-content: space-between;
   align-items: center;
   padding: 0 25px;
-
+  margin-top: 8px;
 }
-
 .button {
   display: flex;
   justify-content: space-around;
@@ -86,7 +93,12 @@ select[include_blank]{
   cursor: pointer;
   position: relative;
 }
-
+.button-long{
+  height: 40px;
+  width: 550px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
 .button p {
   margin: 0;
 }
@@ -104,7 +116,19 @@ select[include_blank]{
   background-color: $pink;
   color: white;
 }
-
+.button-yellow {
+  background-color: $yellow;
+  color: white;
+}
+.button-blue {
+  background-color: $blue;
+  color: white;
+}
+.button-blue-transparent {
+  border: 2px solid $blue;
+  font-weight: 400 !important;
+  color: $blue;
+}
 .date{
   display: flex;
   flex-direction: column;

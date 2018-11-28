@@ -7,6 +7,7 @@
     <div class="card-content">
       <span class="post-badge">EVENT</span>
       <p><%= postable.content %></p>
+      <%= cl_image_tag(postable.photo , class: 'image-post') %>
     </div><!-- end card-content -->
     <div class="card-top">
       <div class="avatar-medium">
