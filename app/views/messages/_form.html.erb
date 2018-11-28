@@ -5,7 +5,10 @@
 
   <%= form.input :email, input_html: { class: "message-input", id: "email" }, label: false, placeholder: "Email adress" %>
   </div>
+
+  <div class="footer-message">
   <%= form.date_field :available_time, class: "message-input", label: false, placeholder: "Availability" %>
 
   <%= form.button :submit, class: "submit_button" %>
 <% end %>
+</div>

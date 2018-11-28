@@ -53,7 +53,7 @@
     <% if postable.responses.blank? %>
       Leave a response
     <% else %>
-      <%postable.responses.each do |response_object|%>document.querySelector("#new-message");
+      <%postable.responses.each do |response_object|%>
       <div class="response-content">
           <div class="avatar-medium">
       <%= cl_image_tag(User.find(response_object.user_id).photo, {class: "avatar-medium"}) %>
@@ -75,10 +75,18 @@
 </div>
 <!-- end comment method -->
 <!-- Help message method -->
-<div class="new-message hidden" >
-<div>
-  <h2>Send your message</h2>
-    <%= render('messages/form', { postable: postable, message: @message }) %>
-  </div>
+  <div class="new-message hidden" >
+
+    <div id="top-message">
+        <div>
+        <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %>
+        </div>
+        <div>
+        <h2>Send your message</h2>
+        </div>
+    </div>
+    <div>
+      <%= render('messages/form', { postable: postable, message: @message }) %>
+    </div>
   </div>
 </div>

@@ -14,6 +14,7 @@
   // background-color: white;
   border-top: 1px solid $middle-grey;
   display: flex;
+  flex-direction: column;
   // align-items: center;
   justify-content: center;
   margin: 0 10px;
@@ -22,26 +23,42 @@
   // box-shadow: 0 0 20px $box-shadow;
   // border: 1px solid $middle-grey;
 }
-.message-input{
+
+#top-message {
   display: flex;
   justify-content: center;
-  width: 500px;
+}
+
+.message-input{
+  display: flex;
+  justify-content: space-between;
+  // width: 500px;
   background: $middle-grey;
   border-radius: 3px;
   margin: 10px;
 }
 #help-content {
-  width: 100%;
+  width: 500px;
+  height: 100px;
+  background: white;
+  border: none !important;
 }
 #phone {
-  width: 150px;
+  width: 200px;
 }
 #email {
- width: 150px;
+ width: 200px;
 }
 #message_available_time {
   width: 100px;
 }
 .coordonate {
   display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+.footer-message {
+ display: flex;
+ justify-content: space-evenly;
+ margin-bottom: 20px;
 }
