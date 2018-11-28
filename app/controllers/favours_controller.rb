@@ -1,6 +1,7 @@
 class FavoursController < ApplicationController
   def create
     @response = Response.new
+    @message = Message.new
     @favour = Favour.new(favour_params)
     @favour.user = current_user
     @favour.save!
@@ -11,6 +12,7 @@ class FavoursController < ApplicationController
 
   def show
     @favour = Favour.find(params[:id])
+    @message = Message.new
     @response = Response.new # <-- You need this now.
   end
 
