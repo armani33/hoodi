@@ -12,7 +12,6 @@
   color: white;
   z-index: 1;
 }
-
 .navbar-content{
   display: flex;
   align-items: center;
@@ -183,3 +182,74 @@
   height: 45px;
   width: 100%;
 }
+
+
+
+.navbar-hoodi-sign-in{
+  height: 85px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background: $black;
+  transition: all 0.3s ease;
+  padding: 0px 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-sign-in{
+  display: flex;
+}
+
+.brand-list-sign-in img{
+  margin-top: -18px;
+  height: 80px
+}
+.brand-list-sign-in #hoodi-nav{
+  font-family: $logo-font;
+  font-size: 30px;
+  color: white;
+  margin: 0;
+  margin-top: -12px;
+}
+.email-input{
+  padding: 4px;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  color: black;
+}
+.pwd-input{
+  padding: 3px;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  color: black;
+}
+.submit-sign-in{
+  padding: 2px 5px;
+  background-color: #373d38;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+.submit-sign-in:hover{
+  background-color: #575e58;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
