@@ -54,4 +54,13 @@
   font-size: 13px;
   padding-top: 5px;
 }
-
+.message-content h1{
+  font: $headers-font;
+  font-size: 15px;
+}
+.message-content {
+  padding-top: 20px;
+  padding-left: 5px;
+  font: $body-font;
+  font-size: 13px;
+}
