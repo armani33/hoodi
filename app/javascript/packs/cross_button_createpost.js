@@ -12,6 +12,8 @@ document.querySelector(".cross-button-3").addEventListener("click", (event) => {
  document.querySelector(".create-post-window-3").classList.add("hidden");
 });
 
+
+
 document.querySelector(".nav-yellow").addEventListener("click", (event) => {
  event.preventDefault();
  document.querySelector(".create-post-window-1").classList.remove("hidden");

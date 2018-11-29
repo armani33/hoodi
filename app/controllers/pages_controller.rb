@@ -1,27 +1,37 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home, :landing]
   def home
-    new_information
-    new_favour
-    new_event
-    # TODO build @posts array
-    # @posts = []
-    find_informations
-    find_events
-    find_favours
-    @response = Response.new
-    @message = Message.new
-    merge = @informations + @events + @favours
-    @posts = merge.sort! { |x, y| y.created_at <=> x.created_at }
+    if user_signed_in?
+      new_information
+      new_favour
+      new_event
+      # TODO build @posts array
+      # @posts = []
+      find_informations
+      find_events
+      find_favours
+      @response = Response.new
+      @message = Message.new
+      merge = @informations + @events + @favours
+      @posts = merge.sort! { |x, y| y.created_at <=> x.created_at }
 
 
 
-    # @users = User.where.not(latitude: nil, longitude: nil)
-    @user_marker = {lat: current_user.latitude, lng: current_user.longitude}
-    respond_to do |format|
-      format.html
-      format.js  # <-- will render `app/views/pages/home.js.erb`
+      # @users = User.where.not(latitude: nil, longitude: nil)
+      @user_marker = {lat: current_user.latitude, lng: current_user.longitude}
+      respond_to do |format|
+        format.html
+        format.js  # <-- will render `app/views/pages/home.js.erb`
+      end
+    else
+      redirect_to pages_landing_path
     end
+  end
 
+  def landing
+    if user_signed_in?
+      redirect_to root_path
+    end
   end
 
   def new_information
