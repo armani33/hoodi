@@ -1,5 +1,3 @@
-#message_help_content {
-}
 .new-message h2 {
   font-size: 25px;
   padding: 5px 0;
@@ -61,4 +59,11 @@
  display: flex;
  justify-content: space-evenly;
  margin-bottom: 20px;
+}
+.message-sender{
+  display: flex;
+}
+.message-item {
+  display: flex;
+  flex-direction: column;
 }
