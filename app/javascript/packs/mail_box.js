@@ -7,6 +7,3 @@ messageIcon.addEventListener("click", (event) => {
   map.classList.toggle("hidden");
   mailBox.classList.toggle("hidden");
 })
-
-
-

@@ -1,23 +1,31 @@
 <div class="message-container">
-<%= render 'messages/index' %>
-<div class="message-nav-bar">
-  <p>Mail Box : <%= current_user.first_name %></p>
-  <p><%= @messages.length %> messages</p>
-</div>
-<% if @messages.empty? %>
-<h3>No messages</h3>
-<% else %>
-<% @messages.each do |message| %>
-  <div class="message-sender">
-    <%= cl_image_tag(message.user.photo, {class: "avatar-medium"}) %>
-    <%= message.user.first_name %> <%= message.user.last_name %>:
+  <%= render 'messages/index' %>
+  <div class="message-nav-bar">
+    <div id="title-mail-box">
+
+    </div>
+    <div id="nb-message">
+      <%= @messages.length %> messages
+    </div>
   </div>
-  <div class="favour-reference">
-    Response to your favour: <%= message.favour.content %>
+  <% if @messages.empty? %>
+  <h3>No messages</h3>
+  <% else %>
+  <% @messages.each do |message| %>
+
+    <div class="message-item read">
+    <div class="message-sender">
+      <%= cl_image_tag(message.user.photo, {class: "avatar-mail-box"}) %>
+    </div>
+    <div class="message-titles">
+    <div class="message-user-name">
+      <strong><%= message.user.first_name.upcase %> <%= message.user.last_name.upcase %></strong>
+    </div>
+    <div class="favour-reference">
+      In response to: <%= message.favour.content %>
+    </div>
+    </div>
+    </div>
+  <% end %>
+  <% end %>
   </div>
-  <div class="favour-content">
-    <%= message.help_content %>
-  </div>
-<% end %>
-<% end %>
-</div>

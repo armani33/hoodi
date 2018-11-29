@@ -5,3 +5,5 @@ document.querySelector(".message-button").addEventListener("click", (event) => {
 const messageFavour = document.querySelector(".new-message");
 messageFavour.classList.toggle("hidden");
 });
+
+
