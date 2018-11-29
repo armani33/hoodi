@@ -1,4 +1,15 @@
 <%= simple_form_for([postable, response], remote: true) do |form| %>
-  <%= form.input :content, as: :text%>
-  <%= form.button :submit %>
+<div id="new-response">
+      <div>
+        <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %>
+      </div>
+      <div>
+  <%= form.input :content, as: :text, input_html: {class: "new-response-content"}, label: false, placeholder: "Leave a comment!"%>
+  </div>
+  <div id="comment-button">
+  <%= form.button :submit, value: "Comment", class: "comment-button-form", label: false, placeholder: "Comment" %>
+  </div>
+  </div>
 <% end %>
+
+
