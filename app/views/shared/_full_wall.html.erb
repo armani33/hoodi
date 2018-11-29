@@ -1,5 +1,5 @@
 <% @posts.each do |post| %><!-- call all the posts from all types within specified perimeter -->
-  <% if current_user.in?(post.user.nearbys(post.perimeter, units: :km)) || post.user == current_user %>
+  <%# if current_user.in?(post.user.nearbys(post.perimeter, units: :km)) || post.user == current_user %>
     <!-- check if card is type info -->
     <% if post.class == Information %>
       <!-- refer to show from info -->
@@ -9,5 +9,5 @@
     <% else post.class == Favour %><!-- check if card is type favour -->
       <%= render 'favours/show', postable: post, response: @response %>
     <% end %>
-  <% end %>
+  <%# end %>
 <% end %>
