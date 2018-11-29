@@ -165,17 +165,79 @@
 .underline{
   font-weight: bold;
   text-transform: uppercase;
-  background-color: $border-light-grey;
+  background-color: $background-gray;
 }
 .text-comment{
   display: flex;
+  flex-direction: row;
   width: 470px;
-  margin: 0 10px;
-  padding: 0 20px;
-  background-color: $border-light-grey;
+  margin: 0 15px;
+  padding: 10px 20px;
+  background-color: $background-gray;
   border-radius: 50px;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+.text-comment h1{
+  font: $headers-font;
+  color: $black;
+  font-size: 15px;
+  margin: 0;
+  padding-right: 8px;
+}
+.text-comment p{
+  font: $body-font;
+  font-size: 15px;
+  margin: 0;
 }
 .response-content{
   display: flex;
-  margin: 10px 5px;
+  // margin: 20px 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  align-items: center;
+  margin-top: 10px;
+}
+#new-response{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-left: 5px;
+  padding-right: 5px;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.new-response-content{
+  overflow: hidden;
+  display: flex;
+  height: 40px !important;
+  font-size: 15px !important;
+  margin: 0 15px;
+  padding: 0 !important;
+  background-color: $background-gray !important;
+  border-radius: 50px;
+  justify-content: flex-start;
+  align-items: center !important;
+}
+.comment-button-form{
+  font-size: 15px;
+  background-color: $background-gray;
+  box-shadow: 0 0 20px $box-shadow;
+  border: 1px solid $middle-grey;
+  font-weight: bold;
+  color: $grey;
+  margin-left: 30px;
+}
+.time-response{
+  font: $body-font;
+  font-size: 10px;
+  color: $middle-grey;
+}
+
+.response {
+  padding: 15px 5px;
 }

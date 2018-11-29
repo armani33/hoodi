@@ -1,31 +1,36 @@
 // Selector
   // Favour
 <% if @response.postable_type == "Favour" %>
-  var newResponseFormFavour = document.getElementById('response_content');
+  console.log("favour test")
+  var newResponseFormFavour = document.getElementById('new-response');
   var selector = "#favours-response-<%= @response.postable_id %> .response-display";
   var responsesFavour = document.querySelector(selector);
-  var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %><div class="text-comment"> <strong><%= current_user.first_name.capitalize%>: </strong> </div><%= j render "responses/show", response: @response %></div></div></div>'
+
+  var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %></div><div class="text-comment"> <h1><strong><%= current_user.first_name.capitalize%>: </strong></h1> <%= j render "responses/show", response: @response %></div></div></div>'
   addResponse(responsesFavour, insertHTMLAdd);
   refreshForm(newResponseFormFavour);
 
 <% elsif @response.postable_type == "Information" %>
-  var newResponseFormInformation = document.getElementById('response-content');
-  var selector = "#informations-response-<%= @response.postable_id %> .response-display";
+console.log("info test")
+  var newResponseFormInformation = document.getElementById('new-response');
+  var selector = "#infos-response-<%= @response.postable_id %> .response-display";
+    console.log(selector)
   var responsesInformation = document.querySelector(selector);
-  var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %><div class="text-comment"> <strong><%= current_user.first_name.capitalize%>: </strong> </div><%= j render "responses/show", response: @response %></div></div></div>'
-  addResponse(responsesInformation, insertHTMLAdd);
+  var insertHTMLAddInfo = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %></div><div class="text-comment"> <h1><strong><%= current_user.first_name.capitalize%>: </strong></h1> <%= j render "responses/show", response: @response %></div></div></div>'
+  addResponse(responsesInformation, insertHTMLAddInfo);
   refreshForm(newResponseFormInformation);
 
 
 
 
 <% elsif @response.postable_type == "Event" %>
-  var newResponseFormInformation = document.getElementById('response-content');
+  console.log("event test")
+  var newResponseFormEvent = document.getElementById('new-response');
   var selector = "#events-response-<%= @response.postable_id %> .response-display";
-  var responsesInformation = document.querySelector(selector);
-  var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %><div class="text-comment"> <strong><%= current_user.first_name.capitalize%>: </strong> </div><%= j render "responses/show", response: @response %></div></div></div>'
-  addResponse(responsesInformation, insertHTMLAdd);
-  refreshForm(newResponseFormInformation);
+  var responsesEvent = document.querySelector(selector);
+  var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %></div><div class="text-comment"> <h1><strong><%= current_user.first_name.capitalize%>: </strong></h1> <%= j render "responses/show", response: @response %></div></div></div>'
+  addResponse(responsesEvent, insertHTMLAdd);
+  refreshForm(newResponseFormEvent);
 <% end %>
 
 function refreshForm(newResponseForm) {
@@ -42,7 +47,7 @@ function addResponse(responses, responseHTML) {
 
 
 
-  // Information
+<!--   // Information
 // var newResponseFormInfo = document.getElementById('response_content');
 // var responsesInfo = document.getElementById('response-display-info');
 // Function
@@ -55,3 +60,4 @@ function addResponse(responses, responseHTML) {
   //Information
 
 // refreshForm(newResponseFormInfo);
+ -->
