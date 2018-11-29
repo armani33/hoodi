@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def index
     @messages = Message.all
     render 'pages/message'
+    # render 'shared/mail_box'
   end
 
   def create

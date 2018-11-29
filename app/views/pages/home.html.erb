@@ -13,6 +13,7 @@
           <%= render 'shared/full_wall' %>
         </div>
       </div>
+      <!-- hidden class toggle for mail box display -->
     <div class="map-layout">
       <div class="sticky-container">
         <div
@@ -22,6 +23,12 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         ></div>
       </div>
+      <div id="mail-box" class="hidden">
+      <%= render 'shared/mail_box' %>
     </div>
+
+    </div>
+
+
   </div>
 </div>

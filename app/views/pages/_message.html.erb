@@ -1,0 +1,10 @@
+<% @messages = Message.all %>
+<% if @messages.empty? %>
+<h3>No messages</h3>
+<% else %>
+<% @messages.each do |message| %>
+<div>
+<%= message.help_content %>
+</div>
+<% end %>
+<% end %>

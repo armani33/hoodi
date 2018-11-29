@@ -1,0 +1,57 @@
+.message-container{
+  border: 1px solid $border-light-grey;
+  height: 534px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#title-mail-box {
+  font: $headers-font;
+  font-size: 20px;
+  color: $grey;
+}
+
+#nb-message{
+  font: $body-font;
+  font-size: 10px;
+  color: $grey;
+}
+.message-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: $middle-grey;
+  height: 30px;
+  align-self: flex-end;
+}
+
+.message-item{
+  padding: 5px;
+  display: flex;
+  border: 1px solid $border-light-grey;
+  background: $light-grey;
+}
+.read {
+ background: $light-grey;
+}
+.message-titles{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+.message-user-name {
+  font: $headers-font;
+  font-size: 15px;
+  padding-top: 5px;
+
+}
+.favour-reference {
+  font: $body-font;
+  font-size: 13px;
+  padding-top: 5px;
+}
+
