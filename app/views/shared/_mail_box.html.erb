@@ -27,7 +27,10 @@
     </div>
     </div>
     <div class="message-content hidden">
-       <%= message.help_content %>
+       <%=message.user.first_name%> said: <%= message.help_content %>
+       Contact:
+       Phone number: <%=message.phone%>
+       Email: <%=message.email%>
     </div>
     </div>
 
