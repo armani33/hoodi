@@ -33,6 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 0 !important;
 }
 
 .nav-link:hover,  {
@@ -114,6 +115,7 @@
   width: 15px;
   height: 15px;
   position: absolute;
+  top: 10px;
   right: 10px;
 
 }

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'reservations/create'
   devise_for :users
   root to: 'pages#home'
+  get 'pages/landing', to: 'pages#landing'
   get 'pages/nearby_users', to: 'pages#nearby_users'
 
   # get 'pages/message', to: 'messages#index'

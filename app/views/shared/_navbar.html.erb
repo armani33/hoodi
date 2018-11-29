@@ -1,10 +1,10 @@
-<div class="navbar-hoodi">
+<div class="navbar-hoodi <%if !signed_in? %> <%= 'navbar-hoodi-sign-in' %> <% end %>">
   <div class="container-page">
     <div class="navbar-content">
     <!-- Logo -->
       <div class="brand access-layout">
         <%= link_to root_path, { :class=>"brand-link" } do %>
-          <div class="brand-list">
+          <div class="brand-list <%if !signed_in? %> <%= 'brand-list-sign-in' %> <% end %>">
             <%= image_tag('hoodi_white.png', class: "navbar-hoodi-brand", alt: 'logo') %>
             <h2 id="hoodi-nav">Hoodi</h2>
           </div>
@@ -65,7 +65,11 @@
           </div>
         <% else %>
           <div class="navbar-sign-in">
-              <p>work on that</p>
+            <%= form_for(:user, :url => session_path(:user)) do |f| %>
+              <%= f.text_field :email, placeholder: 'email', class: 'email-input' %>
+              <%= f.password_field :password, placeholder: 'password', class: 'pwd-input' %>
+              <%= f.submit 'Sign in', class: 'submit-sign-in'%>
+            <% end %>
           </div>
         <% end %>
     </div>

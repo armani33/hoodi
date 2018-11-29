@@ -7,7 +7,10 @@
     "bootstrap": "3",
     "jquery": "^3.3.1",
     "mapbox-gl": "^0.51.0",
-    "places.js": "^1.14.0"
+    "nouislider": "^12.1.0",
+    "places.js": "^1.14.0",
+    "propellerkit-datetimepicker": "^1.2.0",
+    "wnumb": "^1.1.0"
   },
   "devDependencies": {
     "webpack-dev-server": "2.11.2"
