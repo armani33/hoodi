@@ -6,12 +6,12 @@ const commentContentFavour = document.querySelector("#comment");
 toggleResponses(buttonCommentFavour, responseFavour, commentContentFavour);
 }
 // Selection for Information
-else if (document.querySelector(".response-info")!= null) {
-const responseInfo = document.querySelector(".response-info");
-const buttonCommentInfo = document.querySelector(".comment-button-info");
-const commentContentInfo = document.querySelector("#comment-info");
-toggleResponses(buttonCommentInfo, responseInfo, commentContentInfo);
-}
+// else if (document.querySelector(".response-info")!= null) {
+// const responseInfo = document.querySelector(".response-info");
+// const buttonCommentInfo = document.querySelector(".comment-button-info");
+// const commentContentInfo = document.querySelector("#comment-info");
+// toggleResponses(buttonCommentInfo, responseInfo, commentContentInfo);
+// }
 // Selection for Information
 else {
 const responseEvent = document.querySelector(".response-event");
