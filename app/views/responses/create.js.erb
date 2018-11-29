@@ -2,7 +2,7 @@
   // Favour
 <% if @response.postable_type == "Favour" %>
   console.log("favour test")
-  var newResponseFormFavour = document.getElementById('new-response');
+  var newResponseFormFavour = document.querySelector('.nex-response-content');
   var selector = "#favours-response-<%= @response.postable_id %> .response-display";
   var responsesFavour = document.querySelector(selector);
 
