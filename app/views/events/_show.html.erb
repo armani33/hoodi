@@ -32,9 +32,17 @@
 
   <!-- end card-content -->
   <div class="card-footer">
-    <div class="footer-link">
+    <div class="footer-link footer-link-invitation">
       <%= link_to event_reservations_path(postable), method: :post, remote: true do %>
-        <%= image_tag("invited.png", alt: "logo", class: "logo-footer")%> RSVP
+        <div class="neutral">
+          <%= image_tag("invited.png", alt: "logo", class: "logo-footer")%> Invited
+        </div>
+        <div class="accepted hidden">
+          <%= image_tag("accepted.png", alt: "logo", class: "logo-footer")%> Going
+        </div>
+        <div class="decline hidden">
+          <%= image_tag("decline.png", alt: "logo", class: "logo-footer")%> Can't go
+        </div>
       <% end %>
     </div>
     <div class="footer-link" id="comment-event">
