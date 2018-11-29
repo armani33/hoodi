@@ -1,9 +1,9 @@
 <div class="message-container">
   <%= render 'messages/index' %>
   <div class="message-nav-bar">
-    <div id="title-mail-box">
+    <!-- <div id="title-mail-box">
 
-    </div>
+    </div> -->
     <div id="nb-message">
       <%= @messages.length %> messages
     </div>
@@ -27,10 +27,11 @@
     </div>
     </div>
     <div class="message-content hidden">
-       <%=message.user.first_name%> said: <%= message.help_content %>
-       Contact:
-       Phone number: <%=message.phone%>
-       Email: <%=message.email%>
+      <strong> <%=message.user.first_name%> said:</strong> <%= message.help_content %><br> <br>
+       <strong>Contact <%=message.user.first_name%>:</strong><br>
+       <u>Phone number</u>: <%=message.phone%> <br>
+       <u>Email</u>: <%=message.email%>
+       </span>
     </div>
     </div>
 
