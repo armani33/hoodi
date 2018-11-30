@@ -30,7 +30,7 @@
 
   <div class="card-footer">
     <div class="footer-link">
-      <%= link_to information_favourites_path(postable), method: :post do %>
+      <%= link_to information_favourites_path(postable), method: :post, remote: true, class: "save-post-link" do %>
         <%= image_tag("love_neighbour.png", alt: "logo", class: "logo-footer")%> Saved post
       <% end %>
     </div>
