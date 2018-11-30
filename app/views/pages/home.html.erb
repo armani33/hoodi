@@ -22,11 +22,10 @@
           data-usermarker="<%= @user_marker.to_json %>"
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
         ></div>
+        <div id="mail-box" class="hidden">
+          <%= render 'shared/mail_box' %>
+        </div>
       </div>
-      <div id="mail-box" class="hidden">
-      <%= render 'shared/mail_box' %>
-    </div>
-
     </div>
 
 
