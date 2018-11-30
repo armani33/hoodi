@@ -96,7 +96,7 @@
 
 <% content_for :after_js do %>
   <script type="text/javascript">
-    const pinkCards = document.querySelectorAll(".pink-card");
+    var pinkCards = document.querySelectorAll(".pink-card");
 
     pinkCards.forEach((pinkCard) => {
     var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();

@@ -5,7 +5,7 @@ allPosts.innerHTML = "<%= j render 'shared/full_wall', posts: @posts, response: 
 // ==============================response_invitations.js======================================
 
 try {
-const pinkCards = document.querySelectorAll(".pink-card");
+  var pinkCards = document.querySelectorAll(".pink-card");
 
   pinkCards.forEach((pinkCard) => {
     const neutral = pinkCard.querySelector('.neutral');
