@@ -8,7 +8,6 @@ gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
 gem 'geocoder'
-
 gem 'rest-client', '2.0.1'
 
 gem 'autoprefixer-rails'

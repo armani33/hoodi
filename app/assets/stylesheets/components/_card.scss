@@ -40,6 +40,15 @@
   // top: 0;
   // height: 50px;
 }
+.card-top-user{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.card-top-event{
+  display: flex;
+  justify-content: space-between;
+}
 .card-content p{
     font-size: 25px;
     padding: 5px 0;
@@ -62,7 +71,11 @@
 }
 .user-name p{
   font-family: $body-font;
-  font-size: 10px;
+  font-size: 10px;  padding: 3px 6px;
+  border-radius: 3px;
+  color: white;
+  font-size: 8px;
+  font-weight: bold;
   padding: 0;
   margin: 0;
 }
@@ -240,4 +253,16 @@
 
 .response {
   padding: 15px 5px;
+}
+
+#countdown {
+  background: $pink;
+  color: white;
+  width: 200px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-weight: bold;
 }

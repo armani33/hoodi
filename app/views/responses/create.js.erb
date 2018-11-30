@@ -1,36 +1,54 @@
 // Selector
   // Favour
+
+
+
 <% if @response.postable_type == "Favour" %>
-  console.log("favour test")
+
+  // const allCommentFields = card.querySelectorAll(".new-response-content").forEach((commentField) => {
+  //   commentField.value = "";
+  // });
+
   var newResponseFormFavour = document.querySelector('.nex-response-content');
   var selector = "#favours-response-<%= @response.postable_id %> .response-display";
   var responsesFavour = document.querySelector(selector);
 
   var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %></div><div class="text-comment"> <h1><strong><%= current_user.first_name.capitalize%>: </strong></h1> <%= j render "responses/show", response: @response %></div></div></div>'
   addResponse(responsesFavour, insertHTMLAdd);
-  refreshForm(newResponseFormFavour);
+  // refreshForm(newResponseFormFavour);
+  var allCommentFields = document.querySelectorAll(".new-response-content").forEach((commentField) => {
+    commentField.value = "";
+    });
 
 <% elsif @response.postable_type == "Information" %>
-console.log("info test")
+
+
   var newResponseFormInformation = document.getElementById('new-response');
   var selector = "#infos-response-<%= @response.postable_id %> .response-display";
     console.log(selector)
   var responsesInformation = document.querySelector(selector);
   var insertHTMLAddInfo = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %></div><div class="text-comment"> <h1><strong><%= current_user.first_name.capitalize%>: </strong></h1> <%= j render "responses/show", response: @response %></div></div></div>'
   addResponse(responsesInformation, insertHTMLAddInfo);
-  refreshForm(newResponseFormInformation);
+  // refreshForm(newResponseFormInformation);
+  var allCommentFields = document.querySelectorAll(".new-response-content").forEach((commentField) => {
+    commentField.value = "";
+    });
 
 
 
 
 <% elsif @response.postable_type == "Event" %>
-  console.log("event test")
+
   var newResponseFormEvent = document.getElementById('new-response');
   var selector = "#events-response-<%= @response.postable_id %> .response-display";
   var responsesEvent = document.querySelector(selector);
   var insertHTMLAdd = '<div class="response-content"><div class="avatar-medium"> <%= cl_image_tag(current_user.photo, {class: "avatar-medium"}) %></div><div class="text-comment"> <h1><strong><%= current_user.first_name.capitalize%>: </strong></h1> <%= j render "responses/show", response: @response %></div></div></div>'
   addResponse(responsesEvent, insertHTMLAdd);
   refreshForm(newResponseFormEvent);
+      var allCommentFields = document.querySelectorAll(".new-response-content").forEach((commentField) => {
+    commentField.value = "";
+    });
+
 <% end %>
 
 function refreshForm(newResponseForm) {
@@ -39,25 +57,3 @@ function refreshForm(newResponseForm) {
 function addResponse(responses, responseHTML) {
   responses.insertAdjacentHTML('afterend', responseHTML);
 }
-
-
-
-
-
-
-
-
-<!--   // Information
-// var newResponseFormInfo = document.getElementById('response_content');
-// var responsesInfo = document.getElementById('response-display-info');
-// Function
-
-// Processing
-  // Favour
-
-// addResponse(responsesInfo, '<%= j render "responses/show", response: @response %>');
-
-  //Information
-
-// refreshForm(newResponseFormInfo);
- -->
