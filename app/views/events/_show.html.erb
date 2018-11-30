@@ -2,14 +2,14 @@
 <!-- display event just created -->
 
 <div class="card pink-card" id="event-<%= postable.id %>">
-
   <div class="body-card">
     <div class="card-content">
       <span class="post-badge">EVENT</span>
       <p><%= postable.content %></p>
       <%= cl_image_tag(postable.photo , class: 'image-post') %>
     </div><!-- end card-content -->
-    <div class="card-top">
+    <div class="card-top-event">
+      <div class="card-top-user">
       <div class="avatar-medium">
         <%= cl_image_tag(postable.user.photo, {class: "avatar-medium"}) %>
       </div>
@@ -24,8 +24,15 @@
             <p>400m away</p>
           </div>
       </div>
+      </div>
+      <div id="date">
+        <p> <% postable.date %></p>
+      </div>
       <div class="option-menu">
         <%= image_tag("dropdown_menu_card.png", class: "dropdown-card") %>
+      </div>
+      <div id="countdown" class="hidden">
+
       </div>
     </div>
   </div>
@@ -86,3 +93,37 @@
 </div>
 <!-- end card -->
 <!-- comment method -->
+
+<% content_for :after_js do %>
+  <script type="text/javascript">
+    const pinkCards = document.querySelectorAll(".pink-card");
+
+    pinkCards.forEach((pinkCard) => {
+    var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+
+  // Update the count down every 1 second
+    var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Display the result in the element with id="demo"
+    pinkCard.querySelector("#countdown").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+      clearInterval(x);
+      pinkCard.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+});
+</script>
+
+<% end %>

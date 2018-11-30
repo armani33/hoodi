@@ -10,6 +10,5 @@ class FavouritesController < ApplicationController
     @favourite.information = @information
     @favourite.user = current_user
     @favourite.save!
-    redirect_to root_path
   end
 end
