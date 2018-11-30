@@ -2,3 +2,124 @@ var allPosts = document.getElementById('all_posts');
 
 allPosts.innerHTML = "<%= j render 'shared/full_wall', posts: @posts, response: @response %>";
 
+// ==============================response_invitations.js======================================
+
+try {
+  var pinkCards = document.querySelectorAll(".pink-card");
+
+  pinkCards.forEach((pinkCard) => {
+    const neutral = pinkCard.querySelector('.neutral');
+    const accepted = pinkCard.querySelector('.accepted');
+    const decline = pinkCard.querySelector('.decline')
+
+    pinkCard.querySelector(".footer-link-invitation").addEventListener("click", (event) => {
+     event.preventDefault();
+     if (neutral.classList.contains('hidden')){
+      if(accepted.classList.contains('hidden')){
+        pinkCard.querySelector(".accepted").classList.remove("hidden");
+        pinkCard.querySelector(".decline").classList.add("hidden");
+      }else{
+        pinkCard.querySelector(".accepted").classList.add("hidden");
+        pinkCard.querySelector(".decline").classList.remove("hidden");
+      }
+     } else{
+      pinkCard.querySelector(".neutral").classList.add("hidden");
+      pinkCard.querySelector(".accepted").classList.remove("hidden");
+     }
+    });
+  });
+
+} catch(e) {
+  console.log(e);
+}
+
+// ===================================comment.js======================================
+
+try {
+  var blueCards = document.querySelectorAll(".blue-card");
+
+  blueCards.forEach((blueCard) => {
+    var responseFavour = blueCard.querySelector(".response");
+    var buttonCommentFavour = blueCard.querySelector(".comment-button");
+    var commentContentFavour = blueCard.querySelector("#comment");
+    toggleResponses(buttonCommentFavour, responseFavour, commentContentFavour);
+  });
+  // Selection for Information
+  // else if (document.querySelector(".response-info")!= null) {
+  // const responseInfo = document.querySelector(".response-info");
+  // const buttonCommentInfo = document.querySelector(".comment-button-info");
+  // const commentContentInfo = document.querySelector("#comment-info");
+  // toggleResponses(buttonCommentInfo, responseInfo, commentContentInfo);
+  // }
+  // Selection for Information
+  // else {
+  // const responseEvent = document.querySelector(".response-event");
+  // const buttonCommentEvent = document.querySelector(".comment-button-event")
+  // const commentContentEvent = document.querySelector("#comment-event")
+  // toggleResponses(buttonCommentEvent, responseEvent, commentContentEvent);
+  // }
+  function toggleResponses(button, response, comment) {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      // document.querySelector(".new-message").classList.add("hidden");
+      response.classList.toggle("hidden");
+      comment.classList.toggle("underline");
+    });
+  };
+} catch(e) {
+  console.log(e);
+}
+
+// =====================================comment_event.js==================================
+
+try {
+  var pinkCards = document.querySelectorAll(".pink-card");
+
+  pinkCards.forEach((pinkCard) => {
+
+    const responseEvent = pinkCard.querySelector(".response-event");
+    const buttonCommentEvent = pinkCard.querySelector(".comment-button-event")
+
+    const commentContentEvent = pinkCard.querySelector("#comment-event")
+    toggleResponses(buttonCommentEvent, responseEvent, commentContentEvent);
+
+  });
+
+  function toggleResponses(button, response, comment) {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      // document.querySelector(".new-message").classList.add("hidden");
+      response.classList.toggle("hidden");
+      comment.classList.toggle("underline");
+    });
+  };
+} catch(e) {
+  console.log(e);
+}
+
+// =====================================comment_info.js==================================
+
+try {
+  var yellowCards = document.querySelectorAll(".yellow-card");
+
+  yellowCards.forEach((yellowCard) => {
+
+  var responseInfo = yellowCard.querySelector(".response-info");
+  var buttonCommentInfo = yellowCard.querySelector(".comment-button-info");
+  var commentContentInfo = yellowCard.querySelector("#comment-info");
+  toggleResponses(buttonCommentInfo, responseInfo, commentContentInfo);
+
+
+  });
+
+  function toggleResponses(button, response, comment) {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      // document.querySelector(".new-message").classList.add("hidden");
+      response.classList.toggle("hidden");
+      comment.classList.toggle("underline");
+    });
+  };
+} catch(e) {
+  console.log(e);
+}
