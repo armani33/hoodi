@@ -8,7 +8,8 @@
       <p><%= postable.content %></p>
       <%= cl_image_tag(postable.photo , class: 'image-post') %>
     </div><!-- end card-content -->
-    <div class="card-top">
+    <div class="card-top-event">
+      <div class="card-top-user">
       <div class="avatar-medium">
         <%= cl_image_tag(postable.user.photo, {class: "avatar-medium"}) %>
       </div>
@@ -23,14 +24,15 @@
             <p>400m away</p>
           </div>
       </div>
+      </div>
       <div id="date">
         <p> <% postable.date %></p>
       </div>
-      <div id="countdown">
-
-      </div>
       <div class="option-menu">
         <%= image_tag("dropdown_menu_card.png", class: "dropdown-card") %>
+      </div>
+      <div id="countdown">
+
       </div>
     </div>
   </div>
@@ -94,7 +96,7 @@
 
 <% content_for :after_js do %>
   <script type="text/javascript">
-    var countDownDate = new Date("<%= postable.date.strftime('%a %b %Y %T')%>").getTime();
+    var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function() {
