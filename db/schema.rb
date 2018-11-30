@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_221808) do
+ActiveRecord::Schema.define(version: 2018_11_30_000950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2018_11_27_221808) do
     t.string "title"
     t.text "content"
     t.string "picture"
-    t.date "date"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_221808) do
     t.string "photo"
     t.string "location"
     t.float "perimeter"
+    t.datetime "date"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_221808) do
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "reserved"
     t.index ["event_id"], name: "index_reservations_on_event_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
