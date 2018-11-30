@@ -152,12 +152,25 @@ select[include_blank]{
 //   width: 250px;
 // }
 
+.age-button {
+  margin-left: 8px;
+}
+
 .choose-date{
   display: flex;
   flex-direction: column;
 }
+.choose-age{
+  display: flex;
 
-
+  div {
+    margin: 0 10px;
+  }
+}
+.choose-age .form-control {
+  padding: 10px 7px !important;
+  height: 10px;
+}
 
 
 

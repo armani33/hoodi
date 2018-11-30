@@ -24,9 +24,9 @@
               <p>Age</p>
             <% end %>
             <div class="choose-age hidden">
-              <div class="pmd-range-slider pmd-range-tooltip" id="age-range"></div>
-              <%# f.input :start_age, label: false, placeholder: "Start age" %>
-              <%# f.input :end_age, label: false, placeholder: "End age" %>
+              <!-- <div class="pmd-range-slider pmd-range-tooltip" id="age-range"></div> -->
+              <%= f.input :start_age, as: "string", label: false, placeholder: "from" %>
+              <%= f.input :end_age, as: "string", label: false, placeholder: "to" %>
             </div>
           </div>
         </div>
