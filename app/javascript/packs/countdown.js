@@ -1,4 +1,4 @@
-const pinkCards = document.querySelectorAll(".pink-card");
+var pinkCards = document.querySelectorAll(".pink-card");
 
 pinkCards.forEach((pinkcard) => {
   pinkcard.querySelector(".footer-link-invitation").addEventListener("click", (event) => {
